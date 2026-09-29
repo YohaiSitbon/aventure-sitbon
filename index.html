@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#042f45" />
+<meta name="description" content="L'aventure Sitbon — Jessica, Yohai, Maor & Gabrielle · Porto Sani 12–18 octobre 2026" />
+<meta property="og:title" content="L'aventure Sitbon · Porto Sani" />
+<meta property="og:description" content="Choisissez votre aventure en famille — 3 options magiques" />
+<meta property="og:type" content="website" />
+<title>L’aventure Sitbon · Porto Sani</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --sea:#042f45;--sea2:#0a6a8f;--aqua:#2ec4b6;--gold:#f4c95f;--coral:#ff6b6b;
+  --sand:#fff8ef;--ink:#12232c;--glass:rgba(255,255,255,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Outfit,system-ui,sans-serif;color:var(--ink);
+  background:var(--sea);min-height:100dvh;overflow-x:hidden;
+}
+.sky{
+  position:fixed;inset:0;z-index:0;overflow:hidden;
+  background:
+    radial-gradient(ellipse 90% 60% at 15% -10%,#1a8fb5 0%,transparent 55%),
+    radial-gradient(ellipse 70% 50% at 100% 10%,#ff6b6b55 0%,transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% 110%,#f4c95f44 0%,transparent 55%),
+    linear-gradient(165deg,#021820 0%,#042f45 45%,#0a5575 100%);
+}
+.sky .orb{position:absolute;border-radius:50%;filter:blur(40px);opacity:.45;animation:float 12s ease-in-out infinite}
+.sky .o1{width:280px;height:280px;background:#2ec4b6;top:10%;left:-40px;animation-delay:0s}
+.sky .o2{width:220px;height:220px;background:#f4c95f;bottom:15%;right:-30px;animation-delay:-4s}
+.sky .o3{width:160px;height:160px;background:#ff6b6b;top:40%;left:40%;animation-delay:-7s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-28px)}}
+.sparkles{position:fixed;inset:0;z-index:0;pointer-events:none}
+.sparkles i{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;opacity:.35;animation:twinkle 3s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.15;transform:scale(1)}50%{opacity:.8;transform:scale(1.8)}}
+
+.app{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:0 16px 56px}
+.screen{display:none;animation:rise .55s cubic-bezier(.22,1,.36,1) both}
+.screen.on{display:block}
+@keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
+
+.hero{padding:52px 6px 20px;text-align:center;color:#fff}
+.badge{
+  display:inline-flex;gap:8px;align-items:center;
+  padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;
+  background:var(--glass);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);
+  margin-bottom:22px;text-transform:uppercase;
+}
+.hero h1{
+  font-family:Fraunces,Georgia,serif;font-weight:800;
+  font-size:clamp(2.2rem,9vw,2.85rem);line-height:1.08;margin-bottom:14px;
+}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),#ffe9a8,var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:1.05rem;line-height:1.5;opacity:.9;max-width:32ch;margin:0 auto 26px}
+.fam{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:30px}
+.chip{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+  padding:10px 13px;border-radius:16px;font-weight:700;font-size:13px;color:#fff;
+  animation:pop .6s cubic-bezier(.22,1,.36,1) both;
+}
+.chip:nth-child(2){animation-delay:.08s}.chip:nth-child(3){animation-delay:.16s}.chip:nth-child(4){animation-delay:.24s}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.9)}to{opacity:1;transform:none}}
+.chip small{display:block;font-weight:500;opacity:.7;font-size:10px;margin-top:2px}
+
+.btn{
+  appearance:none;border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:1.02rem;
+  padding:17px 26px;border-radius:999px;width:100%;max-width:340px;
+  background:linear-gradient(135deg,var(--gold),#ffe08a);color:var(--sea);
+  box-shadow:0 14px 36px rgba(244,201,95,.4);transition:transform .15s,box-shadow .15s;
+}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);box-shadow:none;margin-top:10px}
+.btn.mint{background:linear-gradient(135deg,var(--aqua),#5eead4);color:#033;box-shadow:0 14px 36px rgba(46,196,182,.35)}
+.btn.coral{background:linear-gradient(135deg,var(--coral),#ff9a8b);color:#fff;box-shadow:0 14px 36px rgba(255,107,107,.35)}
+
+.card{
+  background:rgba(255,255,255,.94);border-radius:26px;padding:22px 18px;
+  box-shadow:0 24px 60px rgba(0,0,0,.22);margin-bottom:14px;
+  border:1px solid rgba(255,255,255,.6);
+}
+.card h2{font-family:Fraunces,serif;font-size:1.35rem;color:var(--sea);margin-bottom:8px}
+.muted{color:#5a6f7a;font-size:.93rem;line-height:1.5}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 2px 10px;color:#fff}
+.topbar button{width:42px;height:42px;border-radius:14px;border:0;background:var(--glass);color:#fff;font-size:18px;cursor:pointer;backdrop-filter:blur(8px)}
+.topbar .t{font-weight:800;font-size:.92rem}
+
+.opt{
+  width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;
+  position:relative;overflow:hidden;border:2px solid transparent;
+  transition:transform .15s,border-color .2s;
+}
+.opt:active{transform:scale(.985)}
+.opt::before{
+  content:"";position:absolute;inset:0;opacity:.12;
+  background:linear-gradient(135deg,var(--g1,#f4c95f),transparent 60%);
+  pointer-events:none;
+}
+.opt.a{--g1:#f4c95f}.opt.b{--g1:#2ec4b6}.opt.c{--g1:#5dade2}
+.opt .emoji{font-size:2.1rem;margin-bottom:6px}
+.opt .tag{
+  position:absolute;top:14px;right:14px;font-size:10px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;
+}
+.opt.a .tag{background:#fff3d1;color:#8a5a00}
+.opt.b .tag{background:#d8faf5;color:#0a6b60}
+.opt.c .tag{background:#dff0ff;color:#1a5f8a}
+.opt .price{margin-top:10px;font-weight:800;color:var(--sea);font-size:.95rem}
+
+.day{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #eaf0f3}
+.day:last-child{border-bottom:0}
+.day .d{font-weight:800;color:var(--sea2);font-size:13px;line-height:1.2}
+.day .d small{display:block;opacity:.65;font-weight:600}
+.day .what{font-size:.94rem;line-height:1.45}
+.day .what strong{color:var(--sea)}
+
+.tip{
+  display:inline-flex;align-items:center;gap:3px;margin:2px 2px 2px 0;
+  background:#e7f5fb;color:var(--sea2);border:0;border-radius:8px;
+  padding:3px 8px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;
+}
+.tip:active{background:var(--sea);color:#fff}
+
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.pill{background:#eaf6fb;color:var(--sea2);padding:5px 11px;border-radius:999px;font-size:11px;font-weight:700}
+.pill.g{background:#fff3d1;color:#8a5a00}.pill.m{background:#d8faf5;color:#0a6b60}
+
+.lex{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+
+.equip{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid #eef2f5;align-items:flex-start}
+.equip:last-child{border-bottom:0}
+.equip .ico{font-size:1.25rem;width:28px;text-align:center}
+.ok{color:#0a8f7e;font-weight:800;font-size:11px}
+.ask{color:#9a6b20}
+
+.modal-bg{
+  position:fixed;inset:0;z-index:60;background:rgba(2,24,32,.6);backdrop-filter:blur(6px);
+  display:none;align-items:flex-end;justify-content:center;padding:16px;
+}
+.modal-bg.show{display:flex}
+.modal{
+  background:#fff;border-radius:24px;padding:22px 20px 26px;width:100%;max-width:420px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);animation:rise .3s ease;
+}
+.modal h4{font-family:Fraunces,serif;font-size:1.3rem;color:var(--sea);margin-bottom:8px}
+.modal p{color:#4d6270;line-height:1.5;margin-bottom:16px}
+
+.choice{
+  background:linear-gradient(145deg,#fff,#fff4e0);border-radius:22px;padding:22px;text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.2);margin-bottom:14px;
+}
+.choice .big{font-family:Fraunces,serif;font-size:1.55rem;color:var(--sea);line-height:1.2}
+
+.foot{text-align:center;color:rgba(255,255,255,.55);font-size:12px;margin-top:22px;line-height:1.45}
+.confetti{pointer-events:none;position:fixed;inset:0;z-index:100;overflow:hidden}
+.confetti i{position:absolute;top:-12px;font-size:18px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+
+.progress{display:flex;gap:6px;justify-content:center;margin:8px 0 18px}
+.progress span{width:28px;height:4px;border-radius:4px;background:rgba(255,255,255,.2)}
+.progress span.on{background:var(--gold)}
+
+.shine{position:relative;overflow:hidden}
+.shine::after{
+  content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:shine 3.5s ease-in-out infinite;
+}
+@keyframes shine{0%{left:-60%}60%,100%{left:120%}}
+</style>
+</head>
+<body>
+<div class="sky"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+<div class="sparkles" id="sp"></div>
+<div class="app">
+
+<section id="intro" class="screen on">
+  <div class="hero">
+    <div class="badge">🇬🇷 Porto Sani · 12–18 oct. 2026</div>
+    <h1>L’aventure<br/><em>Sitbon</em></h1>
+    <p class="lead">Jessica, Yohai, Maor & Gabrielle — trois façons de vivre la Grèce. Touchez, explorez, choisissez.</p>
+    <div class="fam">
+      <div class="chip">Jessica<small>maman</small></div>
+      <div class="chip">Yohai<small>papa</small></div>
+      <div class="chip">Maor<small>~2 ans · vélos & animaux</small></div>
+      <div class="chip">Gabrielle<small>~3 mois</small></div>
+    </div>
+    <button class="btn shine" onclick="go('legend')">C’est parti ✨</button>
+  </div>
+</section>
+
+<section id="legend" class="screen">
+  <div class="topbar"><button onclick="go('intro')">←</button><div class="t">Petit lexique</div><div style="width:42px"></div></div>
+  <div class="progress"><span class="on"></span><span></span><span></span><span></span></div>
+  <div class="card">
+    <h2>C’est quoi, tout ça ?</h2>
+    <p class="muted">Touchez un mot pour l’explication en une phrase.</p>
+    <div class="lex">
+      <button class="tip" data-t="bike">Family bike</button>
+      <button class="tip" data-t="creche">Crèche</button>
+      <button class="tip" data-t="swim">Baby Swim</button>
+      <button class="tip" data-t="babe">Babe Watch</button>
+      <button class="tip" data-t="wet">Wetlands</button>
+      <button class="tip" data-t="bee">Bee Spot</button>
+      <button class="tip" data-t="volvo">Volvo</button>
+      <button class="tip" data-t="dine">Dine Around</button>
+      <button class="tip" data-t="artemis">Artemis</button>
+      <button class="tip" data-t="macaroni">Macaroni</button>
+      <button class="tip" data-t="vosporos">Vosporos</button>
+      <button class="tip" data-t="ergon">Ergon Deli</button>
+      <button class="tip" data-t="psaro">Psaroyannos</button>
+    </div>
+  </div>
+  <div class="card">
+    <h2>✈️ Les vols</h2>
+    <p class="muted"><strong>12/10</strong> Israir 08:00 Tel-Aviv → 10:25 Salonique → hôtel vers midi.<br/>
+    <strong>18/10</strong> départ hôtel ~15h–15h30 · Arkia 19:25 → Tel-Aviv 21:45.<br/>
+    Dernier dîner à l’hôtel : <strong>17/10</strong>. Ensemble — pas de baby-sitter sans caméra.</p>
+  </div>
+  <button class="btn" onclick="go('choose')">Voir les 3 options 🌊</button>
+</section>
+
+<section id="choose" class="screen">
+  <div class="topbar"><button onclick="go('legend')">←</button><div class="t">Votre aventure</div><div style="width:42px"></div></div>
+  <div class="progress"><span class="on"></span><span class="on"></span><span></span><span></span></div>
+  <button class="card opt a" onclick="openOpt(1)">
+    <span class="tag">Fun</span>
+    <div class="emoji">🚴🦁🏊</div>
+    <h2>Option 1 — Max fun Maor</h2>
+    <p class="muted">Vélos dès l’arrivée, crèche animaux, 2 Baby Swim, Wetlands. Le rythme le plus joyeux.</p>
+    <div class="price">Budget extra ~180–200 €</div>
+  </button>
+  <button class="card opt b" onclick="openOpt(2)">
+    <span class="tag">Doux</span>
+    <div class="emoji">🏖️😌☀️</div>
+    <h2>Option 2 — Plus de repos</h2>
+    <p class="muted">Moins de programme, plus de plage et de siestes. Toujours Swim + Volvo.</p>
+    <div class="price">Budget extra ~120–150 €</div>
+  </button>
+  <button class="card opt c" onclick="openOpt(3)">
+    <span class="tag">Nature</span>
+    <div class="emoji">🐦🐝🚗</div>
+    <h2>Option 3 — Nature & découvertes</h2>
+    <p class="muted">Oiseaux, abeilles, tour Volvo de la péninsule, crèche + Swim.</p>
+    <div class="price">Budget extra ~140–170 €</div>
+  </button>
+  <button class="btn ghost" onclick="go('equip')">🧸 Équipement bébé</button>
+</section>
+
+<section id="opt1" class="screen"></section>
+<section id="opt2" class="screen"></section>
+<section id="opt3" class="screen"></section>
+
+<section id="equip" class="screen">
+  <div class="topbar"><button onclick="go('choose')">←</button><div class="t">Équipement</div><div style="width:42px"></div></div>
+  <div class="card">
+    <h2>Déjà confirmé ✅</h2>
+    <div class="equip"><div class="ico">🪑</div><div><strong>BabyBjörn</strong><br/><span class="ok">OK</span></div></div>
+    <div class="equip"><div class="ico">🥣</div><div><strong>Purées &lt; 2 ans</strong><br/><span class="ok">OK · gratuites</span></div></div>
+  </div>
+  <div class="card">
+    <h2>À demander 🙏</h2>
+    <div class="equip"><div class="ico">🛏️</div><div><strong>Lit bébé bois</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">📹</div><div><strong>Babyphone audio + vidéo</strong><br/><span class="ask">à demander</span> — voir à distance</div></div>
+    <div class="equip"><div class="ico">🍼</div><div><strong>Chauffe-biberon + stérilisateur</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🍽️</div><div><strong>Chaise haute</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🛒</div><div><strong>Poussette</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🔊</div><div><strong>Bruit blanc</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🌙</div><div><strong>Veilleuse</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">⏰</div><div><strong>Gro Clock</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🧷</div><div><strong>Matelas à langer</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🛁</div><div><strong>Siège de bain</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🥗</div><div><strong>Menus Donna Hay</strong><br/><span class="ask">à demander</span></div></div>
+  </div>
+  <div class="card"><h2>Optionnel</h2><p class="muted">Moustiquaire · barrières lit · pot · thermomètre · trousse toilette bébé.</p></div>
+  <button class="btn" onclick="go('choose')">Retour aux options</button>
+</section>
+
+<section id="vote" class="screen">
+  <div class="topbar"><button onclick="go('choose')">←</button><div class="t">On valide ?</div><div style="width:42px"></div></div>
+  <div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+  <div class="choice">
+    <div class="big" id="pt">—</div>
+    <p class="muted" id="ps" style="margin-top:8px"></p>
+  </div>
+  <div class="card">
+    <h2>Parfait 💛</h2>
+    <p class="muted">Yohai écrit ensuite à Milena : transferts aéroport, activités, restos, équipement. Toute la famille ensemble.</p>
+  </div>
+  <button class="btn" onclick="go('choose')">Changer d’option</button>
+  <p class="foot">Famille Sitbon · Porto Sani Suite Collection<br/>Pour Jessica, Yohai, Maor & Gabrielle 💙</p>
+</section>
+</div>
+
+<div class="modal-bg" id="modal" onclick="if(event.target===this)closeTip()">
+  <div class="modal"><h4 id="mt"></h4><p id="mb"></p><button class="btn mint" onclick="closeTip()">Compris 👌</button></div>
+</div>
+<div class="confetti" id="cf"></div>
+
+<script>
+const tips={
+bike:["Family bike","Vélo famille + siège tout-petit. Location au Bike Center — le grand plaisir de Maor."],
+creche:["Crèche","Garderie Little Explorers (payante). Thèmes animaux. Si Maor n’aime pas → plan B avec papa/maman."],
+swim:["Baby Swim","Cours natation ~30 min avec un parent. Max 2× pour Maor. Gabrielle trop petite."],
+babe:["Babe Watch","30 min gratuites à la plage avec moniteur — vous êtes juste à côté."],
+wet:["Wetlands","Petite balade oiseaux. Gratuit. On raccourcit si Maor est fatigué."],
+bee:["Bee Spot","Petit coup d’œil aux abeilles — sans contact."],
+volvo:["Volvo","Voiture + chauffeur offerts (Suite Collection) : trajets resort + tour péninsule. Toute la famille à bord."],
+dine:["Dine Around","Full Board : restos du resort. Menus programme ou à la carte avec déduction."],
+artemis:["Artemis","Buffet près des suites, station enfants Donna Hay — idéal après le vol."],
+macaroni:["Macaroni","Italien marina : pizza & pâtes. Joyeux, poussette OK."],
+vosporos:["Vosporos","Grill grec marina. Familial — coin un peu calme."],
+ergon:["Ergon Deli","Mezze à partager. Casual et rapide."],
+psaro:["Psaroyannos","Taverne poisson, plus calme. Soir doux."]
+};
+const opts={
+1:{title:"Option 1 — Max fun Maor",sub:"Le rythme le plus joyeux · ~180–200 €",emoji:"🚴🦁🏊",days:[
+["12","lun","Arrivée ~midi · vélos l’après-midi · <strong>Artemis 19h</strong>"],
+["13","mar","<button class='tip' data-t='bike'>Family bike</button> + marina · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["14","mer","<button class='tip' data-t='creche'>Crèche</button> animaux + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
+["15","jeu","<button class='tip' data-t='volvo'>Tour Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
+["16","ven","<button class='tip' data-t='wet'>Wetlands</button> + Crèche / <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
+["17","sam","Vélos/ballons + <button class='tip' data-t='babe'>Babe Watch</button> · <button class='tip' data-t='artemis'>Artemis 19h</button>"],
+["18","dim","Plage courte · départ ~15h · vol 19h25"]
+]},
+2:{title:"Option 2 — Plus de repos",sub:"Douceur avant tout · ~120–150 €",emoji:"🏖️😌☀️",days:[
+["12","lun","Arrivée · vélos courts · <strong>Artemis 19h</strong>"],
+["13","mar","Plage / piscine soft · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["14","mer","1× <button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
+["15","jeu","<button class='tip' data-t='volvo'>Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
+["16","ven","Wetlands ou plage · Swim #2 si forme · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
+["17","sam","Jeu libre + <button class='tip' data-t='babe'>Babe Watch</button> · Artemis 19h"],
+["18","dim","Départ ~15h · vol 19h25"]
+]},
+3:{title:"Option 3 — Nature",sub:"Oiseaux, abeilles, péninsule · ~140–170 €",emoji:"🐦🐝🚗",days:[
+["12","lun","Arrivée · vélos · <strong>Artemis 19h</strong>"],
+["13","mar","<button class='tip' data-t='wet'>Wetlands</button> court · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["14","mer","<button class='tip' data-t='bee'>Bee Spot</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
+["15","jeu","<button class='tip' data-t='volvo'>Volvo péninsule</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
+["16","ven","<button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
+["17","sam","Vélos/plage + Babe Watch · Artemis 19h"],
+["18","dim","Départ ~15h · vol 19h25"]
+]}
+};
+(function spark(){const b=document.getElementById('sp');for(let i=0;i<40;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';b.appendChild(s)}})();
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}
+function openOpt(n){const o=opts[n];const el=document.getElementById('opt'+n);
+el.innerHTML=`<div class="topbar"><button onclick="go('choose')">←</button><div class="t">${o.emoji} Option ${n}</div><div style="width:42px"></div></div>
+<div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+<div class="card"><h2>${o.title}</h2><p class="muted">${o.sub}</p>
+<div class="pills"><span class="pill">Sieste 13h–15h</span><span class="pill g">Max 2× Swim</span><span class="pill m">Ensemble</span></div>
+${o.days.map(([d,w,what])=>`<div class="day"><div class="d">${d}.10<small>${w}</small></div><div class="what">${what}</div></div>`).join('')}
+</div>
+<button class="btn coral" style="margin-top:8px" onclick="pick(${n})">On choisit celle-ci 💛</button>
+<button class="btn ghost" onclick="go('choose')">Voir les autres</button>`;
+el.querySelectorAll('.tip').forEach(bindTip);go('opt'+n)}
+function pick(n){const o=opts[n];document.getElementById('pt').textContent=o.emoji+' '+o.title;document.getElementById('ps').textContent=o.sub+' — Jessica & Yohai, vous validez ?';burst();go('vote')}
+function bindTip(btn){btn.onclick=e=>{e.stopPropagation();const [t,b]=tips[btn.dataset.t]||['?',''];document.getElementById('mt').textContent=t;document.getElementById('mb').textContent=b;document.getElementById('modal').classList.add('show')}}
+document.querySelectorAll('.tip').forEach(bindTip);
+function closeTip(){document.getElementById('modal').classList.remove('show')}
+function burst(){const box=document.getElementById('cf');const e=['✨','🌊','💛','🏖️','🚴','🇬🇷','☀️','🎉','🦁'];for(let i=0;i<32;i++){const s=document.createElement('i');s.textContent=e[i%e.length];s.style.left=Math.random()*100+'%';s.style.animationDuration=(2+Math.random()*2)+'s';s.style.animationDelay=(Math.random()*.35)+'s';box.appendChild(s);setTimeout(()=>s.remove(),4200)}}
+</script>
+</body>
+</html>
