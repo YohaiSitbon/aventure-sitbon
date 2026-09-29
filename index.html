@@ -111,6 +111,55 @@ body{
 .opt.b .tag{background:#d8faf5;color:#0a6b60}
 .opt.c .tag{background:#dff0ff;color:#1a5f8a}
 .opt .price{margin-top:10px;font-weight:800;color:var(--sea);font-size:.95rem}
+.opt.reco{
+  border-color:#f4c95f;
+  box-shadow:0 0 0 1px rgba(244,201,95,.55), 0 18px 40px rgba(244,201,95,.22), 0 24px 60px rgba(0,0,0,.22);
+}
+.opt.reco .ribbon{
+  display:block;position:relative;z-index:2;
+  margin:-22px -18px 12px;padding:9px 14px;text-align:center;
+  background:linear-gradient(90deg,#f4c95f 0%,#ffc46b 42%,#ff8f7a 100%);
+  color:#042f45;font-weight:800;font-size:13px;letter-spacing:.01em;
+}
+.opt.reco .tag{top:48px;z-index:2}
+.reco-why{
+  color:rgba(255,255,255,.94);font-size:.95rem;line-height:1.5;
+  margin:2px 2px 14px;padding:12px 14px;border-radius:18px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(244,201,95,.5);
+  backdrop-filter:blur(10px);
+}
+.reco-why strong{color:var(--gold)}
+.bonus-hint{font-size:.84rem;margin:2px 0 4px}
+.bonus-hint b{color:var(--sea)}
+.bonus-btn{
+  display:flex;align-items:center;gap:6px;width:fit-content;
+  margin-top:8px;background:#fff8ea;color:#8a5a00;
+  border:1px dashed #e2c27a;border-radius:999px;
+  padding:6px 12px 6px 6px;font-size:12px;font-weight:800;font-family:inherit;
+  cursor:pointer;position:relative;z-index:1;
+}
+.bonus-btn:active{transform:scale(.98)}
+.bonus-btn:focus-visible{outline:2px solid var(--sea2);outline-offset:2px}
+.bonus-btn[aria-expanded="true"]{background:#fff1cc;border-style:solid;border-color:#e6b84d}
+.bonus-btn .chev{
+  width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(135deg,#f4c95f,#ff8f7a);color:#042f45;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:14px;line-height:1;font-weight:800;
+}
+.bonus-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+.bonus-panel.open{grid-template-rows:1fr}
+.bonus-panel .bin{overflow:hidden;min-height:0}
+.bonus-panel .bin p{
+  margin:8px 0 0;padding:10px 12px;border-radius:14px;
+  background:linear-gradient(180deg,#fff9ef,#fff);border:1px solid #f0ddb0;
+  font-size:.88rem;line-height:1.45;color:#3e5562;
+}
+.bk{
+  display:block;font-size:10px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;color:#a87412;margin-bottom:4px;
+}
+@media (prefers-reduced-motion:reduce){.bonus-panel{transition:none}}
 
 .day{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid #eaf0f3}
 .day:last-child{border-bottom:0}
@@ -228,7 +277,9 @@ body{
 <section id="choose" class="screen">
   <div class="topbar"><button onclick="go('legend')">←</button><div class="t">Votre aventure</div><div style="width:42px"></div></div>
   <div class="progress"><span class="on"></span><span class="on"></span><span></span><span></span></div>
-  <button class="card opt a" onclick="openOpt(1)">
+  <p class="reco-why"><strong>Notre recommandation : l’option 1.</strong> C’est le maximum de joie pour Maor — vélos, animaux, jeux — sans bousculer la sieste de 13h à 15h ni les dîners vers 18h30. Gabriela, trois mois, reste dans vos bras : toute la famille, ensemble.</p>
+  <button class="card opt a reco" onclick="openOpt(1)">
+    <span class="ribbon">On vous conseille 💛</span>
     <span class="tag">Fun</span>
     <div class="emoji">🚴🦁🏊</div>
     <h2>Option 1 — Max fun Maor</h2>
@@ -321,44 +372,66 @@ psaro:["Psaroyannos","Taverne poisson, plus calme. Soir doux."]
 const opts={
 1:{title:"Option 1 — Max fun Maor",sub:"Le rythme le plus joyeux · ~180–200 €",emoji:"🚴🦁🏊",days:[
 ["12","lun","Arrivée ~midi · vélos l’après-midi · <strong>Artemis 19h</strong>"],
-["13","mar","<button class='tip' data-t='bike'>Family bike</button> + marina · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["13","mar","<button class='tip' data-t='bike'>Family bike</button> + marina · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Glace à la marina, tous les quatre. Maor choisit sa boule, Gabriela au frais dans les bras — puis on rentre tranquille pour le dîner."],
 ["14","mer","<button class='tip' data-t='creche'>Crèche</button> animaux + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
-["15","jeu","<button class='tip' data-t='volvo'>Tour Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
+["15","jeu","<button class='tip' data-t='volvo'>Tour Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Au retour du Volvo, plage douce des suites : snacks du sac Sani, un petit château de sable. On s’arrête dès que Maor ralentit."],
 ["16","ven","<button class='tip' data-t='wet'>Wetlands</button> + Crèche / <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
-["17","sam","Vélos/ballons + <button class='tip' data-t='babe'>Babe Watch</button> · <button class='tip' data-t='artemis'>Artemis 19h</button>"],
+["17","sam","Vélos/ballons + <button class='tip' data-t='babe'>Babe Watch</button> · <button class='tip' data-t='artemis'>Artemis 19h</button>","Mini séance photo avec les ballons, sur la plage. Maor en star, Gabriela dans les bras, Jessica et Yohai dans le cadre — dix minutes, puis Artemis."],
 ["18","dim","Plage courte · départ ~15h · vol 19h25"]
 ]},
 2:{title:"Option 2 — Plus de repos",sub:"Douceur avant tout · ~120–150 €",emoji:"🏖️😌☀️",days:[
 ["12","lun","Arrivée · vélos courts · <strong>Artemis 19h</strong>"],
-["13","mar","Plage / piscine soft · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
-["14","mer","1× <button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
-["15","jeu","<button class='tip' data-t='volvo'>Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
-["16","ven","Wetlands ou plage · Swim #2 si forme · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
-["17","sam","Jeu libre + <button class='tip' data-t='babe'>Babe Watch</button> · Artemis 19h"],
+["13","mar","Plage / piscine soft · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Petite boucle aux Wetlands, gratuite. Les oiseaux si Maor est partant ; on fait demi-tour au premier bâillement."],
+["14","mer","1× <button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>","Après la sieste, une glace à la marina. Court, sucré, toute la famille — personne ne reste seul avec les enfants."],
+["15","jeu","<button class='tip' data-t='volvo'>Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Pieds dans l’eau à la plage des suites et snacks du sac Sani. Le tour en Volvo a assez duré : ici, c’est tout doux."],
+["16","ven","Wetlands ou plage · Swim #2 si forme · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>","Boucle à vélo très douce près des suites. Maor au petit siège, Gabriela avec vous — on coupe dès que c’est assez."],
+["17","sam","Jeu libre + <button class='tip' data-t='babe'>Babe Watch</button> · Artemis 19h","Photo au playground, ballon en main. Le Babe Watch reste le cœur du jour ; ceci n’est que la cerise, ensemble."],
 ["18","dim","Départ ~15h · vol 19h25"]
 ]},
 3:{title:"Option 3 — Nature",sub:"Oiseaux, abeilles, péninsule · ~140–170 €",emoji:"🐦🐝🚗",days:[
 ["12","lun","Arrivée · vélos · <strong>Artemis 19h</strong>"],
-["13","mar","<button class='tip' data-t='wet'>Wetlands</button> court · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
-["14","mer","<button class='tip' data-t='bee'>Bee Spot</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
-["15","jeu","<button class='tip' data-t='volvo'>Volvo péninsule</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
-["16","ven","<button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>"],
-["17","sam","Vélos/plage + Babe Watch · Artemis 19h"],
+["13","mar","<button class='tip' data-t='wet'>Wetlands</button> court · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Glace à la marina après les oiseaux. Cinq minutes sucrées, Gabriela contre vous, et on garde l’énergie pour 18h30."],
+["14","mer","<button class='tip' data-t='bee'>Bee Spot</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>","Ballons au playground des suites. Si l’eau appelle : un petit jeu dans la piscine soft, tous les quatre — pas un cours de natation."],
+["15","jeu","<button class='tip' data-t='volvo'>Volvo péninsule</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>","Plage des suites au retour du Volvo : ombre pour Gabriela, seau pour Maor, snacks du sac Sani."],
+["16","ven","<button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Si l’après-midi est légère : un tour à la marina, une glace, une photo. On rentre large avant le dîner."],
+["17","sam","Vélos/plage + Babe Watch · Artemis 19h","Séance photo ballons avant Artemis. Maor lâche ou garde les ballons, Gabriela dans le cadre — trois clichés, et on file."],
 ["18","dim","Départ ~15h · vol 19h25"]
 ]}
 };
+const bonusOpen={};
 (function spark(){const b=document.getElementById('sp');for(let i=0;i<40;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';b.appendChild(s)}})();
 function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}
+function bonusHtml(n,d,text){
+  if(!text) return '';
+  const id=n+'-'+d;
+  const open=!!bonusOpen[id];
+  return `<button type="button" class="bonus-btn" data-bonus="${id}" aria-expanded="${open?'true':'false'}" aria-controls="bp-${id}" aria-label="${open?'Masquer l’activité bonus':'Afficher l’activité bonus'}"><span class="chev" aria-hidden="true">${open?'−':'+'}</span> Bonus</button>
+<div class="bonus-panel${open?' open':''}" id="bp-${id}"><div class="bin"><p><span class="bk">Activité bonus</span>${text}</p></div></div>`;
+}
 function openOpt(n){const o=opts[n];const el=document.getElementById('opt'+n);
 el.innerHTML=`<div class="topbar"><button onclick="go('choose')">←</button><div class="t">${o.emoji} Option ${n}</div><div style="width:42px"></div></div>
 <div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
 <div class="card"><h2>${o.title}</h2><p class="muted">${o.sub}</p>
-<div class="pills"><span class="pill">Sieste 13h–15h</span><span class="pill g">Max 2× Swim</span><span class="pill m">Ensemble</span></div>
-${o.days.map(([d,w,what])=>`<div class="day"><div class="d">${d}.10<small>${w}</small></div><div class="what">${what}</div></div>`).join('')}
+<div class="pills"><span class="pill">Sieste 13h–15h</span><span class="pill g">Max 2× Swim</span><span class="pill m">Ensemble</span>${n===1?'<span class="pill g">On vous conseille 💛</span>':''}</div>
+<p class="muted bonus-hint">Le <b>+ Bonus</b> est une gourmandise en plus — seulement si l’énergie est là. Le programme du jour ne change pas.</p>
+${o.days.map(([d,w,what,bonus])=>`<div class="day"><div class="d">${d}.10<small>${w}</small></div><div class="what">${what}${bonusHtml(n,d,bonus)}</div></div>`).join('')}
 </div>
 <button class="btn coral" style="margin-top:8px" onclick="pick(${n})">On choisit celle-ci 💛</button>
 <button class="btn ghost" onclick="go('choose')">Voir les autres</button>`;
-el.querySelectorAll('.tip').forEach(bindTip);go('opt'+n)}
+el.querySelectorAll('.tip').forEach(bindTip);
+el.querySelectorAll('.bonus-btn').forEach(bindBonus);
+go('opt'+n)}
+function bindBonus(btn){btn.onclick=e=>{e.stopPropagation();
+  const id=btn.dataset.bonus;
+  const panel=document.getElementById('bp-'+id);
+  const open=!bonusOpen[id];
+  bonusOpen[id]=open;
+  panel.classList.toggle('open',open);
+  btn.setAttribute('aria-expanded',open?'true':'false');
+  btn.setAttribute('aria-label',open?'Masquer l’activité bonus':'Afficher l’activité bonus');
+  const chev=btn.querySelector('.chev');
+  if(chev) chev.textContent=open?'−':'+';
+}}
 function pick(n){const o=opts[n];document.getElementById('pt').textContent=o.emoji+' '+o.title;document.getElementById('ps').textContent=o.sub+' — Jessica & Yohai, vous validez ?';burst();go('vote')}
 function bindTip(btn){btn.onclick=e=>{e.stopPropagation();const [t,b]=tips[btn.dataset.t]||['?',''];document.getElementById('mt').textContent=t;document.getElementById('mb').textContent=b;document.getElementById('modal').classList.add('show')}}
 document.querySelectorAll('.tip').forEach(bindTip);
