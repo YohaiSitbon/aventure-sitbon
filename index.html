@@ -221,6 +221,43 @@ body{
   animation:shine 3.5s ease-in-out infinite;
 }
 @keyframes shine{0%{left:-60%}60%,100%{left:120%}}
+
+.dream{
+  margin:0 auto 22px;max-width:340px;text-align:left;
+  padding:14px 16px;border-radius:20px;color:#fff;
+  background:rgba(255,255,255,.12);border:1px solid rgba(244,201,95,.5);
+  backdrop-filter:blur(12px);font-size:.95rem;line-height:1.45;
+}
+.dream span{
+  display:block;font-family:Fraunces,Georgia,serif;font-weight:700;
+  color:var(--gold);font-size:1.08rem;margin-bottom:4px;
+}
+.suite{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 90% 70% at 100% -10%,rgba(244,201,95,.55),transparent 55%),
+    radial-gradient(ellipse 70% 60% at -10% 110%,rgba(46,196,182,.28),transparent 52%),
+    linear-gradient(165deg,#fff 0%,#fff8ef 48%,#e9f7fb 100%);
+  border-color:rgba(244,201,95,.75);
+}
+.suite-kicker{
+  display:inline-flex;align-items:center;gap:6px;position:relative;z-index:1;
+  font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:#8a5a00;background:#fff3d1;padding:5px 10px;border-radius:999px;margin-bottom:10px;
+}
+.suite h2,.suite p,.suite-meta{position:relative;z-index:1}
+.suite p{color:#3d5360;font-size:.95rem;line-height:1.55;margin-top:10px}
+.suite-meta{
+  margin-top:14px;padding-top:12px;border-top:1px dashed rgba(138,90,0,.35);
+  font-size:12.5px;line-height:1.6;color:#5a6f7a;
+}
+.suite-meta strong{color:var(--sea)}
+.suite-meta a{color:var(--sea2);font-weight:800;text-decoration:none;overflow-wrap:anywhere}
+.dream-line{
+  text-align:center;color:rgba(255,255,255,.9);font-size:.9rem;line-height:1.45;
+  margin:2px 6px 14px;
+}
+.dream-line strong{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -239,6 +276,10 @@ body{
       <div class="chip">Maor<small>~2 ans · vélos & animaux</small></div>
       <div class="chip">Gabriela<small>~3 mois</small></div>
     </div>
+    <div class="dream">
+      <span>Votre suite vous attend</span>
+      Grand balcon face à la mer, lumière du matin, une chambre pour quatre. Le sac de plage Sani est déjà dans l’histoire.
+    </div>
     <button class="btn shine" onclick="go('legend')">C’est parti ✨</button>
   </div>
 </section>
@@ -246,6 +287,14 @@ body{
 <section id="legend" class="screen">
   <div class="topbar"><button onclick="go('intro')">←</button><div class="t">Petit lexique</div><div style="width:42px"></div></div>
   <div class="progress"><span class="on"></span><span></span><span></span><span></span></div>
+  <div class="card suite">
+    <div class="suite-kicker">Porto Sani · Suite Collection</div>
+    <h2>Le grand balcon, et la mer</h2>
+    <p>Le matin, la lumière entre par le grand balcon et la mer occupe tout l’horizon. Une chambre, rien que pour vous : Jessica, Yohai, Maor et Gabriela. La <strong>Deluxe One Bedroom Suite Grand Balcony Sea View</strong> vous attend au Porto Sani — Suite Collection, pension complète. Le voyage a déjà une adresse.</p>
+    <p>En 2026, les transferts privés aéroport sont offerts : on les cale avec Milena avant le départ. Au resort, un Volvo et son chauffeur vous accompagnent, et vous emmènent sur la péninsule de Kassandra. L’e-concierge reste à un message.</p>
+    <p>Votre coin de plage des suites vous est gardé, avec le sac Sani et ses encas. Dans la salle de bain, les produits Anne Sémonin. Pour la nuit, un menu d’oreillers. Si vous dînez dans la suite, c’est la formule privilégiée. Le linge part, jusqu’à environ huit pièces. Le BabyBjörn est déjà noté, et les purées des moins de 2 ans sont offertes pour Maor.</p>
+    <p class="suite-meta"><strong>Full Board</strong> · confirmation <strong>7744302</strong><br/>Milena Manvelian · <a href="mailto:pssuite@saniresort.gr">pssuite@saniresort.gr</a></p>
+  </div>
   <div class="card">
     <h2>C’est quoi, tout ça ?</h2>
     <p class="muted">Touchez un mot pour l’explication en une phrase.</p>
@@ -300,6 +349,7 @@ body{
     <p class="muted">Oiseaux, abeilles, tour Volvo de la péninsule, crèche + Swim.</p>
     <div class="price">Budget extra ~140–170 €</div>
   </button>
+  <p class="dream-line">Déjà à vous : une chambre, le grand balcon, la mer au matin. <strong>Porto Sani · pension complète.</strong></p>
   <button class="btn ghost" onclick="go('equip')">🧸 Équipement bébé</button>
 </section>
 
