@@ -45,7 +45,7 @@ body{
 .screen.on{display:block}
 @keyframes rise{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}
 
-.hero{padding:52px 6px 20px;text-align:center;color:#fff}
+.hero{padding:28px 6px 16px;text-align:center;color:#fff}
 .badge{
   display:inline-flex;gap:8px;align-items:center;
   padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.04em;
@@ -54,11 +54,11 @@ body{
 }
 .hero h1{
   font-family:Fraunces,Georgia,serif;font-weight:800;
-  font-size:clamp(2.2rem,9vw,2.85rem);line-height:1.08;margin-bottom:14px;
+  font-size:clamp(2.05rem,8.4vw,2.7rem);line-height:1.05;margin-bottom:8px;
 }
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold),#ffe9a8,var(--aqua));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:1.05rem;line-height:1.5;opacity:.9;max-width:32ch;margin:0 auto 26px}
-.fam{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:30px}
+.lead{font-size:.98rem;line-height:1.4;opacity:.9;max-width:34ch;margin:0 auto 12px}
+.fam{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px}
 .chip{
   background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
   padding:10px 13px;border-radius:16px;font-weight:700;font-size:13px;color:#fff;
@@ -222,8 +222,137 @@ body{
 }
 @keyframes shine{0%{left:-60%}60%,100%{left:120%}}
 
+.cta{display:flex;flex-direction:column;align-items:center}
+.countdown{
+  margin:0 auto 12px;max-width:380px;padding:12px 12px 11px;border-radius:24px;
+  background:linear-gradient(165deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 18px 40px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.28);
+  backdrop-filter:blur(16px);
+}
+.cd-kicker{
+  font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2px;
+}
+.cd-title{
+  font-family:Fraunces,Georgia,serif;font-weight:700;
+  font-size:1.32rem;line-height:1.15;margin-bottom:8px;
+}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cd-cell{
+  background:rgba(2,20,30,.35);border-radius:16px;padding:10px 2px 8px;
+  border:1px solid rgba(255,255,255,.08);
+}
+.cd-cell b{
+  display:block;font-family:Fraunces,Georgia,serif;font-weight:800;
+  font-size:clamp(1.35rem,6.2vw,1.7rem);font-variant-numeric:tabular-nums;
+  letter-spacing:-.03em;line-height:1;
+}
+.cd-cell small{
+  display:block;margin-top:5px;font-size:clamp(8px,2.35vw,10px);font-weight:700;
+  letter-spacing:.03em;text-transform:uppercase;opacity:.75;
+}
+.cd-sec{color:var(--gold)}
+.cd-when{margin-top:10px;font-size:12px;font-weight:600;opacity:.82}
+.cd-hello{font-size:.98rem;line-height:1.45;opacity:.95}
+.countdown.is-there{
+  background:linear-gradient(145deg,rgba(46,196,182,.42),rgba(244,201,95,.3));
+}
+.countdown.is-there .cd-title{font-size:1.85rem;margin-bottom:8px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.climate-peek{
+  display:flex;align-items:center;gap:10px;text-align:left;width:100%;max-width:340px;
+  margin:0 auto 16px;padding:11px 12px;border-radius:16px;cursor:pointer;font:inherit;color:#fff;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);
+}
+.climate-peek strong{display:block;font-size:13px}
+.climate-peek small{display:block;opacity:.75;font-size:11px;font-weight:600;margin-top:1px}
+.climate-peek .arr{margin-left:auto;opacity:.8;font-weight:800}
+
+.wx-flag{
+  display:inline-block;margin-bottom:8px;font-size:10px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;background:#fff3d1;color:#8a5a00;border-radius:999px;padding:4px 8px;
+}
+.wx-row{
+  display:flex;gap:8px;overflow-x:auto;padding:12px 2px 6px;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.wx-row::-webkit-scrollbar{display:none}
+.wx-chip{
+  flex:0 0 104px;scroll-snap-align:start;border-radius:18px;padding:10px 8px 12px;text-align:center;
+  background:linear-gradient(180deg,#f7fbfe,#fff);border:1px solid #d7e7ef;
+}
+.wx-chip.wet{background:linear-gradient(180deg,#e7f1ff,#fff);border-color:#9ec0e4}
+.wx-chip.live{background:linear-gradient(180deg,#e7faf6,#fff);border-color:#9adfd4}
+.wx-d{font-weight:800;color:var(--sea2);font-size:12px;line-height:1.15}
+.wx-d small{display:block;font-size:16px;color:var(--sea)}
+.wx-ico{font-size:1.4rem;margin:4px 0 2px}
+.wx-t b{display:block;font-size:1.05rem;color:var(--sea);font-weight:800}
+.wx-t span{display:block;font-size:12px;color:#5a6f7a;font-weight:700}
+.wx-p{margin-top:4px;font-size:11px;font-weight:700;color:var(--sea2);line-height:1.3}
+.wx-tag{
+  display:inline-block;margin-top:5px;font-size:9px;font-weight:800;letter-spacing:.03em;
+  text-transform:uppercase;background:#d7e9ff;color:#1a5f8a;border-radius:999px;padding:2px 6px;
+}
+.wx-chip.live .wx-tag{background:#d8faf5;color:#0a6b60}
+.wx-legend{margin-top:4px;font-size:11px;color:#6a7e89;font-weight:600}
+.wx-note{margin-top:10px}
+.wx-sub{font-family:Fraunces,serif;font-size:1.08rem;color:var(--sea);margin:14px 0 4px}
+#wx-live{margin-top:12px;padding-top:2px;border-top:1px dashed #d5e3ea}
+.wx-btn{
+  margin-top:12px;background:#e7f5fb;color:var(--sea2);border:0;border-radius:999px;
+  padding:10px 14px;font:inherit;font-weight:800;font-size:13px;cursor:pointer;
+}
+.wx-btn:disabled{opacity:.55}
+.wx-status{margin-top:8px;font-size:12.5px;color:#4d6270;line-height:1.45}
+#meteo{scroll-margin-top:12px}
+
+.pack-intro{color:rgba(255,255,255,.9);font-size:.92rem;line-height:1.45;margin:2px 4px 12px}
+.pack-overall{color:#fff;font-weight:800;font-size:13px;margin:0 4px 10px}
+.pack-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:none}
+.pack-tabs::-webkit-scrollbar{display:none}
+.pack-tab{
+  flex:0 0 auto;display:flex;align-items:center;gap:6px;
+  border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:#fff;
+  border-radius:999px;padding:9px 12px;font:inherit;font-weight:800;font-size:13px;cursor:pointer;
+}
+.pack-tab.on{background:var(--gold);color:var(--sea);border-color:transparent}
+.pack-badge{background:rgba(255,255,255,.18);border-radius:999px;padding:2px 6px;font-size:10px;font-weight:800}
+.pack-tab.on .pack-badge{background:rgba(4,47,69,.12)}
+.pack-tab.complete .pack-badge{background:#d8faf5;color:#0a6b60}
+.pack-panel[hidden]{display:none !important}
+.pack-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.pack-head h2{margin-bottom:0}
+.pack-count{font-weight:800;color:var(--sea2);font-size:13px;white-space:nowrap}
+.prog{height:8px;background:#e6eef3;border-radius:99px;overflow:hidden;margin:10px 0 6px}
+.prog > i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2ec4b6,#0a6a8f);transition:width .25s ease}
+.pack-item{
+  display:flex;align-items:flex-start;gap:12px;padding:12px 4px;min-height:52px;
+  border-bottom:1px solid #eef2f5;cursor:pointer;
+}
+.pack-item:last-of-type{border-bottom:0}
+.pack-item input{position:absolute;opacity:0;width:1px;height:1px}
+.tick{
+  width:28px;height:28px;border-radius:9px;border:2px solid #c5d4dc;flex:0 0 28px;
+  display:grid;place-items:center;background:#fff;margin-top:1px;
+  transition:background .15s,border-color .15s,transform .15s;
+}
+.pack-item input:checked + .tick{background:#0a8f7e;border-color:#0a8f7e}
+.pack-item input:checked + .tick::after{
+  content:"";width:7px;height:12px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+  transform:rotate(45deg) translate(-1px,-1px);
+}
+.pack-item input:focus-visible + .tick{outline:2px solid var(--sea2);outline-offset:2px}
+.pack-item:has(input:checked){background:#f3fbf9;margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:12px}
+.lbl{flex:1;min-width:0}
+.lbl-t{display:block;font-weight:700;font-size:.95rem;color:var(--ink);line-height:1.3}
+.lbl-h{display:block;margin-top:2px;font-size:12px;color:#6a7e89;font-weight:500;line-height:1.35}
+.pack-item:has(input:checked) .lbl-t{text-decoration:line-through;text-decoration-thickness:2px;color:#6d808a}
+.pack-note{margin-top:12px;background:#fff8e8;border-radius:14px;padding:12px;color:#6a5316;font-size:13px;line-height:1.45}
+.pack-done{margin-top:8px;font-weight:800;color:#0a8f7e;font-size:13px}
 .dream{
-  margin:0 auto 22px;max-width:340px;text-align:left;
+  margin:0 auto 12px;max-width:340px;text-align:left;
   padding:14px 16px;border-radius:20px;color:#fff;
   background:rgba(255,255,255,.12);border:1px solid rgba(244,201,95,.5);
   backdrop-filter:blur(12px);font-size:.95rem;line-height:1.45;
@@ -269,18 +398,39 @@ body{
   <div class="hero">
     <div class="badge">🇬🇷 Porto Sani · 12–18 oct. 2026</div>
     <h1>L’aventure<br/><em>Sitbon</em></h1>
-    <p class="lead">Jessica, Yohai, Maor & Gabriela — trois façons de vivre la Grèce. Touchez, explorez, choisissez.</p>
+    <div class="countdown" id="countdown">
+      <div class="cd-kicker" id="cd-kicker">Plus que</div>
+      <div class="cd-title" id="cd-title">On décolle dans…</div>
+      <div class="cd-grid" id="cd-grid">
+        <div class="cd-cell"><b id="cd-d">--</b><small id="cd-dl">jours</small></div>
+        <div class="cd-cell"><b id="cd-h">--</b><small id="cd-hl">heures</small></div>
+        <div class="cd-cell"><b id="cd-m">--</b><small id="cd-ml">minutes</small></div>
+        <div class="cd-cell"><b id="cd-s" class="cd-sec">--</b><small id="cd-sl">secondes</small></div>
+      </div>
+      <p class="cd-when" id="cd-when">12 octobre 2026 · 08:00 · heure d’Israël</p>
+      <p class="cd-hello" id="cd-hello" hidden>Le ciel grec vous attend. Belle semaine à Jessica, Yohai, Maor et Gabriela.</p>
+      <p class="sr" id="cd-live" aria-live="polite"></p>
+    </div>
+    <p class="lead">Jessica, Yohai, Maor & Gabriela — trois façons de vivre la Grèce.</p>
     <div class="fam">
       <div class="chip">Jessica<small>maman</small></div>
       <div class="chip">Yohai<small>papa</small></div>
       <div class="chip">Maor<small>~2 ans · vélos & animaux</small></div>
       <div class="chip">Gabriela<small>~3 mois</small></div>
     </div>
+    <div class="cta">
+      <button class="btn shine" onclick="go('legend')">C’est parti ✨</button>
+      <button class="btn ghost" type="button" onclick="openPack('intro')">🎒 À emballer</button>
+    </div>
     <div class="dream">
       <span>Votre suite vous attend</span>
       Grand balcon face à la mer, lumière du matin, une chambre pour quatre. Le sac de plage Sani est déjà dans l’histoire.
     </div>
-    <button class="btn shine" onclick="go('legend')">C’est parti ✨</button>
+    <button class="climate-peek" type="button" onclick="go('legend','meteo')">
+      <span aria-hidden="true">🌤️</span>
+      <span><strong>Climat mi-octobre</strong><small>16–22 °C · mer ~21 °C · pluie possible</small></span>
+      <span class="arr" aria-hidden="true">→</span>
+    </button>
   </div>
 </section>
 
@@ -313,6 +463,25 @@ body{
       <button class="tip" data-t="ergon">Ergon Deli</button>
       <button class="tip" data-t="psaro">Psaroyannos</button>
     </div>
+  </div>
+  <div class="card" id="meteo">
+    <h2>Climat typique mi-octobre à Porto Sani</h2>
+    <p class="wx-flag">Normales historiques · 2020–2024</p>
+    <p class="muted">Moyennes Open-Meteo pour Porto Sani / Kassandra (~40,08° N, 23,32° E). Ce n’est pas la météo réelle d’octobre 2026 : seulement le climat habituel de ces dates. La prévision s’ajoute en dessous dès qu’elle est publiée.</p>
+    <div class="wx-row" aria-label="Normales jour par jour">
+      <div class="wx-chip"><div class="wx-d">Lun<small>12</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>21,9°</b><span>18,1°</span></div><div class="wx-p">0,8 mm</div></div>
+      <div class="wx-chip"><div class="wx-d">Mar<small>13</small></div><div class="wx-ico">🌤️</div><div class="wx-t"><b>21,3°</b><span>16,9°</span></div><div class="wx-p">3,4 mm</div></div>
+      <div class="wx-chip"><div class="wx-d">Mer<small>14</small></div><div class="wx-ico">🌦️</div><div class="wx-t"><b>20,9°</b><span>16,6°</span></div><div class="wx-p">6,6 mm</div></div>
+      <div class="wx-chip wet"><div class="wx-d">Jeu<small>15</small></div><div class="wx-ico">🌧️</div><div class="wx-t"><b>21,3°</b><span>16,0°</span></div><div class="wx-p">20,7 mm</div><div class="wx-tag">plus humide</div></div>
+      <div class="wx-chip"><div class="wx-d">Ven<small>16</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>21,0°</b><span>17,2°</span></div><div class="wx-p">0,3 mm</div></div>
+      <div class="wx-chip"><div class="wx-d">Sam<small>17</small></div><div class="wx-ico">🌤️</div><div class="wx-t"><b>19,6°</b><span>16,1°</span></div><div class="wx-p">1,2 mm</div></div>
+      <div class="wx-chip"><div class="wx-d">Dim<small>18</small></div><div class="wx-ico">🌤️</div><div class="wx-t"><b>18,8°</b><span>15,5°</span></div><div class="wx-p">2,2 mm</div></div>
+    </div>
+    <p class="wx-legend">Chiffre foncé = max typique · clair = min · pluie = moyenne en mm</p>
+    <div id="wx-live" hidden></div>
+    <p class="muted wx-note">Mer souvent ~20–22 °C. Les soirées descendent vers 15–18 °C : un pull léger suffit. Prévoyez une couche pluie compacte, surtout autour du 15 octobre, historiquement plus arrosé.</p>
+    <button type="button" class="wx-btn" id="wx-refresh">Voir si la prévision 2026 est disponible</button>
+    <p class="wx-status" id="wx-status"></p>
   </div>
   <div class="card">
     <h2>✈️ Les vols</h2>
@@ -351,6 +520,7 @@ body{
   </button>
   <p class="dream-line">Déjà à vous : une chambre, le grand balcon, la mer au matin. <strong>Porto Sani · pension complète.</strong></p>
   <button class="btn ghost" onclick="go('equip')">🧸 Équipement bébé</button>
+  <button class="btn ghost" type="button" onclick="openPack('choose')">🎒 À emballer</button>
 </section>
 
 <section id="opt1" class="screen"></section>
@@ -380,6 +550,14 @@ body{
   </div>
   <div class="card"><h2>Optionnel</h2><p class="muted">Moustiquaire · barrières lit · pot · thermomètre · trousse toilette bébé.</p></div>
   <button class="btn" onclick="go('choose')">Retour aux options</button>
+</section>
+
+<section id="pack" class="screen">
+  <div class="topbar"><button type="button" onclick="backPack()">←</button><div class="t">À emballer</div><div style="width:42px"></div></div>
+  <p class="pack-intro">Mi-octobre en Chalcidique : journées ~19–22 °C, soirées 15–18 °C, mer ~20–22 °C, averses possibles. Pension complète à l’hôtel. Les coches restent sur ce téléphone.</p>
+  <div class="pack-tabs" id="pack-tabs" role="tablist"></div>
+  <p class="pack-overall" id="pack-overall"></p>
+  <div id="pack-panels"></div>
 </section>
 
 <section id="vote" class="screen">
@@ -450,7 +628,21 @@ const opts={
 };
 const bonusOpen={};
 (function spark(){const b=document.getElementById('sp');for(let i=0;i<40;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';b.appendChild(s)}})();
-function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}
+function go(id, anchor){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  if(anchor){
+    const el=document.getElementById(anchor);
+    if(el){
+      requestAnimationFrame(()=>requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'start'})));
+      return;
+    }
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+let packBack='intro';
+function openPack(from){packBack=from||'intro';go('pack')}
+function backPack(){go(packBack)}
 function bonusHtml(n,d,text){
   if(!text) return '';
   const id=n+'-'+d;
@@ -487,6 +679,288 @@ function bindTip(btn){btn.onclick=e=>{e.stopPropagation();const [t,b]=tips[btn.d
 document.querySelectorAll('.tip').forEach(bindTip);
 function closeTip(){document.getElementById('modal').classList.remove('show')}
 function burst(){const box=document.getElementById('cf');const e=['✨','🌊','💛','🏖️','🚴','🇬🇷','☀️','🎉','🦁'];for(let i=0;i<32;i++){const s=document.createElement('i');s.textContent=e[i%e.length];s.style.left=Math.random()*100+'%';s.style.animationDuration=(2+Math.random()*2)+'s';s.style.animationDelay=(Math.random()*.35)+'s';box.appendChild(s);setTimeout(()=>s.remove(),4200)}}
+
+function zonedToUtc(dateStr, timeZone){
+  const asUtc=new Date(dateStr+'Z');
+  const dtf=new Intl.DateTimeFormat('en-US',{timeZone,hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  const map={};
+  for(const p of dtf.formatToParts(asUtc)) if(p.type!=='literal') map[p.type]=p.value;
+  const hour=map.hour==='24'?'00':map.hour;
+  const asZoned=Date.UTC(+map.year,+map.month-1,+map.day,+hour,+map.minute,+map.second);
+  return new Date(asUtc.getTime()-(asZoned-asUtc.getTime()));
+}
+const TAKEOFF=zonedToUtc('2026-10-12T08:00:00','Asia/Jerusalem').getTime();
+function frPlural(n,one,many){return (n===0||n>1)?many:one}
+function pad2(n){return String(n).padStart(2,'0')}
+let cdTimer=null, cdSpoken='';
+function tickCountdown(){
+  const left=TAKEOFF-Date.now();
+  const box=document.getElementById('countdown');
+  if(left<=0){
+    box.classList.add('is-there');
+    document.getElementById('cd-kicker').textContent='C’est parti';
+    document.getElementById('cd-title').textContent='On y est 🇬🇷';
+    document.getElementById('cd-grid').hidden=true;
+    document.getElementById('cd-when').hidden=true;
+    document.getElementById('cd-hello').hidden=false;
+    document.getElementById('cd-live').textContent='On y est. Belle semaine à Porto Sani.';
+    if(cdTimer){clearInterval(cdTimer);cdTimer=null}
+    return;
+  }
+  const total=Math.floor(left/1000);
+  const days=Math.floor(total/86400);
+  const hours=Math.floor((total%86400)/3600);
+  const mins=Math.floor((total%3600)/60);
+  const secs=total%60;
+  document.getElementById('cd-d').textContent=pad2(days);
+  document.getElementById('cd-h').textContent=pad2(hours);
+  document.getElementById('cd-m').textContent=pad2(mins);
+  document.getElementById('cd-s').textContent=pad2(secs);
+  document.getElementById('cd-dl').textContent=frPlural(days,'jour','jours');
+  document.getElementById('cd-hl').textContent=frPlural(hours,'heure','heures');
+  document.getElementById('cd-ml').textContent=frPlural(mins,'minute','minutes');
+  document.getElementById('cd-sl').textContent=frPlural(secs,'seconde','secondes');
+  const spoken='Plus que '+days+' '+frPlural(days,'jour','jours')+', '+hours+' '+frPlural(hours,'heure','heures')+' et '+mins+' '+frPlural(mins,'minute','minutes')+'.';
+  if(spoken!==cdSpoken){cdSpoken=spoken;document.getElementById('cd-live').textContent=spoken}
+}
+tickCountdown();
+cdTimer=setInterval(tickCountdown,1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden) tickCountdown()});
+
+const TRIP_DAYS=[
+  {date:'2026-10-12',dow:'Lun',day:'12'},
+  {date:'2026-10-13',dow:'Mar',day:'13'},
+  {date:'2026-10-14',dow:'Mer',day:'14'},
+  {date:'2026-10-15',dow:'Jeu',day:'15'},
+  {date:'2026-10-16',dow:'Ven',day:'16'},
+  {date:'2026-10-17',dow:'Sam',day:'17'},
+  {date:'2026-10-18',dow:'Dim',day:'18'}
+];
+function fr1(n){return Number(n).toLocaleString('fr-FR',{minimumFractionDigits:1,maximumFractionDigits:1})}
+function skyFromCode(code){
+  if(code===0) return ['☀️','ciel clair'];
+  if(code<=2) return ['🌤️','éclaircies'];
+  if(code===3) return ['☁️','nuageux'];
+  if(code===45||code===48) return ['🌫️','brume'];
+  if(code>=51&&code<=57) return ['🌦️','bruine'];
+  if((code>=61&&code<=67)||(code>=80&&code<=82)) return ['🌧️','pluie'];
+  if(code>=71&&code<=77) return ['❄️','neige'];
+  if(code>=95) return ['⛈️','orage'];
+  return ['🌡️','variable'];
+}
+function frDateList(days){
+  const nums=days.map(d=>d.day);
+  if(nums.length===1) return 'le '+nums[0]+' octobre';
+  return 'les '+nums.slice(0,-1).join(', ')+' et '+nums.at(-1)+' octobre';
+}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function renderForecast(days){
+  const box=document.getElementById('wx-live');
+  if(!days.length){box.hidden=true;box.innerHTML='';return}
+  box.hidden=false;
+  box.innerHTML='<h3 class="wx-sub">Prévision Open-Meteo</h3>'
+    +'<p class="muted">Uniquement les jours déjà dans la fenêtre de prévision. Ce n’est pas une normale : ça peut encore changer. Les puces au-dessus restent le climat historique.</p>'
+    +'<div class="wx-row">'+days.map(d=>{
+      const sky=skyFromCode(d.code);
+      return '<div class="wx-chip live"><div class="wx-d">'+d.dow+'<small>'+d.day+'</small></div><div class="wx-ico">'+sky[0]+'</div><div class="wx-t"><b>'+fr1(d.max)+'°</b><span>'+fr1(d.min)+'°</span></div><div class="wx-p">'+fr1(d.rain)+' mm</div><div class="wx-tag">prévision · '+sky[1]+'</div></div>';
+    }).join('')+'</div>';
+}
+async function refreshForecast(){
+  const btn=document.getElementById('wx-refresh');
+  const status=document.getElementById('wx-status');
+  btn.disabled=true;
+  btn.textContent='Recherche…';
+  try{
+    const url='https://api.open-meteo.com/v1/forecast?latitude=40.08&longitude=23.32&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum&timezone=Europe%2FAthens&forecast_days=16';
+    const res=await fetch(url);
+    if(!res.ok) throw new Error('http');
+    const data=await res.json();
+    const daily=data.daily||{};
+    const time=daily.time||[];
+    const found=[];
+    TRIP_DAYS.forEach(d=>{
+      const i=time.indexOf(d.date);
+      if(i<0) return;
+      const max=daily.temperature_2m_max[i], min=daily.temperature_2m_min[i], rain=daily.precipitation_sum[i], code=daily.weather_code[i];
+      if([max,min,rain,code].some(v=>typeof v!=='number')) return;
+      found.push({...d,max,min,rain,code});
+    });
+    renderForecast(found);
+    const missing=TRIP_DAYS.filter(d=>!found.some(f=>f.date===d.date));
+    if(!found.length){
+      status.textContent='Pas encore de prévision pour le 12–18 octobre. Les normales historiques restent affichées.';
+    }else if(!missing.length){
+      status.textContent='Prévision à jour pour tout le séjour (12–18 octobre). Elle peut encore changer. Les normales restent au-dessus, pour comparer.';
+    }else{
+      status.textContent='Prévision disponible pour '+frDateList(found)+'. '+cap(frDateList(missing))+' : encore hors fenêtre, normales historiques seulement.';
+    }
+  }catch(e){
+    status.textContent='Prévision indisponible pour le moment. Les normales historiques restent affichées.';
+  }finally{
+    btn.disabled=false;
+    btn.textContent='Actualiser la prévision';
+  }
+}
+document.getElementById('wx-refresh').addEventListener('click',refreshForecast);
+refreshForecast();
+
+const PACK_KEY='sitbon-pack-2026';
+const PACKS=[
+  {id:'docs',name:'Famille',emoji:'📄',title:'Documents & sac partagé',sub:'Pour toute la famille',items:[
+    {id:'doc-pass',t:'Passeports',h:'Jessica, Yohai, Maor et Gabriela'},
+    {id:'doc-billets',t:'Billets Israir et Arkia',h:'Aller 12/10 · retour 18/10'},
+    {id:'doc-hotel',t:'Confirmation hôtel n° 7744302'},
+    {id:'doc-assur',t:'Assurance voyage'},
+    {id:'doc-pay',t:'Cartes bancaires et un peu d’euros'},
+    {id:'doc-adapt',t:'Adaptateurs prises européennes',h:'Type C / F'},
+    {id:'doc-meds',t:'Médicaments famille et ordonnances'},
+    {id:'doc-sun',t:'Crème solaire',h:'Indice élevé, pour tout le monde'},
+    {id:'doc-bug',t:'Anti-moustique',h:'Pour les soirées'}
+  ]},
+  {id:'yohai',name:'Yohai',emoji:'🧢',title:'Valise de Yohai',sub:'Journées douces, soirées plus fraîches',items:[
+    {id:'yo-tee',t:'T-shirts et chemises casual'},
+    {id:'yo-pull',t:'Pull ou sweat léger'},
+    {id:'yo-short',t:'Shorts'},
+    {id:'yo-pant',t:'Pantalon léger pour le dîner'},
+    {id:'yo-swim',t:'Maillot de bain'},
+    {id:'yo-shoes',t:'Baskets confort'},
+    {id:'yo-flip',t:'Tongs'},
+    {id:'yo-cap',t:'Casquette'},
+    {id:'yo-rain',t:'Veste compacte anti-pluie'},
+    {id:'yo-sun',t:'Lunettes de soleil'},
+    {id:'yo-charge',t:'Chargeurs, câbles et batterie'},
+    {id:'yo-und',t:'Sous-vêtements et chaussettes',h:'6 nuits + une marge'}
+  ]},
+  {id:'jessica',name:'Jessica',emoji:'👒',title:'Valise de Jessica',sub:'Même climat, plus le confort de maman',items:[
+    {id:'je-day',t:'Tenues casual pour la journée'},
+    {id:'je-swim',t:'Maillot de bain'},
+    {id:'je-card',t:'Gilet ou cardigan pour le soir'},
+    {id:'je-dine',t:'Tenue légère pour le dîner'},
+    {id:'je-layer',t:'Veste fine ou couche pluie'},
+    {id:'je-shoes',t:'Chaussures confort'},
+    {id:'je-sand',t:'Sandales'},
+    {id:'je-hat',t:'Chapeau ou casquette'},
+    {id:'je-sun',t:'Lunettes de soleil'},
+    {id:'je-nurs',t:'Soutien-gorge d’allaitement et coussinets',h:'Si besoin'},
+    {id:'je-cream',t:'Crème confort d’allaitement',h:'Si vous l’utilisez'},
+    {id:'je-charge',t:'Chargeur de téléphone'},
+    {id:'je-und',t:'Sous-vêtements',h:'6 nuits + une marge'}
+  ]},
+  {id:'maor',name:'Maor',emoji:'🚴',title:'Valise de Maor',sub:'~2 ans · vélos, plage, soirées fraîches',items:[
+    {id:'ma-top',t:'Bodies et t-shirts'},
+    {id:'ma-bot',t:'Shorts et un pantalon léger'},
+    {id:'ma-pj',t:'Pyjamas',h:'3 à 4'},
+    {id:'ma-swim',t:'Maillot de bain'},
+    {id:'ma-diap',t:'Couches ou culottes d’apprentissage',h:'Si encore utilisées'},
+    {id:'ma-hat',t:'Chapeau de soleil'},
+    {id:'ma-jack',t:'Veste fine'},
+    {id:'ma-shoes',t:'Chaussures confort'},
+    {id:'ma-sand',t:'Sandales'},
+    {id:'ma-lovey',t:'Doudou'},
+    {id:'ma-toy',t:'Un ou deux petits jouets'},
+    {id:'ma-ball',t:'Ballon léger'},
+    {id:'ma-sun',t:'Crème solaire enfant'},
+    {id:'ma-spare',t:'Change complet dans le sac cabine'}
+  ]},
+  {id:'gabriela',name:'Gabriela',emoji:'🍼',title:'Valise de Gabriela',sub:'~3 mois · ne pas emporter ce que l’hôtel fournit',note:'La chaise BabyBjörn est déjà à l’hôtel. Lit bébé, chauffe-biberon, stérilisateur, poussette et chaise haute se demandent sur place — inutile de les mettre en valise. Pension complète : presque rien à emporter pour les repas.',items:[
+    {id:'ga-diap',t:'Couches',h:'Large réserve pour la semaine'},
+    {id:'ga-wipes',t:'Lingettes'},
+    {id:'ga-pj',t:'Pyjamas ou dors-bien',h:'5 à 6'},
+    {id:'ga-body',t:'Bodies',h:'Plutôt manches longues pour le soir'},
+    {id:'ga-sleep',t:'Turbulette légère ou lange d’emmaillotage'},
+    {id:'ga-blank',t:'Couverture légère'},
+    {id:'ga-bot',t:'Biberons',h:'Si vous en utilisez'},
+    {id:'ga-milk',t:'Lait ou préparation',h:'Si utilisé, quantité du séjour'},
+    {id:'ga-hat',t:'Chapeau de soleil'},
+    {id:'ga-out',t:'Tenue de sortie',h:'Plus une tenue un peu plus habillée'},
+    {id:'ga-thermo',t:'Thermomètre',h:'Trousse pharmacie bébé'},
+    {id:'ga-serum',t:'Sérum physiologique'},
+    {id:'ga-rash',t:'Crème pour le change'},
+    {id:'ga-carrier',t:'Écharpe ou porte-bébé'},
+    {id:'ga-spare',t:'Change de Gabriela dans le sac cabine'}
+  ]}
+];
+function readPack(){
+  try{const v=JSON.parse(localStorage.getItem(PACK_KEY)||'{}');return v&&typeof v==='object'?v:{}}
+  catch(e){return {}}
+}
+let packState=readPack();
+function writePack(){try{localStorage.setItem(PACK_KEY,JSON.stringify(packState))}catch(e){}}
+function packCount(group){
+  const n=group.items.filter(it=>packState[it.id]).length;
+  return {n,total:group.items.length};
+}
+function refreshPackProgress(){
+  PACKS.forEach(g=>{
+    const c=packCount(g);
+    const pct=c.total?Math.round(100*c.n/c.total):0;
+    const tab=document.querySelector('.pack-tab[data-who="'+g.id+'"]');
+    if(tab){
+      tab.querySelector('.pack-badge').textContent=c.n+'/'+c.total;
+      tab.classList.toggle('complete',c.n===c.total&&c.total>0);
+    }
+    const panel=document.querySelector('.pack-panel[data-who="'+g.id+'"]');
+    if(!panel) return;
+    panel.querySelector('.pack-count').textContent=c.n+'/'+c.total+' cochés';
+    panel.querySelector('.prog > i').style.width=pct+'%';
+    const done=panel.querySelector('.pack-done');
+    if(c.n===c.total&&!done){
+      const p=document.createElement('p');
+      p.className='pack-done';
+      p.textContent='Valise bouclée ✨';
+      panel.querySelector('.prog').after(p);
+    }else if(c.n!==c.total&&done) done.remove();
+  });
+  const all=PACKS.reduce((a,g)=>{const c=packCount(g);return {n:a.n+c.n,total:a.total+c.total}},{n:0,total:0});
+  document.getElementById('pack-overall').textContent=all.n+'/'+all.total+' cochés'
+    +(all.n===all.total?' · toutes les valises sont prêtes 💛':'');
+}
+function renderPack(){
+  const tabs=document.getElementById('pack-tabs');
+  const panels=document.getElementById('pack-panels');
+  tabs.innerHTML=PACKS.map(g=>{
+    const c=packCount(g);
+    return '<button type="button" class="pack-tab" role="tab" id="tab-'+g.id+'" aria-controls="panel-'+g.id+'" data-who="'+g.id+'" aria-selected="false"><span aria-hidden="true">'+g.emoji+'</span>'+g.name+'<span class="pack-badge">'+c.n+'/'+c.total+'</span></button>';
+  }).join('');
+  panels.innerHTML=PACKS.map(g=>{
+    const c=packCount(g);
+    const pct=c.total?Math.round(100*c.n/c.total):0;
+    return '<div class="pack-panel" id="panel-'+g.id+'" data-who="'+g.id+'" role="tabpanel" aria-labelledby="tab-'+g.id+'" hidden><div class="card">'
+      +'<div class="pack-head"><h2>'+g.title+'</h2><span class="pack-count">'+c.n+'/'+c.total+' cochés</span></div>'
+      +'<p class="muted">'+g.sub+'</p>'
+      +'<div class="prog" aria-hidden="true"><i style="width:'+pct+'%"></i></div>'
+      +(c.n===c.total?'<p class="pack-done">Valise bouclée ✨</p>':'')
+      +g.items.map(it=>'<label class="pack-item"><input type="checkbox" data-id="'+it.id+'" '+(packState[it.id]?'checked':'')+'><span class="tick" aria-hidden="true"></span><span class="lbl"><span class="lbl-t">'+it.t+'</span>'+(it.h?'<span class="lbl-h">'+it.h+'</span>':'')+'</span></label>').join('')
+      +(g.note?'<p class="pack-note">'+g.note+'</p>':'')
+      +'</div></div>';
+  }).join('');
+  tabs.querySelectorAll('.pack-tab').forEach(btn=>{
+    btn.addEventListener('click',()=>showPack(btn.dataset.who));
+  });
+  panels.addEventListener('change',e=>{
+    const input=e.target;
+    if(!input.matches||!input.matches('input[type="checkbox"][data-id]')) return;
+    if(input.checked) packState[input.dataset.id]=true;
+    else delete packState[input.dataset.id];
+    writePack();
+    refreshPackProgress();
+  });
+  let saved='docs';
+  try{saved=localStorage.getItem('sitbon-pack-tab')||'docs'}catch(e){}
+  if(!PACKS.some(g=>g.id===saved)) saved='docs';
+  showPack(saved);
+}
+function showPack(id){
+  document.querySelectorAll('#pack-panels .pack-panel').forEach(p=>{p.hidden=p.dataset.who!==id});
+  document.querySelectorAll('#pack-tabs .pack-tab').forEach(t=>{
+    const on=t.dataset.who===id;
+    t.classList.toggle('on',on);
+    t.setAttribute('aria-selected',on?'true':'false');
+  });
+  refreshPackProgress();
+  try{localStorage.setItem('sitbon-pack-tab',id)}catch(e){}
+}
+renderPack();
 </script>
 </body>
 </html>
