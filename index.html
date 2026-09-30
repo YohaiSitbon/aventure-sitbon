@@ -592,7 +592,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 @keyframes hop-pos{0%,100%{transform:translateY(0) scale(1,1)}35%{transform:translateY(-10px) scale(1.04,.94)}55%{transform:translateY(0) scale(.96,1.05)}}
 @keyframes side{0%,100%{transform:translateX(-6px)}50%{transform:translateX(7px)}}
 @keyframes found-pop{0%{transform:scale(.5) rotate(-8deg)}55%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
-@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}25%{opacity:.95}100%{transform:translateY(-52px) scale(1);opacity:0}}
+@keyframes bubble-rise{0%{transform:translateY(0) scale(.6);opacity:0}25%{opacity:.95}100%{transform:translateY(-52px) scale(1);opacity:0}}
 .find-animal{
   position:absolute;width:80px;height:80px;border:0;border-radius:50%;padding:8px;
   background:rgba(255,255,255,.92);cursor:pointer;z-index:2;
@@ -639,7 +639,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .catch-bug .bub{position:absolute;inset:0;pointer-events:none}
 .catch-bug .bub i{
   position:absolute;left:34%;bottom:30%;width:8px;height:8px;border-radius:50%;
-  border:1.5px solid rgba(255,255,255,.9);animation:rise 1.35s ease-in infinite;
+  border:1.5px solid rgba(255,255,255,.9);animation:bubble-rise 1.35s ease-in infinite;
 }
 .catch-bug .bub i:nth-child(2){left:50%;width:6px;height:6px;animation-delay:.35s}
 .catch-bug .bub i:nth-child(3){left:64%;animation-delay:.7s}
@@ -672,14 +672,38 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .quiz-opt.good{background:#e5faf4}
 @keyframes shake{20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 .mem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.mem-card{aspect-ratio:1;min-height:112px;border:0;background:transparent;padding:0;cursor:pointer;perspective:700px;touch-action:manipulation}
-.mem-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .4s ease}
-.mem-card.open .mem-inner,.mem-card.matched .mem-inner{transform:rotateY(180deg)}
-.mem-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;display:grid;place-items:center}
-.mem-back{background:linear-gradient(145deg,#0a6a8f,#2ec4b6);color:#fff;font-size:1.35rem;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25)}
-.mem-front{background:#fff;transform:rotateY(180deg);box-shadow:inset 0 0 0 2px #e7f5fb}
-.mem-front .critter{width:78px;height:78px}
-.mem-card:not(.open):not(.matched) .critter *{animation-play-state:paused}
+.mem-card{
+  position:relative;display:block;aspect-ratio:1;min-height:112px;width:100%;
+  border:0;background:transparent;padding:0;cursor:pointer;
+  -webkit-perspective:700px;perspective:700px;touch-action:manipulation;
+}
+.mem-inner{
+  position:absolute;inset:0;display:block;pointer-events:none;
+  -webkit-transform-style:preserve-3d;transform-style:preserve-3d;
+  transition:transform .4s ease;
+}
+.mem-card.open .mem-inner,.mem-card.matched .mem-inner{
+  -webkit-transform:rotateY(180deg);transform:rotateY(180deg);
+}
+.mem-face{
+  position:absolute;inset:0;pointer-events:none;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  -webkit-transform-style:flat;transform-style:flat;
+  border-radius:16px;display:grid;place-items:center;
+}
+.mem-back{
+  background:linear-gradient(145deg,#0a6a8f,#2ec4b6);color:#fff;font-size:1.35rem;
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);
+  -webkit-transform:rotateY(0deg);transform:rotateY(0deg);
+}
+.mem-front{
+  background:#fff;
+  -webkit-transform:rotateY(180deg);transform:rotateY(180deg);
+  box-shadow:inset 0 0 0 2px #e7f5fb;
+}
+.mem-front .critter{width:78px;height:78px;-webkit-transform-style:flat;transform-style:flat}
+.mem-card:not(.open):not(.matched) .critter,
+.mem-card:not(.open):not(.matched) .critter *{animation:none}
 .mem-card.matched{animation:found-pop .45s cubic-bezier(.2,1.4,.4,1)}
 .mem-card.matched .mem-front{background:#e7faf6;box-shadow:inset 0 0 0 3px #0a8f7e}
 .win-card{text-align:center}
