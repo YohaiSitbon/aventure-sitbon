@@ -675,33 +675,40 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .mem-card{
   position:relative;display:block;aspect-ratio:1;min-height:112px;width:100%;
   border:0;background:transparent;padding:0;cursor:pointer;
-  -webkit-perspective:700px;perspective:700px;touch-action:manipulation;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
 }
-.mem-inner{
-  position:absolute;inset:0;display:block;pointer-events:none;
-  -webkit-transform-style:preserve-3d;transform-style:preserve-3d;
-  transition:transform .4s ease;
-}
-.mem-card.open .mem-inner,.mem-card.matched .mem-inner{
-  -webkit-transform:rotateY(180deg);transform:rotateY(180deg);
+.mem-inner,.mem-face{
+  display:block;position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;
 }
 .mem-face{
-  position:absolute;inset:0;pointer-events:none;
-  -webkit-backface-visibility:hidden;backface-visibility:hidden;
-  -webkit-transform-style:flat;transform-style:flat;
-  border-radius:16px;display:grid;place-items:center;
+  border-radius:16px;overflow:hidden;
+  -webkit-transition:opacity .28s ease,visibility .28s ease,-webkit-transform .28s ease;
+  transition:opacity .28s ease,visibility .28s ease,transform .28s ease;
 }
 .mem-back{
   background:linear-gradient(145deg,#0a6a8f,#2ec4b6);color:#fff;font-size:1.35rem;
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);
-  -webkit-transform:rotateY(0deg);transform:rotateY(0deg);
+  text-align:center;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);
+  opacity:1;visibility:visible;
 }
+.mem-back::before{content:"";display:inline-block;height:100%;vertical-align:middle}
 .mem-front{
-  background:#fff;
-  -webkit-transform:rotateY(180deg);transform:rotateY(180deg);
-  box-shadow:inset 0 0 0 2px #e7f5fb;
+  background:#fff;box-shadow:inset 0 0 0 2px #e7f5fb;
+  opacity:0;visibility:hidden;
+  -webkit-transform:scale(.92);transform:scale(.92);
 }
-.mem-front .critter{width:78px;height:78px;-webkit-transform-style:flat;transform-style:flat}
+.mem-card.open .mem-back,.mem-card.matched .mem-back{
+  opacity:0;visibility:hidden;
+  -webkit-transform:scale(.96);transform:scale(.96);
+}
+.mem-card.open .mem-front,.mem-card.matched .mem-front{
+  opacity:1;visibility:visible;
+  -webkit-transform:scale(1);transform:scale(1);
+}
+.mem-front .critter{
+  display:block;width:78px;height:78px;pointer-events:none;
+  position:absolute;left:50%;top:50%;margin:-39px 0 0 -39px;
+}
 .mem-card:not(.open):not(.matched) .critter,
 .mem-card:not(.open):not(.matched) .critter *{animation:none}
 .mem-card.matched{animation:found-pop .45s cubic-bezier(.2,1.4,.4,1)}
@@ -723,7 +730,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .live-quiet{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 @media (prefers-reduced-motion:reduce){
   .find-animal,.mover,.float-em,.float-word,.quiz-opt.bad,.quiz-opt.good,.critter,.critter *,.mem-card.matched,.catch-bug.pop,.sil.reveal{animation:none !important}
-  .mem-inner,.sil{transition:none}
+  .mem-face,.mem-inner,.sil{transition:none}
   .catch-bug .bub i{animation:none;opacity:0}
 }
 </style>
