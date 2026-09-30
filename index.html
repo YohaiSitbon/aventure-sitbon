@@ -537,19 +537,46 @@ button.gcard,button.jcard{appearance:none;width:100%}
 }
 .modes button.on{background:var(--gold);color:var(--sea)}
 .find-scene{
-  position:relative;height:min(64vh,520px);border-radius:28px;overflow:hidden;
-  background:linear-gradient(180deg,#8fd0ee 0%,#d7f1fb 32%,#f6e0b5 32.2%,#efd09a 56%,#1f9aa8 56.2%,#0a6280 100%);
+  position:relative;height:min(78vh,680px);border-radius:28px;overflow:hidden;
+  background:#1c6b34;
   box-shadow:0 16px 40px rgba(0,0,0,.2);touch-action:manipulation;
 }
-.find-scene.garden{
+.find-scene.canopy{
   background:
-    radial-gradient(circle at 18% 8%, #fff6c2 0 16px, transparent 18px),
-    linear-gradient(180deg,#9ed8f2 0%,#e7f7ff 16%,#7ec97a 16.2%,#3f8f52 42%,#d7c094 42.2%,#f0e0be 100%);
+    radial-gradient(circle at 82% 7%, #fff3c4 0 14px, rgba(255,243,180,.35) 16px, transparent 22px),
+    linear-gradient(180deg,#7ec8ea 0%,#d5f0c8 11%,#3aaa4e 11.2%,#1f7a38 46%,#145c2c 100%);
 }
+.find-scene.canopy:before,.find-scene.floor:before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 46% 22% at 8% 28%, rgba(12,70,24,.55), transparent 70%),
+    radial-gradient(ellipse 55% 26% at 92% 48%, rgba(8,50,18,.5), transparent 72%),
+    radial-gradient(ellipse 40% 18% at 48% 78%, rgba(20,80,24,.4), transparent 70%);
+}
+.find-scene.floor{
+  background:linear-gradient(180deg,#217a3c 0%,#14532d 60%,#0c6e7c 60.2%,#072c42 100%);
+}
+.find-scene.floor .sun{display:none}
 .find-scene[hidden]{display:none}
-.find-scene .sun{position:absolute;width:46px;height:46px;border-radius:50%;right:8%;top:6%;background:radial-gradient(circle,#fff6c2,#f4c95f);box-shadow:0 0 0 10px rgba(255,243,180,.35);pointer-events:none}
-.find-scene.garden .sun{left:6%;right:auto;top:3%;width:34px;height:34px;box-shadow:0 0 0 8px rgba(255,243,180,.28)}
-.find-deco{position:absolute;font-size:2rem;filter:drop-shadow(0 6px 6px rgba(0,0,0,.15));pointer-events:none;z-index:1}
+.find-scene .sun{position:absolute;width:36px;height:36px;border-radius:50%;right:10%;top:3%;background:radial-gradient(circle,#fff6c2,#f4c95f);box-shadow:0 0 0 8px rgba(255,243,180,.28);pointer-events:none;z-index:1}
+.j-crit{position:absolute;pointer-events:none;z-index:2;filter:drop-shadow(0 2px 1px rgba(0,0,0,.28))}
+.j-rot{display:block;width:100%;height:100%}
+.j-leaf{
+  position:absolute;pointer-events:none;z-index:6;
+  border-radius:2% 80% 8% 78%;
+  background:linear-gradient(155deg,#8ed85f 0%,#2f9a40 42%,#176b2c 100%);
+  box-shadow:inset -6px -4px 0 rgba(10,50,16,.18);
+}
+.j-leaf:after{
+  content:"";position:absolute;left:46%;top:10%;bottom:12%;width:2px;border-radius:2px;
+  background:rgba(20,70,24,.4);transform:rotate(8deg);
+}
+.j-leaf.deep{background:linear-gradient(160deg,#1f7a34,#0d4a22);opacity:.94}
+.j-branch{
+  position:absolute;height:12px;border-radius:8px;pointer-events:none;z-index:6;
+  background:linear-gradient(#c48a52,#6a4120);
+  box-shadow:0 3px 0 rgba(0,0,0,.18);
+}
 .critter{display:block;width:100%;height:100%;line-height:0;pointer-events:none}
 .critter-toy img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;user-select:none;-webkit-user-drag:none}
 .critter svg{width:100%;height:100%;display:block;overflow:visible}
@@ -602,43 +629,34 @@ button.gcard,button.jcard{appearance:none;width:100%}
 @keyframes found-pop{0%{transform:scale(.5) rotate(-8deg)}55%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
 @keyframes bubble-rise{0%{transform:translateY(0) scale(.6);opacity:0}25%{opacity:.95}100%{transform:translateY(-52px) scale(1);opacity:0}}
 .find-animal{
-  position:absolute;width:76px;height:76px;border:0;border-radius:18px;padding:0;
-  background:transparent;cursor:pointer;z-index:2;
-  filter:drop-shadow(0 7px 5px rgba(0,0,0,.28));
+  position:absolute;width:64px;height:64px;border:0;border-radius:16px;padding:0;
+  background:transparent;cursor:pointer;z-index:3;
+  filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));
   touch-action:manipulation;-webkit-tap-highlight-color:transparent;
   display:grid;place-items:center;
 }
 .find-animal .critter{width:100%;height:100%}
 .find-animal img{width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
-.find-animal.kind-fish2{width:96px;height:74px}
-.find-animal.kind-gull{width:78px;height:74px}
-.find-animal.kind-butterfly2{width:74px;height:74px}
-.find-animal.kind-crab{width:74px;height:70px}
-.find-animal.kind-ladybug{width:68px;height:68px}
-.find-animal.kind-bee{width:70px;height:70px}
-.find-animal.kind-turtle{width:82px;height:70px}
-.find-animal.kind-parrot{width:min(44vw,156px);height:min(36vw,128px);z-index:3}
-.find-animal.kind-mickey{width:min(36vw,128px);height:min(44vw,156px);z-index:3}
-.find-animal.kind-hedgehog{width:min(62vw,214px);height:min(22vw,90px);z-index:3}
-.find-animal.kind-fish2 .mover,.find-animal.kind-turtle .mover{animation:bob 2.4s ease-in-out infinite}
-.find-animal.kind-gull .mover,.find-animal.kind-butterfly2 .mover,.find-animal.kind-parrot .mover{animation:floaty 2.8s ease-in-out infinite}
-.find-animal.kind-ladybug .mover,.find-animal.kind-bee .mover{animation:crawl-pos 1.6s ease-in-out infinite}
-.find-animal.kind-crab .mover{animation:side 1.25s ease-in-out infinite}
-.find-animal.kind-mickey .mover,.find-animal.kind-hedgehog .mover{animation:bob 3.1s ease-in-out infinite}
+.find-animal.kind-parrot{width:min(22vw,78px);height:min(18vw,66px)}
+.find-animal.kind-mickey{width:min(18vw,64px);height:min(22vw,78px)}
+.find-animal.kind-hedgehog{width:min(34vw,118px);height:min(15vw,54px)}
+.find-animal .mover{animation:none}
 .find-animal.found{
+  z-index:7;
   animation:found-pop .55s cubic-bezier(.2,1.45,.36,1) both;
-  filter:drop-shadow(0 0 8px rgba(46,196,182,.95)) drop-shadow(0 8px 8px rgba(0,0,0,.2));
+  filter:drop-shadow(0 0 7px rgba(46,196,182,.95)) drop-shadow(0 4px 4px rgba(0,0,0,.25));
 }
-.find-animal.hinted{outline:4px solid #f4c95f;outline-offset:3px;z-index:5}
-.found-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.find-animal.hinted{outline:4px solid #f4c95f;outline-offset:2px;z-index:8;border-radius:12px}
+.found-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .found-row span{
-  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
-  background:rgba(255,255,255,.16);border:1px dashed rgba(255,255,255,.4);
+  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  background:rgba(255,255,255,.16);border:1px dashed rgba(255,255,255,.45);
 }
-.found-row span.wide{width:58px;border-radius:12px}
-.found-row span .critter{width:30px;height:30px}
-.found-row span.wide .critter{width:52px;height:30px}
-.found-row span.on{background:#fff;border-style:solid}
+.found-row span.wide{width:72px}
+.found-row span .critter{width:36px;height:36px}
+.found-row span.wide .critter{width:64px;height:32px}
+.found-row span.preview{opacity:.4}
+.found-row span.on{background:#fff;border-style:solid;opacity:1}
 .catch-field{
   position:relative;height:min(60vh,460px);border-radius:28px;overflow:hidden;
   box-shadow:0 16px 40px rgba(0,0,0,.2);touch-action:manipulation;
@@ -750,7 +768,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 }
 .live-quiet{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 @media (prefers-reduced-motion:reduce){
-  .find-animal,.mover,.float-em,.float-word,.quiz-opt.bad,.quiz-opt.good,.critter,.critter *,.mem-card.matched,.catch-bug.pop,.sil.reveal{animation:none !important}
+  .find-animal,.mover,.j-crit,.j-rot,.float-em,.float-word,.quiz-opt.bad,.quiz-opt.good,.critter,.critter *,.mem-card.matched,.catch-bug.pop,.sil.reveal{animation:none !important}
   .mem-face,.mem-inner,.sil{transition:none}
   .catch-bug .bub i{animation:none;opacity:0}
 }
@@ -1821,9 +1839,18 @@ function critter(kind){
     turtle:'<svg viewBox="0 0 100 100"><ellipse cx="52" cy="58" rx="28" ry="20" fill="#3d9a62"/><ellipse cx="52" cy="56" rx="18" ry="12" fill="#7dcea0"/><path d="M52 46 V66 M40 56 H64" stroke="#2f7a4c" stroke-width="1.5"/><g class="head"><circle cx="82" cy="50" r="9" fill="#8fd0a4"/><circle cx="85" cy="48" r="1.8" fill="#1c3a28"/></g><ellipse cx="30" cy="72" rx="7" ry="4" fill="#8fd0a4"/><ellipse cx="70" cy="74" rx="7" ry="4" fill="#8fd0a4"/></svg>',
     gull:'<svg viewBox="0 0 100 100"><g class="wing wing-b"><path d="M48 50 Q12 24 20 58 Q40 64 52 54 Z" fill="#7f93a3"/></g><ellipse cx="58" cy="58" rx="22" ry="14" fill="#f4f7fb"/><circle cx="76" cy="44" r="12" fill="#fff"/><circle cx="80" cy="42" r="2.8" fill="#1c2430"/><path d="M86 46 L102 41 L88 54 Z" fill="#f0b429"/><g class="wing"><path d="M62 52 Q26 36 34 70 Q54 72 66 58 Z" fill="#d5dee6"/></g><path d="M38 70 Q52 80 68 70" fill="none" stroke="#f0b429" stroke-width="2.4" stroke-linecap="round"/></svg>',
     butterfly2:'<svg viewBox="0 0 100 100"><g class="wl"><ellipse cx="28" cy="40" rx="18" ry="16" fill="#ff6b9a"/><ellipse cx="30" cy="64" rx="13" ry="12" fill="#ffc2d8"/><circle cx="24" cy="38" r="4" fill="#fff3b0"/></g><g class="wr"><ellipse cx="72" cy="40" rx="18" ry="16" fill="#ff4d88"/><ellipse cx="70" cy="64" rx="13" ry="12" fill="#ffb0cc"/><circle cx="76" cy="38" r="4" fill="#fff3b0"/></g><rect x="46" y="32" width="8" height="38" rx="4" fill="#6a2344"/><circle cx="50" cy="28" r="6" fill="#6a2344"/><g class="ant"><path d="M47 24 Q38 10 32 14" fill="none" stroke="#6a2344" stroke-width="1.6" stroke-linecap="round"/><circle cx="32" cy="14" r="2.1" fill="#6a2344"/></g><g class="ant ant-b"><path d="M53 24 Q62 10 68 14" fill="none" stroke="#6a2344" stroke-width="1.6" stroke-linecap="round"/><circle cx="68" cy="14" r="2.1" fill="#6a2344"/></g></svg>',
-    fish2:'<svg viewBox="0 0 100 100"><g class="tail"><path d="M30 50 L8 32 Q16 50 8 68 Z" fill="#ff7a22"/></g><g class="body"><ellipse cx="58" cy="50" rx="28" ry="18" fill="#ff8a1e"/><path d="M46 34 L42 50 L46 66" fill="none" stroke="#1c2430" stroke-width="3.2" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#1c2430" stroke-width="2.2" stroke-linecap="round"/><g class="fin"><path d="M48 62 Q40 80 64 66" fill="#ffb15a"/></g><circle cx="74" cy="46" r="5.2" fill="#fff"/><circle cx="76" cy="46" r="2.3" fill="#123044"/><path d="M68 55 Q76 60 82 53" fill="none" stroke="#a33b12" stroke-width="1.7" stroke-linecap="round"/></g></svg>'
+    fish2:'<svg viewBox="0 0 100 100"><g class="tail"><path d="M30 50 L8 32 Q16 50 8 68 Z" fill="#ff7a22"/></g><g class="body"><ellipse cx="58" cy="50" rx="28" ry="18" fill="#ff8a1e"/><path d="M46 34 L42 50 L46 66" fill="none" stroke="#1c2430" stroke-width="3.2" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#1c2430" stroke-width="2.2" stroke-linecap="round"/><g class="fin"><path d="M48 62 Q40 80 64 66" fill="#ffb15a"/></g><circle cx="74" cy="46" r="5.2" fill="#fff"/><circle cx="76" cy="46" r="2.3" fill="#123044"/><path d="M68 55 Q76 60 82 53" fill="none" stroke="#a33b12" stroke-width="1.7" stroke-linecap="round"/></g></svg>',
+    butterfly3:'<svg viewBox="0 0 100 100"><g class="wl"><ellipse cx="28" cy="40" rx="18" ry="16" fill="#7dce4a"/><ellipse cx="30" cy="64" rx="13" ry="12" fill="#d4f5a4"/><circle cx="24" cy="38" r="4" fill="#ffe08a"/></g><g class="wr"><ellipse cx="72" cy="40" rx="18" ry="16" fill="#3aaa6a"/><ellipse cx="70" cy="64" rx="13" ry="12" fill="#b6e87a"/><circle cx="76" cy="38" r="4" fill="#ffe08a"/></g><rect x="46" y="32" width="8" height="38" rx="4" fill="#1d4a28"/><circle cx="50" cy="28" r="6" fill="#1d4a28"/><g class="ant"><path d="M47 24 Q38 10 32 14" fill="none" stroke="#1d4a28" stroke-width="1.6" stroke-linecap="round"/><circle cx="32" cy="14" r="2" fill="#1d4a28"/></g><g class="ant ant-b"><path d="M53 24 Q62 10 68 14" fill="none" stroke="#1d4a28" stroke-width="1.6" stroke-linecap="round"/><circle cx="68" cy="14" r="2" fill="#1d4a28"/></g></svg>',
+    monkey:'<svg viewBox="0 0 100 100"><ellipse cx="50" cy="64" rx="22" ry="18" fill="#c4843a"/><circle cx="50" cy="40" r="16" fill="#e8b56a"/><circle cx="32" cy="28" r="9" fill="#c4843a"/><circle cx="68" cy="28" r="9" fill="#c4843a"/><circle cx="28" cy="28" r="4" fill="#f0c090"/><circle cx="72" cy="28" r="4" fill="#f0c090"/><circle cx="44" cy="38" r="2.6" fill="#3a2418"/><circle cx="56" cy="38" r="2.6" fill="#3a2418"/><ellipse cx="50" cy="46" rx="4" ry="3" fill="#c47a52"/><path d="M44 51 Q50 56 56 51" fill="none" stroke="#6a3a22" stroke-width="1.5" stroke-linecap="round"/><path d="M30 58 Q12 72 20 86" fill="none" stroke="#c4843a" stroke-width="6" stroke-linecap="round"/><path d="M70 58 Q90 46 82 32" fill="none" stroke="#c4843a" stroke-width="6" stroke-linecap="round"/><ellipse cx="50" cy="78" rx="8" ry="5" fill="#f3c9a0"/></svg>',
+    toucan:'<svg viewBox="0 0 100 100"><ellipse cx="40" cy="60" rx="20" ry="16" fill="#2a2418"/><circle cx="56" cy="42" r="14" fill="#2a2418"/><path d="M66 40 L100 34 L98 50 L68 52 Z" fill="#ff9a1f"/><path d="M70 46 L96 43 L95 50 L70 51 Z" fill="#ff4d3a"/><circle cx="60" cy="40" r="3.2" fill="#fff"/><circle cx="61" cy="40" r="1.6" fill="#111"/><ellipse cx="28" cy="50" rx="10" ry="7" fill="#f4c95f"/><path d="M22 74 Q34 84 46 74" fill="none" stroke="#f4c95f" stroke-width="2.2" stroke-linecap="round"/></svg>',
+    frog:'<svg viewBox="0 0 100 100"><ellipse cx="30" cy="36" rx="14" ry="12" fill="#7dce4a"/><ellipse cx="70" cy="36" rx="14" ry="12" fill="#7dce4a"/><circle cx="30" cy="34" r="6" fill="#fff"/><circle cx="70" cy="34" r="6" fill="#fff"/><circle cx="31" cy="35" r="3" fill="#1c3a18"/><circle cx="71" cy="35" r="3" fill="#1c3a18"/><ellipse cx="50" cy="62" rx="26" ry="18" fill="#8fd45a"/><ellipse cx="50" cy="68" rx="14" ry="9" fill="#d4f5a8"/><path d="M40 62 Q50 68 60 62" fill="none" stroke="#2f6b28" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    snake:'<svg viewBox="0 0 140 64"><path d="M8 38 Q30 8 54 36 Q78 62 102 30 Q120 12 132 32" fill="none" stroke="#1f7a38" stroke-width="14" stroke-linecap="round"/><path d="M8 38 Q30 8 54 36 Q78 62 102 30 Q120 12 132 32" fill="none" stroke="#7dce4a" stroke-width="6" stroke-linecap="round"/><circle cx="132" cy="30" r="9" fill="#1f7a38"/><circle cx="135" cy="28" r="2.3" fill="#fff"/><circle cx="136" cy="28" r="1.1" fill="#123"/><path d="M138 34 q7 3 1 9" fill="none" stroke="#e23d3d" stroke-width="2.2" stroke-linecap="round"/></svg>',
+    dragonfly:'<svg viewBox="0 0 100 100"><ellipse cx="32" cy="40" rx="18" ry="8" fill="#c5ecff" opacity=".9"/><ellipse cx="68" cy="40" rx="18" ry="8" fill="#c5ecff" opacity=".9"/><ellipse cx="34" cy="56" rx="13" ry="6" fill="#e7f7ff" opacity=".85"/><ellipse cx="66" cy="56" rx="13" ry="6" fill="#e7f7ff" opacity=".85"/><rect x="46" y="26" width="8" height="50" rx="4" fill="#1a5a78"/><circle cx="50" cy="22" r="6" fill="#0e3c52"/><circle cx="48" cy="21" r="1.6" fill="#fff"/></svg>',
+    owl:'<svg viewBox="0 0 100 100"><ellipse cx="50" cy="58" rx="26" ry="28" fill="#8d6b43"/><path d="M30 34 L42 44 L34 16 Z" fill="#6a4e30"/><path d="M70 34 L58 44 L66 16 Z" fill="#6a4e30"/><circle cx="38" cy="50" r="11" fill="#f6e2b4"/><circle cx="62" cy="50" r="11" fill="#f6e2b4"/><circle cx="38" cy="51" r="5" fill="#2a2418"/><circle cx="62" cy="51" r="5" fill="#2a2418"/><path d="M46 62 L50 70 L54 62 Z" fill="#e09a4a"/></svg>',
+    chameleon:'<svg viewBox="0 0 100 100"><path d="M22 58 Q8 36 18 24" fill="none" stroke="#2f9a58" stroke-width="5" stroke-linecap="round"/><ellipse cx="54" cy="58" rx="28" ry="14" fill="#3aaa6a"/><path d="M36 48 Q50 30 66 46" fill="#217a44"/><circle cx="78" cy="46" r="12" fill="#2f9a58"/><circle cx="82" cy="44" r="4.2" fill="#fff"/><circle cx="83.2" cy="44" r="2" fill="#123"/><ellipse cx="40" cy="72" rx="7" ry="3.2" fill="#217a44"/><ellipse cx="66" cy="72" rx="7" ry="3.2" fill="#217a44"/></svg>',
+    beetle:'<svg viewBox="0 0 100 100"><ellipse cx="50" cy="60" rx="24" ry="18" fill="#1c6b45"/><path d="M50 44 V76" stroke="#0c3a26" stroke-width="2"/><circle cx="42" cy="54" r="3" fill="#0c3a26"/><circle cx="58" cy="62" r="2.6" fill="#0c3a26"/><circle cx="50" cy="38" r="12" fill="#14563a"/><circle cx="45" cy="36" r="2.2" fill="#fff"/><circle cx="55" cy="36" r="2.2" fill="#fff"/><path d="M30 52 L14 42 M70 52 L86 42 M32 66 L16 74 M68 66 L84 74" stroke="#14563a" stroke-width="2.2" stroke-linecap="round"/></svg>'
   };
-  const alias={gull:'bird',butterfly2:'butterfly',fish2:'fish'};
+  const alias={gull:'bird',butterfly2:'butterfly',butterfly3:'butterfly',fish2:'fish',toucan:'bird'};
   if(TOY_IMG[kind]){
     const dim=TOY_DIM[kind];
     return `<span class="critter critter-toy critter-${kind}" aria-hidden="true"><img src="${TOY_IMG[kind]}" alt="" width="${dim[0]}" height="${dim[1]}" draggable="false" decoding="async"></span>`;
@@ -1838,26 +1865,74 @@ const TOY_IMG={
 };
 const TOY_DIM={parrot:[720,608],mickey:[618,760],hedgehog:[900,381]};
 const FIND_SCENES=[
-  {id:'beach',label:'La plage',emoji:'🏖️',
-    decos:[['2%','34%','2.5rem','🌴'],['46%','40%','1.8rem','⛱️']],
+  {id:'canopy',label:'La canopée',emoji:'🌴',
     spots:[
-      {id:'gull',kind:'gull',emoji:'🐦',label:'la mouette',left:'4%',top:'2%'},
-      {id:'butterfly',kind:'butterfly2',emoji:'🦋',label:'le papillon',left:'46%',top:'3%'},
-      {id:'parrot',kind:'parrot',emoji:'🦜',label:'le perroquet de Maor',left:'2%',top:'24%',toy:true},
-      {id:'crab',kind:'crab',emoji:'🦀',label:'le crabe',left:'68%',top:'38%'},
-      {id:'clown',kind:'fish2',emoji:'🐠',label:'le poisson clown',left:'14%',top:'66%'}
+      {id:'parrot',kind:'parrot',emoji:'🦜',label:'le perroquet de Maor',left:'50%',top:'22%',toy:true}
+    ],
+    crowd:[
+      {kind:'monkey',l:'4%',t:'6%',w:74,h:74,z:2,rot:-12},
+      {kind:'bird',l:'22%',t:'3%',w:58,h:54,z:2,rot:8},
+      {kind:'butterfly',l:'78%',t:'4%',w:50,h:50,z:2},
+      {kind:'owl',l:'2%',t:'30%',w:58,h:58,z:2},
+      {kind:'toucan',l:'36%',t:'16%',w:78,h:66,z:4,rot:-6},
+      {kind:'chameleon',l:'8%',t:'46%',w:72,h:58,z:2,flip:1},
+      {kind:'butterfly2',l:'60%',t:'16%',w:52,h:52,z:4},
+      {kind:'bee',l:'30%',t:'38%',w:46,h:46,z:2},
+      {kind:'dragonfly',l:'60%',t:'40%',w:58,h:50,z:4},
+      {kind:'ladybug',l:'16%',t:'62%',w:46,h:46,z:2},
+      {kind:'monkey',l:'70%',t:'52%',w:68,h:68,z:4,rot:10,flip:1},
+      {kind:'gull',l:'8%',t:'74%',w:56,h:50,z:2,rot:-8},
+      {kind:'beetle',l:'40%',t:'66%',w:48,h:48,z:2},
+      {kind:'butterfly3',l:'78%',t:'74%',w:50,h:50,z:2},
+      {kind:'elephant',l:'2%',t:'84%',w:70,h:62,z:2},
+      {kind:'lion',l:'36%',t:'82%',w:62,h:62,z:2},
+      {kind:'bird',l:'62%',t:'78%',w:54,h:50,z:4,rot:14,flip:1}
+    ],
+    leaves:[
+      {l:'56%',t:'20%',w:58,h:36,rot:-28,z:6},
+      {l:'46%',t:'30%',w:46,h:30,rot:18,z:6,deep:1},
+      {l:'18%',t:'18%',w:54,h:32,rot:24,z:5},
+      {l:'68%',t:'58%',w:50,h:32,rot:-16,z:5}
+    ],
+    branches:[
+      {l:'28%',t:'32%',w:150,rot:-8,z:5},
+      {l:'4%',t:'58%',w:120,rot:6,z:1}
     ]},
-  {id:'garden',label:'Le jardin',emoji:'🌿',
-    decos:[['4%','16%','1.6rem','🌸'],['78%','20%','1.7rem','🌼']],
+  {id:'floor',label:'Le sous-bois',emoji:'🌿',
     spots:[
-      {id:'bug',kind:'ladybug',emoji:'🐞',label:'la coccinelle',left:'10%',top:'12%'},
-      {id:'bee',kind:'bee',emoji:'🐝',label:'l’abeille',left:'68%',top:'12%'},
-      {id:'hedgehog',kind:'hedgehog',emoji:'🦔',label:'le hérisson de Maor',left:'4%',top:'32%',toy:true,wide:true},
-      {id:'mickey',kind:'mickey',emoji:'🐭',label:'Mickey',left:'2%',top:'56%',toy:true},
-      {id:'turtle',kind:'turtle',emoji:'🐢',label:'la tortue',left:'62%',top:'64%'}
+      {id:'mickey',kind:'mickey',emoji:'🐭',label:'Mickey',left:'7%',top:'26%',toy:true},
+      {id:'hedgehog',kind:'hedgehog',emoji:'🦔',label:'le hérisson de Maor',left:'40%',top:'46%',toy:true,wide:true}
+    ],
+    crowd:[
+      {kind:'frog',l:'4%',t:'6%',w:60,h:56,z:2},
+      {kind:'snake',l:'28%',t:'4%',w:150,h:62,z:2},
+      {kind:'butterfly3',l:'74%',t:'8%',w:48,h:48,z:2},
+      {kind:'monkey',l:'14%',t:'20%',w:70,h:70,z:4,rot:8},
+      {kind:'beetle',l:'70%',t:'24%',w:44,h:44,z:2},
+      {kind:'bee',l:'82%',t:'36%',w:46,h:46,z:2},
+      {kind:'turtle',l:'4%',t:'48%',w:64,h:54,z:2},
+      {kind:'frog',l:'74%',t:'42%',w:56,h:52,z:4,flip:1},
+      {kind:'roach',l:'28%',t:'58%',w:46,h:46,z:2},
+      {kind:'ladybug',l:'78%',t:'58%',w:44,h:44,z:2},
+      {kind:'crab',l:'8%',t:'66%',w:56,h:52,z:2},
+      {kind:'dragonfly',l:'62%',t:'64%',w:54,h:48,z:4},
+      {kind:'fish',l:'6%',t:'78%',w:72,h:56,z:2},
+      {kind:'fish2',l:'42%',t:'80%',w:78,h:58,z:2,flip:1},
+      {kind:'butterfly2',l:'78%',t:'76%',w:48,h:48,z:2},
+      {kind:'cat',l:'58%',t:'18%',w:58,h:54,z:2,rot:-10}
+    ],
+    leaves:[
+      {l:'8%',t:'24%',w:52,h:30,rot:22,z:6,deep:1},
+      {l:'14%',t:'40%',w:40,h:26,rot:-12,z:6},
+      {l:'52%',t:'48%',w:72,h:32,rot:10,z:6},
+      {l:'36%',t:'54%',w:40,h:24,rot:-20,z:6,deep:1},
+      {l:'60%',t:'14%',w:48,h:28,rot:16,z:5}
+    ],
+    branches:[
+      {l:'0%',t:'30%',w:110,rot:14,z:6},
+      {l:'34%',t:'44%',w:130,rot:-4,z:5}
     ]}
 ];
-const FLIGHT_FIND=['parrot','gull','crab','clown'];
 const CATCH_MODES=[
   {id:'butterfly',kind:'butterfly',emoji:'🦋',label:'Papillon',band:[4,28]},
   {id:'fish',kind:'fish',emoji:'🐟',label:'Poisson',band:[46,60]},
@@ -1899,7 +1974,7 @@ function showJeuxHub(){
   const el=document.getElementById('jeux');
   el.innerHTML=`<div class="topbar"><button type="button" onclick="backJeux()" aria-label="Retour">←</button><div class="t">Jeux pour Maor 🦁</div><div style="width:42px"></div></div>
 <p class="play-help">Grands boutons, parties courtes, sans son obligatoire. Jessica ou Yohai joue avec Maor — dans l’avion, à la plage, ou dans un creux.</p>
-<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('parrot')}</span><span><h2>Cherche et trouve</h2><p class="muted">Le perroquet, Mickey et le hérisson de Maor se cachent à la plage et au jardin, avec d’autres animaux.</p></span></button>
+<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('parrot')}</span><span><h2>Cherche et trouve</h2><p class="muted">Une jungle pleine d’animaux. Il faut retrouver le perroquet, Mickey et le hérisson de Maor, cachés dedans.</p></span></button>
 <button class="card gcard" type="button" onclick="startCatch()"><span class="emoji">${critter('fish')}</span><span><h2>Attrape !</h2><p class="muted">On tape le papillon, le poisson, la coccinelle ou le petit cafard.</p></span></button>
 <button class="card gcard" type="button" onclick="startGuess()"><span class="emoji">${critter('bird')}</span><span><h2>Devine l’animal</h2><p class="muted">Une ombre, trois choix. Maor montre du doigt, vous lisez l’indice.</p></span></button>
 <button class="card gcard" type="button" onclick="startMemory()"><span class="emoji">${critter('ladybug')}</span><span><h2>Memory safari</h2><p class="muted">Les paires : poisson, oiseau, papillon, coccinelle. Pas de son.</p></span></button>
@@ -1946,25 +2021,29 @@ function runFlight(){
 }
 function startFind(opts){
   const flight=!!(opts&&opts.flight);
-  const scenes=flight
-    ?[{id:'beach',label:'La plage',emoji:'🏖️',decos:FIND_SCENES[0].decos,spots:FLIGHT_FIND.map(id=>FIND_SCENES[0].spots.find(s=>s.id===id))}]
-    :FIND_SCENES;
+  const scenes=FIND_SCENES;
   const spots=scenes.flatMap(sc=>sc.spots);
   const found=new Set();
   let sceneId=scenes[0].id;
-  function sceneHtml(sc, on){
-    const decos=(sc.decos||[]).map(d=>`<span class="find-deco" style="left:${d[0]};top:${d[1]};font-size:${d[2]}">${d[3]}</span>`).join('');
-    const buttons=sc.spots.map(s=>`<button type="button" class="find-animal kind-${s.kind}" id="fa-${s.id}" style="left:${s.left};top:${s.top}" aria-label="Chercher ${esc(s.label)}"><span class="mover">${critter(s.kind)}</span></button>`).join('');
-    return `<div class="find-scene ${sc.id}" id="scene-${sc.id}" data-scene="${sc.id}"${on?'':' hidden'}><i class="sun"></i>${decos}${buttons}</div>`;
+  function piece(c){
+    const flip=c.flip?' scaleX(-1)':'';
+    return `<span class="j-crit" style="left:${c.l};top:${c.t};width:${c.w}px;height:${c.h}px;z-index:${c.z||2}"><span class="j-rot" style="transform:rotate(${c.rot||0}deg)${flip}">${critter(c.kind)}</span></span>`;
   }
-  const tabs=scenes.length>1?`<div class="modes find-tabs" role="tablist">${scenes.map(sc=>`<button type="button" data-scene="${sc.id}" class="${sc.id===sceneId?'on':''}" aria-label="${esc(sc.label)}">${sc.emoji} ${esc(sc.label)}</button>`).join('')}</div>`:'';
+  function sceneHtml(sc, on){
+    const crowd=(sc.crowd||[]).map(piece).join('');
+    const leaves=(sc.leaves||[]).map(l=>`<i class="j-leaf${l.deep?' deep':''}" style="left:${l.l};top:${l.t};width:${l.w}px;height:${l.h}px;z-index:${l.z||6};transform:rotate(${l.rot||0}deg)"></i>`).join('');
+    const branches=(sc.branches||[]).map(b=>`<i class="j-branch" style="left:${b.l};top:${b.t};width:${b.w}px;z-index:${b.z||6};transform:rotate(${b.rot||0}deg)"></i>`).join('');
+    const buttons=sc.spots.map(s=>`<button type="button" class="find-animal kind-${s.kind}" id="fa-${s.id}" style="left:${s.left};top:${s.top}" aria-label="Chercher ${esc(s.label)}"><span class="mover">${critter(s.kind)}</span></button>`).join('');
+    return `<div class="find-scene jungle ${sc.id}" id="scene-${sc.id}" data-scene="${sc.id}"${on?'':' hidden'}><i class="sun"></i>${crowd}${buttons}${leaves}${branches}</div>`;
+  }
+  const tabs=`<div class="modes find-tabs" role="tablist">${scenes.map(sc=>`<button type="button" data-scene="${sc.id}" class="${sc.id===sceneId?'on':''}" aria-label="${esc(sc.label)}">${sc.emoji} ${esc(sc.label)}</button>`).join('')}</div>`;
   const help=flight
-    ?'Touchez-les. Le perroquet de Maor est avec les animaux de la plage.'
-    :'Touchez les doudous de Maor et les animaux. Ciel, sable et eau à la plage — feuilles et terrasse au jardin.';
-  shell('Cherche et trouve', `${tabs}<div class="play-meta"><b>Cherche et trouve</b><span class="score-pill" id="find-score">0 / ${spots.length}</span></div>
+    ?'Les trois doudous de Maor sont dans la jungle. Touchez seulement ceux-là.'
+    :'Cherche les doudous de Maor parmi tous les animaux. Ils sont un peu cachés sous les feuilles.';
+  shell('Cherche et trouve', `${tabs}<div class="play-meta"><b>Les doudous de Maor</b><span class="score-pill" id="find-score">0 / ${spots.length}</span></div>
 ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
-<div class="found-row" aria-hidden="true">${spots.map(s=>`<span id="slot-${s.id}" class="${s.wide?'wide':''}"></span>`).join('')}</div>
-<p class="play-help" id="find-help">${help}</p>
+<div class="found-row">${spots.map(s=>`<span id="slot-${s.id}" class="preview${s.wide?' wide':''}">${critter(s.kind)}</span>`).join('')}</div>
+<p class="play-help">${help}</p>
 <button type="button" class="hint-btn" id="find-hint">Un indice</button>`);
   function showScene(id){
     sceneId=id;
@@ -1979,11 +2058,9 @@ ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
   function sceneOf(id){
     return scenes.find(sc=>sc.spots.some(s=>s.id===id));
   }
-  if(scenes.length>1){
-    document.querySelectorAll('.find-tabs [data-scene]').forEach(btn=>{
-      btn.addEventListener('click',()=>showScene(btn.dataset.scene));
-    });
-  }
+  document.querySelectorAll('.find-tabs [data-scene]').forEach(btn=>{
+    btn.addEventListener('click',()=>showScene(btn.dataset.scene));
+  });
   spots.forEach(s=>{
     document.getElementById('fa-'+s.id).addEventListener('click',()=>{
       if(found.has(s.id)) return;
@@ -1993,30 +2070,26 @@ ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
       btn.classList.remove('hinted');
       btn.disabled=true;
       const slot=document.getElementById('slot-'+s.id);
-      if(slot){slot.innerHTML=critter(s.kind);slot.classList.add('on')}
+      if(slot){slot.classList.add('on');slot.classList.remove('preview')}
       const score=document.getElementById('find-score');
       if(score) score.textContent=found.size+' / '+spots.length;
       burst(['✨','💛','🎉',s.emoji],14);
       const host=document.getElementById('scene-'+sceneOf(s.id).id);
-      if(host) floatWord(host, s.toy?'Oui !':'Bravo !');
+      if(host) floatWord(host, 'Oui !');
       say('Trouvé : '+s.label+'. '+found.size+' sur '+spots.length+'.');
       if(found.size===spots.length){
-        say('Tous les animaux sont trouvés.');
-        const win=flight
-          ?'Le perroquet de Maor et les animaux de la plage sont là.'
-          :'Le perroquet, Mickey, le hérisson, et tous les animaux.';
-        showWin('Tout trouvé, Maor !',win,()=>startFind(opts));
+        say('Les trois doudous sont retrouvés.');
+        showWin('Tout trouvé, Maor !','Le perroquet, Mickey et le hérisson étaient cachés dans la jungle.',()=>startFind(opts));
         return;
       }
       const here=sceneOf(s.id);
-      const hereLeft=here.spots.some(sp=>!found.has(sp.id));
-      if(!hereLeft){
+      if(!here.spots.some(sp=>!found.has(sp.id))){
         const nextSc=scenes.find(sc=>sc.spots.some(sp=>!found.has(sp.id)));
         if(nextSc){
-          const doneLine=here.id==='beach'?'La plage est trouvée.':'Le jardin est trouvé.';
-          const nextLine=nextSc.id==='garden'?'Au jardin, maintenant.':'Retour à la plage.';
+          const doneLine=here.id==='canopy'?'Le perroquet est trouvé.':'Mickey et le hérisson sont trouvés.';
+          const nextLine=nextSc.id==='floor'?'On cherche en bas, dans le sous-bois.':'On remonte dans la canopée.';
           say(doneLine+' '+nextLine);
-          later(()=>showScene(nextSc.id),650);
+          later(()=>showScene(nextSc.id),700);
         }
       }
     });
@@ -2032,7 +2105,7 @@ ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
     const el=document.getElementById('fa-'+next.id);
     document.querySelectorAll('.find-animal.hinted').forEach(n=>n.classList.remove('hinted'));
     el.classList.add('hinted');
-    later(()=>el.classList.remove('hinted'),2400);
+    later(()=>el.classList.remove('hinted'),2600);
     say('Indice : cherche '+next.label+'.');
   });
 }
