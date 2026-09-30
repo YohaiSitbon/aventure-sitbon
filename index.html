@@ -559,8 +559,32 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .find-scene.floor .sun{display:none}
 .find-scene[hidden]{display:none}
 .find-scene .sun{position:absolute;width:36px;height:36px;border-radius:50%;right:10%;top:3%;background:radial-gradient(circle,#fff6c2,#f4c95f);box-shadow:0 0 0 8px rgba(255,243,180,.28);pointer-events:none;z-index:1}
-.j-crit{position:absolute;pointer-events:none;z-index:2;filter:drop-shadow(0 2px 1px rgba(0,0,0,.28))}
-.j-rot{display:block;width:100%;height:100%}
+.j-crit{
+  appearance:none;border:0;padding:0;margin:0;background:transparent;color:inherit;font:inherit;
+  position:absolute;cursor:pointer;touch-action:manipulation;z-index:2;
+  -webkit-tap-highlight-color:transparent;min-width:48px;min-height:48px;
+  filter:drop-shadow(0 2px 1px rgba(0,0,0,.28));
+}
+.j-crit:focus-visible{outline:3px solid #ffe08a;outline-offset:2px}
+.j-crit.revealed{
+  z-index:7 !important;pointer-events:none;cursor:default;
+  filter:drop-shadow(0 0 8px #ffe08a) drop-shadow(0 6px 5px rgba(0,0,0,.28));
+  animation:reveal-pop .48s cubic-bezier(.2,1.45,.36,1) both;
+}
+@keyframes reveal-pop{
+  0%{transform:scale(.85)}
+  55%{transform:scale(1.28)}
+  100%{transform:scale(1.08)}
+}
+.j-spark{
+  position:absolute;z-index:9;pointer-events:none;font-size:1.05rem;line-height:1;
+  margin:-.55rem 0 0 -.55rem;animation:spark-out .7s ease-out forwards;
+}
+@keyframes spark-out{
+  0%{transform:translate(0,0) scale(.5);opacity:1}
+  100%{transform:translate(var(--dx),var(--dy)) scale(1.15);opacity:0}
+}
+.j-rot{display:block;width:100%;height:100%;pointer-events:none}
 .j-leaf{
   position:absolute;pointer-events:none;z-index:6;
   border-radius:2% 80% 8% 78%;
@@ -629,7 +653,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 @keyframes found-pop{0%{transform:scale(.5) rotate(-8deg)}55%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
 @keyframes bubble-rise{0%{transform:translateY(0) scale(.6);opacity:0}25%{opacity:.95}100%{transform:translateY(-52px) scale(1);opacity:0}}
 .find-animal{
-  position:absolute;width:64px;height:64px;border:0;border-radius:16px;padding:0;
+  position:absolute;width:64px;height:64px;min-width:48px;min-height:48px;border:0;border-radius:16px;padding:0;
   background:transparent;cursor:pointer;z-index:3;
   filter:drop-shadow(0 2px 2px rgba(0,0,0,.35));
   touch-action:manipulation;-webkit-tap-highlight-color:transparent;
@@ -642,7 +666,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 .find-animal.kind-hedgehog{width:min(34vw,118px);height:min(15vw,54px)}
 .find-animal .mover{animation:none}
 .find-animal.found{
-  z-index:7;
+  z-index:8;
   animation:found-pop .55s cubic-bezier(.2,1.45,.36,1) both;
   filter:drop-shadow(0 0 7px rgba(46,196,182,.95)) drop-shadow(0 4px 4px rgba(0,0,0,.25));
 }
@@ -768,7 +792,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 }
 .live-quiet{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 @media (prefers-reduced-motion:reduce){
-  .find-animal,.mover,.j-crit,.j-rot,.float-em,.float-word,.quiz-opt.bad,.quiz-opt.good,.critter,.critter *,.mem-card.matched,.catch-bug.pop,.sil.reveal{animation:none !important}
+  .find-animal,.mover,.j-crit,.j-crit.revealed,.j-spark,.j-rot,.float-em,.float-word,.quiz-opt.bad,.quiz-opt.good,.critter,.critter *,.mem-card.matched,.catch-bug.pop,.sil.reveal{animation:none !important}
   .mem-face,.mem-inner,.sil{transition:none}
   .catch-bug .bub i{animation:none;opacity:0}
 }
@@ -1974,7 +1998,7 @@ function showJeuxHub(){
   const el=document.getElementById('jeux');
   el.innerHTML=`<div class="topbar"><button type="button" onclick="backJeux()" aria-label="Retour">←</button><div class="t">Jeux pour Maor 🦁</div><div style="width:42px"></div></div>
 <p class="play-help">Grands boutons, parties courtes, sans son obligatoire. Jessica ou Yohai joue avec Maor — dans l’avion, à la plage, ou dans un creux.</p>
-<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('parrot')}</span><span><h2>Cherche et trouve</h2><p class="muted">Une jungle pleine d’animaux. Il faut retrouver le perroquet, Mickey et le hérisson de Maor, cachés dedans.</p></span></button>
+<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('parrot')}</span><span><h2>Cherche et trouve</h2><p class="muted">Une jungle pleine d’animaux. Touchez-les, ils sortent des feuilles. Seuls le perroquet, Mickey et le hérisson comptent.</p></span></button>
 <button class="card gcard" type="button" onclick="startCatch()"><span class="emoji">${critter('fish')}</span><span><h2>Attrape !</h2><p class="muted">On tape le papillon, le poisson, la coccinelle ou le petit cafard.</p></span></button>
 <button class="card gcard" type="button" onclick="startGuess()"><span class="emoji">${critter('bird')}</span><span><h2>Devine l’animal</h2><p class="muted">Une ombre, trois choix. Maor montre du doigt, vous lisez l’indice.</p></span></button>
 <button class="card gcard" type="button" onclick="startMemory()"><span class="emoji">${critter('ladybug')}</span><span><h2>Memory safari</h2><p class="muted">Les paires : poisson, oiseau, papillon, coccinelle. Pas de son.</p></span></button>
@@ -2019,6 +2043,14 @@ function runFlight(){
   else if(kind==='guess') startGuess({flight:true});
   else startMemory({flight:true});
 }
+const CRITTER_LABEL={
+  monkey:'le singe',toucan:'le toucan',frog:'la grenouille',snake:'le serpent',
+  dragonfly:'la libellule',owl:'le hibou',chameleon:'le caméléon',beetle:'le scarabée',
+  butterfly:'le papillon',butterfly2:'le papillon',butterfly3:'le papillon',
+  bird:'l’oiseau',gull:'la mouette',bee:'l’abeille',ladybug:'la coccinelle',
+  fish:'le poisson',fish2:'le poisson',turtle:'la tortue',crab:'le crabe',
+  lion:'le lion',elephant:'l’éléphant',roach:'le cafard',cat:'le chat'
+};
 function startFind(opts){
   const flight=!!(opts&&opts.flight);
   const scenes=FIND_SCENES;
@@ -2027,7 +2059,9 @@ function startFind(opts){
   let sceneId=scenes[0].id;
   function piece(c){
     const flip=c.flip?' scaleX(-1)':'';
-    return `<span class="j-crit" style="left:${c.l};top:${c.t};width:${c.w}px;height:${c.h}px;z-index:${c.z||2}"><span class="j-rot" style="transform:rotate(${c.rot||0}deg)${flip}">${critter(c.kind)}</span></span>`;
+    const label=CRITTER_LABEL[c.kind]||'l’animal';
+    const w=Math.max(c.w,48), h=Math.max(c.h,48);
+    return `<button type="button" class="j-crit" data-kind="${esc(c.kind)}" aria-label="Voir ${esc(label)}" style="left:${c.l};top:${c.t};width:${w}px;height:${h}px;z-index:${c.z||2}"><span class="j-rot" style="transform:rotate(${c.rot||0}deg)${flip}">${critter(c.kind)}</span></button>`;
   }
   function sceneHtml(sc, on){
     const crowd=(sc.crowd||[]).map(piece).join('');
@@ -2038,8 +2072,8 @@ function startFind(opts){
   }
   const tabs=`<div class="modes find-tabs" role="tablist">${scenes.map(sc=>`<button type="button" data-scene="${sc.id}" class="${sc.id===sceneId?'on':''}" aria-label="${esc(sc.label)}">${sc.emoji} ${esc(sc.label)}</button>`).join('')}</div>`;
   const help=flight
-    ?'Les trois doudous de Maor sont dans la jungle. Touchez seulement ceux-là.'
-    :'Cherche les doudous de Maor parmi tous les animaux. Ils sont un peu cachés sous les feuilles.';
+    ?'Touchez les animaux : ils sortent des feuilles. Seuls les trois doudous de Maor comptent.'
+    :'Touchez n’importe quel animal : il sort des feuilles. Seuls les trois doudous de Maor remplissent la bande.';
   shell('Cherche et trouve', `${tabs}<div class="play-meta"><b>Les doudous de Maor</b><span class="score-pill" id="find-score">0 / ${spots.length}</span></div>
 ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
 <div class="found-row">${spots.map(s=>`<span id="slot-${s.id}" class="preview${s.wide?' wide':''}">${critter(s.kind)}</span>`).join('')}</div>
@@ -2060,6 +2094,38 @@ ${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
   }
   document.querySelectorAll('.find-tabs [data-scene]').forEach(btn=>{
     btn.addEventListener('click',()=>showScene(btn.dataset.scene));
+  });
+  function sparkle(btn){
+    const host=btn.parentElement;
+    if(!host) return;
+    const r=btn.getBoundingClientRect();
+    const hr=host.getBoundingClientRect();
+    const cx=r.left-hr.left+r.width/2;
+    const cy=r.top-hr.top+r.height/2;
+    for(let i=0;i<6;i++){
+      const s=document.createElement('span');
+      s.className='j-spark';
+      s.textContent='✨';
+      s.setAttribute('aria-hidden','true');
+      const ang=(Math.PI*2*i)/6-Math.PI/2;
+      s.style.left=cx+'px';
+      s.style.top=cy+'px';
+      s.style.setProperty('--dx',Math.round(Math.cos(ang)*26)+'px');
+      s.style.setProperty('--dy',Math.round(Math.sin(ang)*26)+'px');
+      host.appendChild(s);
+      later(()=>s.remove(),720);
+    }
+  }
+  document.querySelectorAll('#jeux-play .j-crit').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(btn.classList.contains('revealed')) return;
+      btn.classList.add('revealed');
+      const label=CRITTER_LABEL[btn.dataset.kind]||'l’animal';
+      sparkle(btn);
+      const host=btn.closest('.find-scene');
+      if(host) floatWord(host,'Vu !');
+      say('Vu : '+label+'.');
+    });
   });
   spots.forEach(s=>{
     document.getElementById('fa-'+s.id).addEventListener('click',()=>{
