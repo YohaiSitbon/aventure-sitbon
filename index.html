@@ -537,13 +537,21 @@ button.gcard,button.jcard{appearance:none;width:100%}
 }
 .modes button.on{background:var(--gold);color:var(--sea)}
 .find-scene{
-  position:relative;height:min(62vh,500px);border-radius:28px;overflow:hidden;
-  background:linear-gradient(180deg,#8fd0ee 0%,#d7f1fb 34%,#f6e0b5 34.2%,#efd09a 56%,#1f9aa8 56.2%,#0a6280 100%);
+  position:relative;height:min(64vh,520px);border-radius:28px;overflow:hidden;
+  background:linear-gradient(180deg,#8fd0ee 0%,#d7f1fb 32%,#f6e0b5 32.2%,#efd09a 56%,#1f9aa8 56.2%,#0a6280 100%);
   box-shadow:0 16px 40px rgba(0,0,0,.2);touch-action:manipulation;
 }
-.find-scene .sun{position:absolute;width:46px;height:46px;border-radius:50%;right:8%;top:6%;background:radial-gradient(circle,#fff6c2,#f4c95f);box-shadow:0 0 0 10px rgba(255,243,180,.35)}
-.find-deco{position:absolute;font-size:2rem;filter:drop-shadow(0 6px 6px rgba(0,0,0,.15));pointer-events:none}
+.find-scene.garden{
+  background:
+    radial-gradient(circle at 18% 8%, #fff6c2 0 16px, transparent 18px),
+    linear-gradient(180deg,#9ed8f2 0%,#e7f7ff 16%,#7ec97a 16.2%,#3f8f52 42%,#d7c094 42.2%,#f0e0be 100%);
+}
+.find-scene[hidden]{display:none}
+.find-scene .sun{position:absolute;width:46px;height:46px;border-radius:50%;right:8%;top:6%;background:radial-gradient(circle,#fff6c2,#f4c95f);box-shadow:0 0 0 10px rgba(255,243,180,.35);pointer-events:none}
+.find-scene.garden .sun{left:6%;right:auto;top:3%;width:34px;height:34px;box-shadow:0 0 0 8px rgba(255,243,180,.28)}
+.find-deco{position:absolute;font-size:2rem;filter:drop-shadow(0 6px 6px rgba(0,0,0,.15));pointer-events:none;z-index:1}
 .critter{display:block;width:100%;height:100%;line-height:0;pointer-events:none}
+.critter-toy img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;user-select:none;-webkit-user-drag:none}
 .critter svg{width:100%;height:100%;display:block;overflow:visible}
 .critter svg *{transform-box:fill-box}
 .critter-flip{display:grid;width:100%;height:100%;place-items:center}
@@ -594,29 +602,42 @@ button.gcard,button.jcard{appearance:none;width:100%}
 @keyframes found-pop{0%{transform:scale(.5) rotate(-8deg)}55%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
 @keyframes bubble-rise{0%{transform:translateY(0) scale(.6);opacity:0}25%{opacity:.95}100%{transform:translateY(-52px) scale(1);opacity:0}}
 .find-animal{
-  position:absolute;width:80px;height:80px;border:0;border-radius:50%;padding:8px;
-  background:rgba(255,255,255,.92);cursor:pointer;z-index:2;
-  box-shadow:0 8px 16px rgba(0,0,0,.16);touch-action:manipulation;
+  position:absolute;width:76px;height:76px;border:0;border-radius:18px;padding:0;
+  background:transparent;cursor:pointer;z-index:2;
+  filter:drop-shadow(0 7px 5px rgba(0,0,0,.28));
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
   display:grid;place-items:center;
 }
-.find-animal .critter{width:64px;height:64px}
-.find-animal.kind-fish .mover{animation:bob 2.3s ease-in-out infinite}
-.find-animal.kind-bird .mover{animation:floaty 2.6s ease-in-out infinite}
-.find-animal.kind-butterfly .mover{animation:floaty 2.1s ease-in-out infinite}
-.find-animal.kind-ladybug .mover{animation:crawl-pos 1.5s ease-in-out infinite}
-.find-animal.kind-roach .mover{animation:hop-pos .78s ease-in-out infinite}
+.find-animal .critter{width:100%;height:100%}
+.find-animal img{width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
+.find-animal.kind-fish2{width:96px;height:74px}
+.find-animal.kind-gull{width:78px;height:74px}
+.find-animal.kind-butterfly2{width:74px;height:74px}
+.find-animal.kind-crab{width:74px;height:70px}
+.find-animal.kind-ladybug{width:68px;height:68px}
+.find-animal.kind-bee{width:70px;height:70px}
+.find-animal.kind-turtle{width:82px;height:70px}
+.find-animal.kind-parrot{width:min(44vw,156px);height:min(36vw,128px);z-index:3}
+.find-animal.kind-mickey{width:min(36vw,128px);height:min(44vw,156px);z-index:3}
+.find-animal.kind-hedgehog{width:min(62vw,214px);height:min(22vw,90px);z-index:3}
+.find-animal.kind-fish2 .mover,.find-animal.kind-turtle .mover{animation:bob 2.4s ease-in-out infinite}
+.find-animal.kind-gull .mover,.find-animal.kind-butterfly2 .mover,.find-animal.kind-parrot .mover{animation:floaty 2.8s ease-in-out infinite}
+.find-animal.kind-ladybug .mover,.find-animal.kind-bee .mover{animation:crawl-pos 1.6s ease-in-out infinite}
 .find-animal.kind-crab .mover{animation:side 1.25s ease-in-out infinite}
+.find-animal.kind-mickey .mover,.find-animal.kind-hedgehog .mover{animation:bob 3.1s ease-in-out infinite}
 .find-animal.found{
   animation:found-pop .55s cubic-bezier(.2,1.45,.36,1) both;
-  background:#e7fff6;box-shadow:0 0 0 3px #0a8f7e,0 8px 16px rgba(0,0,0,.12);
+  filter:drop-shadow(0 0 8px rgba(46,196,182,.95)) drop-shadow(0 8px 8px rgba(0,0,0,.2));
 }
-.find-animal.hinted{box-shadow:0 0 0 5px #f4c95f,0 10px 22px rgba(0,0,0,.2);z-index:3}
-.found-row{display:flex;gap:6px;justify-content:center;margin-top:10px}
+.find-animal.hinted{outline:4px solid #f4c95f;outline-offset:3px;z-index:5}
+.found-row{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .found-row span{
-  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
   background:rgba(255,255,255,.16);border:1px dashed rgba(255,255,255,.4);
 }
-.found-row span .critter{width:32px;height:32px}
+.found-row span.wide{width:58px;border-radius:12px}
+.found-row span .critter{width:30px;height:30px}
+.found-row span.wide .critter{width:52px;height:30px}
 .found-row span.on{background:#fff;border-style:solid}
 .catch-field{
   position:relative;height:min(60vh,460px);border-radius:28px;overflow:hidden;
@@ -1797,18 +1818,46 @@ function critter(kind){
     elephant:'<svg viewBox="0 0 100 100"><g class="ear"><ellipse cx="28" cy="48" rx="16" ry="20" fill="#b9c4ce"/></g><ellipse cx="58" cy="50" rx="26" ry="22" fill="#d5dee6"/><circle cx="70" cy="42" r="4" fill="#3a4550"/><g class="trunk"><path d="M78 52 Q92 58 84 78" fill="none" stroke="#d5dee6" stroke-width="8" stroke-linecap="round"/><path d="M84 78 Q78 84 74 78" fill="none" stroke="#c5d0da" stroke-width="6" stroke-linecap="round"/></g></svg>',
     cat:'<svg viewBox="0 0 100 100"><g class="tail"><path d="M22 70 Q8 50 24 40" fill="none" stroke="#f4a261" stroke-width="6" stroke-linecap="round"/></g><ellipse cx="56" cy="64" rx="24" ry="18" fill="#f6c28b"/><circle cx="70" cy="42" r="16" fill="#ffd7ad"/><path d="M58 32 L52 16 L66 30 Z" fill="#ffd7ad"/><path d="M78 30 L90 16 L84 34 Z" fill="#ffd7ad"/><circle cx="66" cy="42" r="2.2" fill="#3a2a18"/><circle cx="78" cy="42" r="2.2" fill="#3a2a18"/><path d="M70 48 L66 52 L74 52 Z" fill="#e08a6a"/><path d="M56 50 H48 M84 50 H92" stroke="#c9846a" stroke-width="1.2" stroke-linecap="round"/></svg>',
     bee:'<svg viewBox="0 0 100 100"><g class="wing"><ellipse cx="38" cy="40" rx="14" ry="8" fill="#fff" opacity=".9"/></g><g class="wing"><ellipse cx="62" cy="40" rx="14" ry="8" fill="#fff" opacity=".9"/></g><g class="bod"><ellipse cx="50" cy="58" rx="16" ry="22" fill="#f4c95f"/><path d="M34 52 H66 M34 62 H66 M36 72 H64" stroke="#2a2418" stroke-width="3" stroke-linecap="round"/><circle cx="50" cy="34" r="10" fill="#2a2418"/><circle cx="46" cy="33" r="2.2" fill="#fff"/><circle cx="54" cy="33" r="2.2" fill="#fff"/><path d="M44 24 Q40 14 36 16" fill="none" stroke="#2a2418" stroke-width="1.4"/><path d="M56 24 Q60 14 64 16" fill="none" stroke="#2a2418" stroke-width="1.4"/></g></svg>',
-    turtle:'<svg viewBox="0 0 100 100"><ellipse cx="52" cy="58" rx="28" ry="20" fill="#3d9a62"/><ellipse cx="52" cy="56" rx="18" ry="12" fill="#7dcea0"/><path d="M52 46 V66 M40 56 H64" stroke="#2f7a4c" stroke-width="1.5"/><g class="head"><circle cx="82" cy="50" r="9" fill="#8fd0a4"/><circle cx="85" cy="48" r="1.8" fill="#1c3a28"/></g><ellipse cx="30" cy="72" rx="7" ry="4" fill="#8fd0a4"/><ellipse cx="70" cy="74" rx="7" ry="4" fill="#8fd0a4"/></svg>'
+    turtle:'<svg viewBox="0 0 100 100"><ellipse cx="52" cy="58" rx="28" ry="20" fill="#3d9a62"/><ellipse cx="52" cy="56" rx="18" ry="12" fill="#7dcea0"/><path d="M52 46 V66 M40 56 H64" stroke="#2f7a4c" stroke-width="1.5"/><g class="head"><circle cx="82" cy="50" r="9" fill="#8fd0a4"/><circle cx="85" cy="48" r="1.8" fill="#1c3a28"/></g><ellipse cx="30" cy="72" rx="7" ry="4" fill="#8fd0a4"/><ellipse cx="70" cy="74" rx="7" ry="4" fill="#8fd0a4"/></svg>',
+    gull:'<svg viewBox="0 0 100 100"><g class="wing wing-b"><path d="M48 50 Q12 24 20 58 Q40 64 52 54 Z" fill="#7f93a3"/></g><ellipse cx="58" cy="58" rx="22" ry="14" fill="#f4f7fb"/><circle cx="76" cy="44" r="12" fill="#fff"/><circle cx="80" cy="42" r="2.8" fill="#1c2430"/><path d="M86 46 L102 41 L88 54 Z" fill="#f0b429"/><g class="wing"><path d="M62 52 Q26 36 34 70 Q54 72 66 58 Z" fill="#d5dee6"/></g><path d="M38 70 Q52 80 68 70" fill="none" stroke="#f0b429" stroke-width="2.4" stroke-linecap="round"/></svg>',
+    butterfly2:'<svg viewBox="0 0 100 100"><g class="wl"><ellipse cx="28" cy="40" rx="18" ry="16" fill="#ff6b9a"/><ellipse cx="30" cy="64" rx="13" ry="12" fill="#ffc2d8"/><circle cx="24" cy="38" r="4" fill="#fff3b0"/></g><g class="wr"><ellipse cx="72" cy="40" rx="18" ry="16" fill="#ff4d88"/><ellipse cx="70" cy="64" rx="13" ry="12" fill="#ffb0cc"/><circle cx="76" cy="38" r="4" fill="#fff3b0"/></g><rect x="46" y="32" width="8" height="38" rx="4" fill="#6a2344"/><circle cx="50" cy="28" r="6" fill="#6a2344"/><g class="ant"><path d="M47 24 Q38 10 32 14" fill="none" stroke="#6a2344" stroke-width="1.6" stroke-linecap="round"/><circle cx="32" cy="14" r="2.1" fill="#6a2344"/></g><g class="ant ant-b"><path d="M53 24 Q62 10 68 14" fill="none" stroke="#6a2344" stroke-width="1.6" stroke-linecap="round"/><circle cx="68" cy="14" r="2.1" fill="#6a2344"/></g></svg>',
+    fish2:'<svg viewBox="0 0 100 100"><g class="tail"><path d="M30 50 L8 32 Q16 50 8 68 Z" fill="#ff7a22"/></g><g class="body"><ellipse cx="58" cy="50" rx="28" ry="18" fill="#ff8a1e"/><path d="M46 34 L42 50 L46 66" fill="none" stroke="#1c2430" stroke-width="3.2" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M58 33 L54 50 L58 67" fill="none" stroke="#1c2430" stroke-width="2.2" stroke-linecap="round"/><g class="fin"><path d="M48 62 Q40 80 64 66" fill="#ffb15a"/></g><circle cx="74" cy="46" r="5.2" fill="#fff"/><circle cx="76" cy="46" r="2.3" fill="#123044"/><path d="M68 55 Q76 60 82 53" fill="none" stroke="#a33b12" stroke-width="1.7" stroke-linecap="round"/></g></svg>'
   };
-  return `<span class="critter critter-${kind}" aria-hidden="true">${svg[kind]||svg.fish}</span>`;
+  const alias={gull:'bird',butterfly2:'butterfly',fish2:'fish'};
+  if(TOY_IMG[kind]){
+    const dim=TOY_DIM[kind];
+    return `<span class="critter critter-toy critter-${kind}" aria-hidden="true"><img src="${TOY_IMG[kind]}" alt="" width="${dim[0]}" height="${dim[1]}" draggable="false" decoding="async"></span>`;
+  }
+  const extra=alias[kind]?' critter-'+alias[kind]:'';
+  return `<span class="critter critter-${kind}${extra}" aria-hidden="true">${svg[kind]||svg.fish}</span>`;
 }
-const FIND_SPOTS=[
-  {id:'butterfly',kind:'butterfly',emoji:'🦋',label:'le papillon',left:'4%',top:'12%'},
-  {id:'bird',kind:'bird',emoji:'🐦',label:'l’oiseau',left:'60%',top:'6%'},
-  {id:'bug',kind:'ladybug',emoji:'🐞',label:'la coccinelle',left:'34%',top:'30%'},
-  {id:'fish',kind:'fish',emoji:'🐟',label:'le poisson',left:'8%',top:'62%'},
-  {id:'crab',kind:'crab',emoji:'🦀',label:'le crabe',left:'46%',top:'48%'},
-  {id:'roach',kind:'roach',emoji:'🪳',label:'le gentil cafard',left:'66%',top:'36%'}
+const TOY_IMG={
+  parrot:'assets/toys/parrot.webp',
+  mickey:'assets/toys/mickey.webp',
+  hedgehog:'assets/toys/hedgehog.webp'
+};
+const TOY_DIM={parrot:[720,608],mickey:[618,760],hedgehog:[900,381]};
+const FIND_SCENES=[
+  {id:'beach',label:'La plage',emoji:'🏖️',
+    decos:[['2%','34%','2.5rem','🌴'],['46%','40%','1.8rem','⛱️']],
+    spots:[
+      {id:'gull',kind:'gull',emoji:'🐦',label:'la mouette',left:'4%',top:'2%'},
+      {id:'butterfly',kind:'butterfly2',emoji:'🦋',label:'le papillon',left:'46%',top:'3%'},
+      {id:'parrot',kind:'parrot',emoji:'🦜',label:'le perroquet de Maor',left:'2%',top:'24%',toy:true},
+      {id:'crab',kind:'crab',emoji:'🦀',label:'le crabe',left:'68%',top:'38%'},
+      {id:'clown',kind:'fish2',emoji:'🐠',label:'le poisson clown',left:'14%',top:'66%'}
+    ]},
+  {id:'garden',label:'Le jardin',emoji:'🌿',
+    decos:[['4%','16%','1.6rem','🌸'],['78%','20%','1.7rem','🌼']],
+    spots:[
+      {id:'bug',kind:'ladybug',emoji:'🐞',label:'la coccinelle',left:'10%',top:'12%'},
+      {id:'bee',kind:'bee',emoji:'🐝',label:'l’abeille',left:'68%',top:'12%'},
+      {id:'hedgehog',kind:'hedgehog',emoji:'🦔',label:'le hérisson de Maor',left:'4%',top:'32%',toy:true,wide:true},
+      {id:'mickey',kind:'mickey',emoji:'🐭',label:'Mickey',left:'2%',top:'56%',toy:true},
+      {id:'turtle',kind:'turtle',emoji:'🐢',label:'la tortue',left:'62%',top:'64%'}
+    ]}
 ];
+const FLIGHT_FIND=['parrot','gull','crab','clown'];
 const CATCH_MODES=[
   {id:'butterfly',kind:'butterfly',emoji:'🦋',label:'Papillon',band:[4,28]},
   {id:'fish',kind:'fish',emoji:'🐟',label:'Poisson',band:[46,60]},
@@ -1850,7 +1899,7 @@ function showJeuxHub(){
   const el=document.getElementById('jeux');
   el.innerHTML=`<div class="topbar"><button type="button" onclick="backJeux()" aria-label="Retour">←</button><div class="t">Jeux pour Maor 🦁</div><div style="width:42px"></div></div>
 <p class="play-help">Grands boutons, parties courtes, sans son obligatoire. Jessica ou Yohai joue avec Maor — dans l’avion, à la plage, ou dans un creux.</p>
-<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('butterfly')}</span><span><h2>Cherche et trouve</h2><p class="muted">Poisson, oiseau, papillon, coccinelle, crabe et un cafard très gentil, cachés à la plage.</p></span></button>
+<button class="card gcard" type="button" onclick="startFind()"><span class="emoji">${critter('parrot')}</span><span><h2>Cherche et trouve</h2><p class="muted">Le perroquet, Mickey et le hérisson de Maor se cachent à la plage et au jardin, avec d’autres animaux.</p></span></button>
 <button class="card gcard" type="button" onclick="startCatch()"><span class="emoji">${critter('fish')}</span><span><h2>Attrape !</h2><p class="muted">On tape le papillon, le poisson, la coccinelle ou le petit cafard.</p></span></button>
 <button class="card gcard" type="button" onclick="startGuess()"><span class="emoji">${critter('bird')}</span><span><h2>Devine l’animal</h2><p class="muted">Une ombre, trois choix. Maor montre du doigt, vous lisez l’indice.</p></span></button>
 <button class="card gcard" type="button" onclick="startMemory()"><span class="emoji">${critter('ladybug')}</span><span><h2>Memory safari</h2><p class="muted">Les paires : poisson, oiseau, papillon, coccinelle. Pas de son.</p></span></button>
@@ -1897,17 +1946,44 @@ function runFlight(){
 }
 function startFind(opts){
   const flight=!!(opts&&opts.flight);
-  const spots=flight?FIND_SPOTS.slice(0,4):FIND_SPOTS;
+  const scenes=flight
+    ?[{id:'beach',label:'La plage',emoji:'🏖️',decos:FIND_SCENES[0].decos,spots:FLIGHT_FIND.map(id=>FIND_SCENES[0].spots.find(s=>s.id===id))}]
+    :FIND_SCENES;
+  const spots=scenes.flatMap(sc=>sc.spots);
   const found=new Set();
-  shell('Cherche et trouve', `<div class="find-scene"><i class="sun"></i>
-<span class="find-deco" style="left:4%;top:38%;font-size:2.3rem">🌴</span>
-<span class="find-deco" style="left:30%;top:44%;font-size:1.8rem">⛱️</span>
-<span class="find-deco" style="left:66%;top:40%;font-size:1.5rem">🌸</span>
-${spots.map(s=>`<button type="button" class="find-animal kind-${s.kind}" id="fa-${s.id}" style="left:${s.left};top:${s.top}" aria-label="Chercher ${esc(s.label)}"><span class="mover">${critter(s.kind)}</span></button>`).join('')}
-</div>
-<div class="found-row" aria-hidden="true">${spots.map(s=>`<span id="slot-${s.id}"></span>`).join('')}</div>
-<p class="play-help">Touchez les animaux. ${spots.length} à trouver, à la plage.</p>
+  let sceneId=scenes[0].id;
+  function sceneHtml(sc, on){
+    const decos=(sc.decos||[]).map(d=>`<span class="find-deco" style="left:${d[0]};top:${d[1]};font-size:${d[2]}">${d[3]}</span>`).join('');
+    const buttons=sc.spots.map(s=>`<button type="button" class="find-animal kind-${s.kind}" id="fa-${s.id}" style="left:${s.left};top:${s.top}" aria-label="Chercher ${esc(s.label)}"><span class="mover">${critter(s.kind)}</span></button>`).join('');
+    return `<div class="find-scene ${sc.id}" id="scene-${sc.id}" data-scene="${sc.id}"${on?'':' hidden'}><i class="sun"></i>${decos}${buttons}</div>`;
+  }
+  const tabs=scenes.length>1?`<div class="modes find-tabs" role="tablist">${scenes.map(sc=>`<button type="button" data-scene="${sc.id}" class="${sc.id===sceneId?'on':''}" aria-label="${esc(sc.label)}">${sc.emoji} ${esc(sc.label)}</button>`).join('')}</div>`:'';
+  const help=flight
+    ?'Touchez-les. Le perroquet de Maor est avec les animaux de la plage.'
+    :'Touchez les doudous de Maor et les animaux. Ciel, sable et eau à la plage — feuilles et terrasse au jardin.';
+  shell('Cherche et trouve', `${tabs}<div class="play-meta"><b>Cherche et trouve</b><span class="score-pill" id="find-score">0 / ${spots.length}</span></div>
+${scenes.map((sc,i)=>sceneHtml(sc,i===0)).join('')}
+<div class="found-row" aria-hidden="true">${spots.map(s=>`<span id="slot-${s.id}" class="${s.wide?'wide':''}"></span>`).join('')}</div>
+<p class="play-help" id="find-help">${help}</p>
 <button type="button" class="hint-btn" id="find-hint">Un indice</button>`);
+  function showScene(id){
+    sceneId=id;
+    scenes.forEach(sc=>{
+      const el=document.getElementById('scene-'+sc.id);
+      if(el) el.hidden=sc.id!==id;
+    });
+    document.querySelectorAll('.find-tabs [data-scene]').forEach(btn=>{
+      btn.classList.toggle('on', btn.dataset.scene===id);
+    });
+  }
+  function sceneOf(id){
+    return scenes.find(sc=>sc.spots.some(s=>s.id===id));
+  }
+  if(scenes.length>1){
+    document.querySelectorAll('.find-tabs [data-scene]').forEach(btn=>{
+      btn.addEventListener('click',()=>showScene(btn.dataset.scene));
+    });
+  }
   spots.forEach(s=>{
     document.getElementById('fa-'+s.id).addEventListener('click',()=>{
       if(found.has(s.id)) return;
@@ -1918,20 +1994,45 @@ ${spots.map(s=>`<button type="button" class="find-animal kind-${s.kind}" id="fa-
       btn.disabled=true;
       const slot=document.getElementById('slot-'+s.id);
       if(slot){slot.innerHTML=critter(s.kind);slot.classList.add('on')}
+      const score=document.getElementById('find-score');
+      if(score) score.textContent=found.size+' / '+spots.length;
       burst(['✨','💛','🎉',s.emoji],14);
+      const host=document.getElementById('scene-'+sceneOf(s.id).id);
+      if(host) floatWord(host, s.toy?'Oui !':'Bravo !');
       say('Trouvé : '+s.label+'. '+found.size+' sur '+spots.length+'.');
       if(found.size===spots.length){
         say('Tous les animaux sont trouvés.');
-        showWin('Tout trouvé, Maor !','La plage a rendu tous ses animaux.',()=>startFind(opts));
+        const win=flight
+          ?'Le perroquet de Maor et les animaux de la plage sont là.'
+          :'Le perroquet, Mickey, le hérisson, et tous les animaux.';
+        showWin('Tout trouvé, Maor !',win,()=>startFind(opts));
+        return;
+      }
+      const here=sceneOf(s.id);
+      const hereLeft=here.spots.some(sp=>!found.has(sp.id));
+      if(!hereLeft){
+        const nextSc=scenes.find(sc=>sc.spots.some(sp=>!found.has(sp.id)));
+        if(nextSc){
+          const doneLine=here.id==='beach'?'La plage est trouvée.':'Le jardin est trouvé.';
+          const nextLine=nextSc.id==='garden'?'Au jardin, maintenant.':'Retour à la plage.';
+          say(doneLine+' '+nextLine);
+          later(()=>showScene(nextSc.id),650);
+        }
       }
     });
   });
   document.getElementById('find-hint').addEventListener('click',()=>{
-    const next=spots.find(s=>!found.has(s.id));
-    if(!next) return;
+    let next=scenes.find(sc=>sc.id===sceneId).spots.find(s=>!found.has(s.id));
+    if(!next){
+      const other=scenes.find(sc=>sc.spots.some(s=>!found.has(s.id)));
+      if(!other) return;
+      showScene(other.id);
+      next=other.spots.find(s=>!found.has(s.id));
+    }
     const el=document.getElementById('fa-'+next.id);
+    document.querySelectorAll('.find-animal.hinted').forEach(n=>n.classList.remove('hinted'));
     el.classList.add('hinted');
-    later(()=>el.classList.remove('hinted'),2200);
+    later(()=>el.classList.remove('hinted'),2400);
     say('Indice : cherche '+next.label+'.');
   });
 }
