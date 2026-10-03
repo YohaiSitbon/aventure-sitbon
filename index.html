@@ -405,6 +405,112 @@ body{
   background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.28);
   border-radius:18px;padding:12px 8px;font:inherit;font-weight:800;font-size:14px;cursor:pointer;
 }
+.next-strip{
+  margin:0 auto 14px;max-width:380px;text-align:left;color:#fff;
+}
+.next-kicker{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);
+}
+.next-live{
+  width:8px;height:8px;border-radius:50%;background:#b6f3c8;flex:0 0 auto;
+  box-shadow:0 0 0 0 rgba(182,243,200,.7);animation:pulse 2.2s ease-out infinite;
+}
+@keyframes pulse{70%,100%{box-shadow:0 0 0 8px rgba(182,243,200,0)}}
+.next-note{margin:6px 8px 0;font-size:12px;line-height:1.4;opacity:.8;text-align:center}
+.next-card{
+  margin-top:8px;border-radius:22px;padding:14px 14px 12px;text-align:left;
+  background:linear-gradient(165deg,rgba(255,255,255,.2),rgba(255,255,255,.07));
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:0 16px 36px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.28);
+  backdrop-filter:blur(14px);
+}
+.next-card.is-kept{border-color:rgba(244,201,95,.7)}
+.next-hit{
+  display:block;width:100%;text-align:left;background:none;border:0;color:inherit;
+  font:inherit;cursor:pointer;padding:0;animation:nextIn .45s ease both;
+}
+.next-hit:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:12px}
+@keyframes nextIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.next-time{
+  font-family:Fraunces,Georgia,serif;font-weight:800;font-size:1.45rem;line-height:1;
+  color:var(--gold);font-variant-numeric:tabular-nums;
+}
+.next-title{
+  display:block;font-family:Fraunces,Georgia,serif;font-weight:700;
+  font-size:1.28rem;line-height:1.15;margin:4px 0 6px;
+}
+.next-line{display:block;font-size:.92rem;line-height:1.4;opacity:.94}
+.next-day{
+  display:block;margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;opacity:.75;
+}
+.next-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.18);margin-top:12px;overflow:hidden}
+.next-bar i{display:block;height:100%;width:0;background:var(--gold)}
+.next-bar i.run{animation:nextBar 6s linear forwards}
+@keyframes nextBar{from{width:0}to{width:100%}}
+.next-nav{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px}
+.next-arrow{
+  width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.1);color:#fff;font:inherit;font-weight:800;font-size:18px;cursor:pointer;
+}
+.next-arrow:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.next-dots{display:flex;gap:6px;align-items:center}
+.next-dots button{
+  width:8px;height:8px;border-radius:99px;border:0;padding:0;background:rgba(255,255,255,.35);cursor:pointer;
+}
+.next-dots button.on{width:18px;background:var(--gold)}
+.next-dots button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.next-album{
+  display:block;margin:8px auto 0;background:none;border:0;color:#fff;font:inherit;font-weight:800;
+  font-size:13px;cursor:pointer;opacity:.9;text-decoration:underline;text-underline-offset:3px;
+}
+.next-album:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.album-kicker{
+  font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a87412;margin-bottom:6px;
+}
+.album-gate h2,.album-add h2{font-family:Fraunces,Georgia,serif}
+.album-gate input,.album-add textarea,.album-word input{
+  width:100%;font:inherit;font-size:16px;border-radius:16px;border:1.5px solid #d5e3ea;
+  padding:14px 14px;margin:8px 0 12px;background:#fff;color:var(--ink);
+}
+.album-add textarea{min-height:72px;resize:vertical}
+.album-err{color:#9a3b32;font-weight:700;font-size:.9rem;margin:-4px 0 10px}
+.album-status{color:#0a6a8f;font-weight:700;font-size:.9rem;margin:0 0 10px}
+.btn:disabled{opacity:.45;cursor:default}
+.album-row{display:flex;flex-direction:column;gap:8px}
+.album-pick{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:#e7f5fb;color:var(--sea2);border-radius:999px;padding:14px 16px;
+  font-weight:800;cursor:pointer;
+}
+.album-pick input{position:absolute;width:1px;height:1px;opacity:0}
+.album-pick:focus-within{outline:2px solid var(--sea2);outline-offset:2px}
+.album-preview{width:100%;height:auto;border-radius:18px;margin:4px 0 8px;display:block}
+.album-limit{font-size:.9rem;line-height:1.45}
+.memory{
+  margin:0 0 22px;background:rgba(255,255,255,.94);border-radius:26px;overflow:hidden;
+  box-shadow:0 18px 44px rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.6);
+}
+.memory img{width:100%;height:auto;display:block;background:#efe6da}
+.memory figcaption{padding:14px 16px 16px}
+.mem-cap{
+  font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.28rem;line-height:1.3;color:var(--sea);
+}
+.mem-quiet{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.15rem;color:#8aa0ab;font-style:italic}
+.mem-when{margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#8a5a00}
+.mem-tools{display:flex;gap:14px;margin-top:10px}
+.mem-tools button{
+  background:none;border:0;padding:0;font:inherit;font-weight:800;font-size:13px;color:var(--sea2);cursor:pointer;
+}
+.mem-tools .danger{color:#9a3b32}
+.album-count{color:rgba(255,255,255,.88);font-size:.95rem;line-height:1.45;margin:0 4px 12px}
+.album-tools{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.dio-swim{background:linear-gradient(180deg,#146f96 0%,#8fd4ee 48%,#1a9aaa 48%)}
+@media (prefers-reduced-motion:reduce){
+  .next-bar i,.next-live,.next-hit{animation:none !important}
+  .next-bar i.run{width:100%}
+}
 .quick-btn:active{transform:scale(.98)}
 .quick-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 
@@ -820,7 +926,8 @@ button.gcard,button.jcard{appearance:none;width:100%}
       <p class="cd-hello" id="cd-hello" hidden>Le ciel grec vous attend. Belle semaine à Jessica, Yohai, Maor et Gabriela.</p>
       <p class="sr" id="cd-live" aria-live="polite"></p>
     </div>
-    <p class="lead">Jessica, Yohai, Maor & Gabriela — trois façons de vivre la Grèce.</p>
+    <section class="next-strip" id="next-strip" aria-label="La suite du séjour"></section>
+    <p class="lead">Jessica, Yohai, Maor & Gabriela — la semaine est confirmée, le rythme reste le vôtre.</p>
     <div class="fam">
       <div class="chip">Jessica<small>maman</small></div>
       <div class="chip">Yohai<small>papa</small></div>
@@ -834,6 +941,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
         <button class="quick-btn" type="button" onclick="openJours('intro')">📅 Mon jour</button>
         <button class="quick-btn" type="button" onclick="openJeux('intro')">🦁 Jeux Maor</button>
       </div>
+      <button class="btn ghost" type="button" onclick="openSouvenir('intro')">📷 L’album du séjour</button>
     </div>
     <div class="dream">
       <span>Votre suite vous attend</span>
@@ -854,7 +962,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
     <div class="suite-kicker">Porto Sani · Suite Collection</div>
     <h2>Le grand balcon, et la mer</h2>
     <p>Le matin, la lumière entre par le grand balcon et la mer occupe tout l’horizon. Une chambre, rien que pour vous : Jessica, Yohai, Maor et Gabriela. La <strong>Deluxe One Bedroom Suite Grand Balcony Sea View</strong> vous attend au Porto Sani — Suite Collection, pension complète. Le voyage a déjà une adresse.</p>
-    <p>En 2026, les transferts privés aéroport sont offerts : on les cale avec Milena avant le départ. Au resort, un Volvo et son chauffeur vous accompagnent, et vous emmènent sur la péninsule de Kassandra. L’e-concierge reste à un message.</p>
+    <p>Le transfert privé est confirmé : hall des arrivées B, côté droit, devant le Sani Resort Office, avec deux sièges auto. Jeudi, le Volvo et son chauffeur emmènent toute la famille sur Kassandra, à 10h30. L’e-concierge reste à un message.</p>
     <p>Votre coin de plage des suites vous est gardé, avec le sac Sani et ses encas. Dans la salle de bain, les produits Anne Sémonin. Pour la nuit, un menu d’oreillers. Si vous dînez dans la suite, c’est la formule privilégiée. Le linge part, jusqu’à environ huit pièces. Le BabyBjörn est déjà noté, et les purées des moins de 2 ans sont offertes pour Maor.</p>
     <p class="suite-meta"><strong>Full Board</strong> · confirmation <strong>7744302</strong><br/>Milena Manvelian · <a href="mailto:pssuite@saniresort.gr">pssuite@saniresort.gr</a></p>
   </div>
@@ -873,8 +981,8 @@ button.gcard,button.jcard{appearance:none;width:100%}
       <button class="tip" data-t="artemis">Artemis</button>
       <button class="tip" data-t="macaroni">Macaroni</button>
       <button class="tip" data-t="vosporos">Vosporos</button>
-      <button class="tip" data-t="ergon">Ergon Deli</button>
-      <button class="tip" data-t="psaro">Psaroyannos</button>
+      <button class="tip" data-t="ergon">Ergon</button>
+      <button class="tip" data-t="psaro">Psarogiannos</button>
     </div>
   </div>
   <div class="card" id="meteo">
@@ -898,9 +1006,10 @@ button.gcard,button.jcard{appearance:none;width:100%}
   </div>
   <div class="card">
     <h2>✈️ Les vols</h2>
-    <p class="muted"><strong>12/10</strong> Israir 08:00 Tel-Aviv → 10:25 Salonique → hôtel vers midi.<br/>
-    <strong>18/10</strong> départ hôtel ~15h–15h30 · Arkia 19:25 → Tel-Aviv 21:45.<br/>
-    Dernier dîner à l’hôtel : <strong>17/10</strong>. Ensemble — pas de baby-sitter sans caméra.</p>
+    <p class="muted"><strong>12/10</strong> Israir 08:00 Tel-Aviv → 10:25 Salonique. Transfert privé, deux sièges auto : hall B, côté droit, devant le Sani Resort Office. Hôtel vers midi.<br/>
+    <strong>18/10</strong> départ hôtel 15h–15h30 · Arkia 19:25 → Tel-Aviv 21:45. Pas de dîner à l’hôtel.<br/>
+    Dernier dîner sur place : <strong>17/10</strong>, Artemis 19h. Ensemble — pas de baby-sitter sans caméra.<br/>
+    Dîners : arriver dans les 15 minutes, tenue smart casual. Petit-déjeuner et déjeuner sans réservation.</p>
   </div>
   <button class="btn" onclick="go('choose')">Voir les 3 options 🌊</button>
 </section>
@@ -908,28 +1017,28 @@ button.gcard,button.jcard{appearance:none;width:100%}
 <section id="choose" class="screen">
   <div class="topbar"><button onclick="go('legend')">←</button><div class="t">Votre aventure</div><div style="width:42px"></div></div>
   <div class="progress"><span class="on"></span><span class="on"></span><span></span><span></span></div>
-  <p class="reco-why"><strong>Notre recommandation : l’option 1.</strong> C’est le maximum de joie pour Maor — vélos, animaux, jeux — sans bousculer la sieste de 13h à 15h ni les dîners vers 18h30. Gabriela, trois mois, reste dans vos bras : toute la famille, ensemble.</p>
+  <p class="reco-why"><strong>La semaine est confirmée par l’hôtel.</strong> Sieste de 13h à 15h, deux Baby Swim, le Volvo jeudi, les dîners déjà réservés. Les trois cartes gardent une couleur ; les horaires, eux, sont les mêmes. Gabriela reste dans vos bras : toute la famille, ensemble.</p>
   <button class="card opt a reco" onclick="openOpt(1)">
-    <span class="ribbon">On vous conseille 💛</span>
+    <span class="ribbon">La plus joueuse 💛</span>
     <span class="tag">Fun</span>
     <div class="emoji">🚴🦁🏊</div>
     <h2>Option 1 — Max fun Maor</h2>
-    <p class="muted">Vélos dès l’arrivée, crèche animaux, 2 Baby Swim, Wetlands. Le rythme le plus joyeux.</p>
-    <div class="price">Budget extra ~180–200 €</div>
+    <p class="muted">L’esprit le plus joueur : vélos si l’envie est là, l’eau, la plage. Rien qui bouscule la sieste.</p>
+    <div class="price">Horaires de l’hôtel</div>
   </button>
   <button class="card opt b" onclick="openOpt(2)">
     <span class="tag">Doux</span>
     <div class="emoji">🏖️😌☀️</div>
     <h2>Option 2 — Plus de repos</h2>
-    <p class="muted">Moins de programme, plus de plage et de siestes. Toujours Swim + Volvo.</p>
-    <div class="price">Budget extra ~120–150 €</div>
+    <p class="muted">Le même fil, vécu plus doucement. On coupe dès que les yeux se ferment.</p>
+    <div class="price">Horaires de l’hôtel</div>
   </button>
   <button class="card opt c" onclick="openOpt(3)">
     <span class="tag">Nature</span>
     <div class="emoji">🐦🐝🚗</div>
     <h2>Option 3 — Nature & découvertes</h2>
-    <p class="muted">Oiseaux, abeilles, tour Volvo de la péninsule, crèche + Swim.</p>
-    <div class="price">Budget extra ~140–170 €</div>
+    <p class="muted">Le même fil, avec le goût du dehors : le Volvo, la mer, les soirs à table.</p>
+    <div class="price">Horaires de l’hôtel</div>
   </button>
   <p class="dream-line">Déjà à vous : une chambre, le grand balcon, la mer au matin. <strong>Porto Sani · pension complète.</strong></p>
   <button class="btn ghost" type="button" onclick="openJours('choose')">📅 Mon jour, heure par heure</button>
@@ -943,6 +1052,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 <section id="jours" class="screen"></section>
 <section id="jour" class="screen"></section>
 <section id="jeux" class="screen"></section>
+<section id="souvenir" class="screen"></section>
 
 <section id="equip" class="screen">
   <div class="topbar"><button onclick="go('choose')">←</button><div class="t">Équipement</div><div style="width:42px"></div></div>
@@ -956,7 +1066,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
     <div class="equip"><div class="ico">🛏️</div><div><strong>Lit bébé bois</strong><br/><span class="ask">à demander</span></div></div>
     <div class="equip"><div class="ico">📹</div><div><strong>Babyphone audio + vidéo</strong><br/><span class="ask">à demander</span> — voir à distance</div></div>
     <div class="equip"><div class="ico">🍼</div><div><strong>Chauffe-biberon + stérilisateur</strong><br/><span class="ask">à demander</span></div></div>
-    <div class="equip"><div class="ico">🍽️</div><div><strong>Chaise haute</strong><br/><span class="ask">à demander</span></div></div>
+    <div class="equip"><div class="ico">🍽️</div><div><strong>Chaise haute</strong><br/><span class="ok">notée · Artemis 12/10</span> — réservation 1404428. À redemander si un autre soir en a besoin.</div></div>
     <div class="equip"><div class="ico">🛒</div><div><strong>Poussette</strong><br/><span class="ask">à demander</span></div></div>
     <div class="equip"><div class="ico">🔊</div><div><strong>Bruit blanc</strong><br/><span class="ask">à demander</span></div></div>
     <div class="equip"><div class="ico">🌙</div><div><strong>Veilleuse</strong><br/><span class="ask">à demander</span></div></div>
@@ -986,7 +1096,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
   </div>
   <div class="card">
     <h2>Parfait 💛</h2>
-    <p class="muted">Yohai écrit ensuite à Milena : transferts aéroport, activités, restos, équipement. Toute la famille ensemble.</p>
+    <p class="muted">Les réservations sont déjà à l’hôtel. Ici, on garde juste la couleur qui vous va. Toute la famille, ensemble.</p>
   </div>
   <button class="btn" onclick="go('choose')">Changer d’option</button>
   <p class="foot">Famille Sitbon · Porto Sani Suite Collection<br/>Pour Jessica, Yohai, Maor & Gabriela 💙<br/>Photo de la plage : Keith Daulby, CC BY 3.0, via Wikimedia Commons.</p>
@@ -1000,48 +1110,33 @@ button.gcard,button.jcard{appearance:none;width:100%}
 
 <script>
 const tips={
-bike:["Family bike","Vélo famille + siège tout-petit. Location au Bike Center — le grand plaisir de Maor."],
-creche:["Crèche","Garderie Little Explorers (payante). Thèmes animaux. Si Maor n’aime pas → plan B avec papa/maman."],
-swim:["Baby Swim","Cours natation ~30 min avec un parent. Max 2× pour Maor. Gabriela trop petite."],
-babe:["Babe Watch","30 min gratuites à la plage avec moniteur — vous êtes juste à côté."],
-wet:["Wetlands","Petite balade oiseaux. Gratuit. On raccourcit si Maor est fatigué."],
-bee:["Bee Spot","Petit coup d’œil aux abeilles — sans contact."],
-volvo:["Volvo","Voiture + chauffeur offerts (Suite Collection) : trajets resort + tour péninsule. Toute la famille à bord."],
-dine:["Dine Around","Full Board : restos du resort. Menus programme ou à la carte avec déduction."],
-artemis:["Artemis","Buffet près des suites, station enfants Donna Hay — idéal après le vol."],
-macaroni:["Macaroni","Italien marina : pizza & pâtes. Joyeux, poussette OK."],
-vosporos:["Vosporos","Grill grec marina. Familial — coin un peu calme."],
-ergon:["Ergon Deli","Mezze à partager. Casual et rapide."],
-psaro:["Psaroyannos","Taverne poisson, plus calme. Soir doux."]
+bike:["Family bike","Bike Center, pas réservé. Seulement s’ils en ont envie : lundi après la sieste, ou mardi matin."],
+creche:["Crèche","Pas confirmée. On ne compte pas dessus. Si un créneau s’ouvre, un parent reste joignable. Sinon, plan B ensemble."],
+swim:["Baby Swim","Baby Swim & Sensory Play, 30 min, piscine Sani Beach. Réservation 4966185. Mercredi 14 et vendredi 16 à 11h. Un parent dans l’eau. Maor seulement. Gabriela trop petite."],
+babe:["Babe Watch","Pas de réservation. Si vous y allez, un parent reste tout le temps : Maor a 2 ans. Ce n’est pas une garde."],
+wet:["Wetlands","Pas au programme. L’hôtel a dit que les wetlands sont secs."],
+bee:["Bee Spot","Pas au programme de cette semaine. Si vous en croisez, on regarde sans toucher."],
+volvo:["Volvo","Jeudi 15 octobre, 10h30, tour de Kassandra. Tous les quatre, avec le chauffeur du resort."],
+dine:["Dine Around","Les dîners sont réservés. Arriver dans les 15 minutes, tenue smart casual. Petit-déjeuner et déjeuner : pas de réservation."],
+artemis:["Artemis","Buffet près des suites, station enfants Donna Hay. Lundi 19h, réservation 1404428, chaise haute. Samedi 19h, réservation 1412302, dernier dîner à l’hôtel."],
+macaroni:["Macaroni","Italien, marina : pizza et pâtes. Mardi 18h30, réservation 1412299."],
+vosporos:["Vosporos","Grill grec, marina. Jeudi 18h30, réservation 1412300. Pas le mercredi : mercredi, c’est Ergon."],
+ergon:["Ergon","Mezze à partager. Mercredi 18h, réservation 1404431. Pas Vosporos ce soir-là."],
+psaro:["Psarogiannos","Taverne de poisson, plus calme. Vendredi 18h30, réservation 1412301. Sur d’anciens papiers, le nom s’écrivait Psaroyannos."]
 };
+const WEEK=[
+["12","lun","Arrivée 10h25 · hall B · sieste · <strong>Artemis 19h</strong>"],
+["13","mar","Vélos le matin, si envie · plage · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["14","mer","<button class='tip' data-t='swim'>Baby Swim 11h</button> · sieste · <button class='tip' data-t='ergon'>Ergon 18h</button>"],
+["15","jeu","<button class='tip' data-t='volvo'>Volvo 10h30</button> · sieste · <button class='tip' data-t='vosporos'>Vosporos 18h30</button>"],
+["16","ven","<button class='tip' data-t='swim'>Baby Swim 11h</button> · pas de wetlands · <button class='tip' data-t='psaro'>Psarogiannos 18h30</button>"],
+["17","sam","Matin doux · sieste · valises · <button class='tip' data-t='artemis'>Artemis 19h</button>"],
+["18","dim","Matin doux · sieste · départ 15h–15h30 · vol 19h25"]
+];
 const opts={
-1:{title:"Option 1 — Max fun Maor",sub:"Le rythme le plus joyeux · ~180–200 €",emoji:"🚴🦁🏊",days:[
-["12","lun","Arrivée ~midi · vélos l’après-midi · <strong>Artemis 19h</strong>"],
-["13","mar","<button class='tip' data-t='bike'>Family bike</button> + marina · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Glace à la marina, tous les quatre. Maor choisit sa boule, Gabriela au frais dans les bras — puis on rentre tranquille pour le dîner."],
-["14","mer","<button class='tip' data-t='creche'>Crèche</button> animaux + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>"],
-["15","jeu","<button class='tip' data-t='volvo'>Tour Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Au retour du Volvo, plage douce des suites : snacks du sac Sani, un petit château de sable. On s’arrête dès que Maor ralentit."],
-["16","ven","<button class='tip' data-t='wet'>Wetlands</button> + Crèche / <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>"],
-["17","sam","Vélos/ballons + <button class='tip' data-t='babe'>Babe Watch</button> · <button class='tip' data-t='artemis'>Artemis 19h</button>","Mini séance photo avec les ballons, sur la plage. Maor en star, Gabriela dans les bras, Jessica et Yohai dans le cadre — dix minutes, puis Artemis."],
-["18","dim","Plage courte · départ ~15h · vol 19h25"]
-]},
-2:{title:"Option 2 — Plus de repos",sub:"Douceur avant tout · ~120–150 €",emoji:"🏖️😌☀️",days:[
-["12","lun","Arrivée · vélos courts · <strong>Artemis 19h</strong>"],
-["13","mar","Plage / piscine soft · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Petite boucle aux Wetlands, gratuite. Les oiseaux si Maor est partant ; on fait demi-tour au premier bâillement."],
-["14","mer","1× <button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>","Après la sieste, une glace à la marina. Court, sucré, toute la famille — personne ne reste seul avec les enfants."],
-["15","jeu","<button class='tip' data-t='volvo'>Volvo</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Pieds dans l’eau à la plage des suites et snacks du sac Sani. Le tour en Volvo a assez duré : ici, c’est tout doux."],
-["16","ven","Wetlands ou plage · Swim #2 si forme · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>","Boucle à vélo très douce près des suites. Maor au petit siège, Gabriela avec vous — on coupe dès que c’est assez."],
-["17","sam","Jeu libre + <button class='tip' data-t='babe'>Babe Watch</button> · Artemis 19h","Photo au playground, ballon en main. Le Babe Watch reste le cœur du jour ; ceci n’est que la cerise, ensemble."],
-["18","dim","Départ ~15h · vol 19h25"]
-]},
-3:{title:"Option 3 — Nature",sub:"Oiseaux, abeilles, péninsule · ~140–170 €",emoji:"🐦🐝🚗",days:[
-["12","lun","Arrivée · vélos · <strong>Artemis 19h</strong>"],
-["13","mar","<button class='tip' data-t='wet'>Wetlands</button> court · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>","Glace à la marina après les oiseaux. Cinq minutes sucrées, Gabriela contre vous, et on garde l’énergie pour 18h30."],
-["14","mer","<button class='tip' data-t='bee'>Bee Spot</button> + <button class='tip' data-t='swim'>Swim #1</button> · <button class='tip' data-t='vosporos'>Vosporos 19h</button>","Ballons au playground des suites. Si l’eau appelle : un petit jeu dans la piscine soft, tous les quatre — pas un cours de natation."],
-["15","jeu","<button class='tip' data-t='volvo'>Volvo péninsule</button> · <button class='tip' data-t='psaro'>Psaroyannos 19h</button>","Plage des suites au retour du Volvo : ombre pour Gabriela, seau pour Maor, snacks du sac Sani."],
-["16","ven","<button class='tip' data-t='creche'>Crèche</button> + <button class='tip' data-t='swim'>Swim #2</button> · <button class='tip' data-t='ergon'>Ergon 18h30</button>","Si l’après-midi est légère : un tour à la marina, une glace, une photo. On rentre large avant le dîner."],
-["17","sam","Vélos/plage + Babe Watch · Artemis 19h","Séance photo ballons avant Artemis. Maor lâche ou garde les ballons, Gabriela dans le cadre — trois clichés, et on file."],
-["18","dim","Départ ~15h · vol 19h25"]
-]}
+1:{title:"Option 1 — Max fun Maor",sub:"La même semaine, l’esprit le plus joueur",emoji:"🚴🦁🏊",days:WEEK},
+2:{title:"Option 2 — Plus de repos",sub:"La même semaine, vécue plus doucement",emoji:"🏖️😌☀️",days:WEEK},
+3:{title:"Option 3 — Nature",sub:"La même semaine, le goût du dehors",emoji:"🐦🐝🚗",days:WEEK}
 };
 const bonusOpen={};
 (function spark(){const b=document.getElementById('sp');for(let i=0;i<40;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';b.appendChild(s)}})();
@@ -1088,7 +1183,7 @@ el.innerHTML=`<div class="topbar"><button onclick="go('choose')">←</button><di
 <div class="progress"><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
 <div class="card"><h2>${o.title}</h2><p class="muted">${o.sub}</p>
 <div class="pills"><span class="pill">Sieste 13h–15h</span><span class="pill g">Max 2× Swim</span><span class="pill m">Ensemble</span>${n===1?'<span class="pill g">On vous conseille 💛</span>':''}</div>
-<p class="muted bonus-hint">Touchez un jour pour l’ambiance, les horaires et l’upgrade du jour. Le <b>+ Bonus</b> reste une gourmandise — seulement si l’énergie est là.</p>
+<p class="muted bonus-hint">Les horaires suivent l’hôtel. Touchez un jour pour le fil, la réservation, et le sac du matin.</p>
 ${seenN?`<p class="muted">${seenN}/7 jours déjà ouverts.</p>`:''}
 ${o.days.map(([d,w,what,bonus])=>`<div class="day day-tap"><div class="d">${d}.10<small>${w}</small>${isDaySeen(n,d)?'<span class="seen-pip" aria-hidden="true"></span>':''}</div><div class="what">${what}${bonusHtml(n,d,bonus)}<button type="button" class="day-open" data-opt="${n}" data-day="${d}" aria-label="Mon jour, ${w} ${d} octobre">Mon jour →</button></div></div>`).join('')}
 </div>
@@ -1137,24 +1232,73 @@ function zonedToUtc(dateStr, timeZone){
   const asZoned=Date.UTC(+map.year,+map.month-1,+map.day,+hour,+map.minute,+map.second);
   return new Date(asUtc.getTime()-(asZoned-asUtc.getTime()));
 }
+const ATHENS='Europe/Athens';
+// Heure figée de Porto Sani, pour relire une journée. null = l’horloge réelle.
+// Exemple : const AGENDA_PREVIEW = '2026-10-14T10:40:00';
+const AGENDA_PREVIEW=null;
+function clockOverride(){
+  if(AGENDA_PREVIEW) return AGENDA_PREVIEW;
+  let q='';
+  try{q=new URLSearchParams(location.search).get('quand')||''}catch(e){}
+  if(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?$/.test(q)) return q;
+  return '';
+}
+function agendaNow(){
+  const raw=clockOverride();
+  if(raw){
+    const norm=raw.length===16?raw+':00':raw;
+    const d=zonedToUtc(norm,ATHENS);
+    if(!isNaN(d.getTime())) return d;
+  }
+  return new Date();
+}
+function tripPhase(now){
+  const t=now.getTime();
+  if(t<zonedToUtc('2026-10-12T00:00:00',ATHENS).getTime()) return 'before';
+  if(t>=zonedToUtc('2026-10-18T21:45:00',ATHENS).getTime()) return 'after';
+  return 'during';
+}
 const TAKEOFF=zonedToUtc('2026-10-12T08:00:00','Asia/Jerusalem').getTime();
 function frPlural(n,one,many){return (n===0||n>1)?many:one}
 function pad2(n){return String(n).padStart(2,'0')}
 let cdTimer=null, cdSpoken='';
 function tickCountdown(){
-  const left=TAKEOFF-Date.now();
+  const now=agendaNow();
+  const phase=tripPhase(now);
+  const left=TAKEOFF-now.getTime();
   const box=document.getElementById('countdown');
+  if(phase==='after'){
+    box.classList.add('is-there','is-kept');
+    document.getElementById('cd-kicker').textContent='On l’a vécu';
+    document.getElementById('cd-title').textContent='C’est dans l’album';
+    document.getElementById('cd-grid').hidden=true;
+    document.getElementById('cd-when').hidden=true;
+    const hello=document.getElementById('cd-hello');
+    hello.hidden=false;
+    hello.textContent='Le séjour est passé. Les photos que vous avez gardées peuvent rester ici.';
+    document.getElementById('cd-live').textContent='Le séjour est passé. L’album garde les photos.';
+    if(cdTimer){clearInterval(cdTimer);cdTimer=null}
+    return;
+  }
   if(left<=0){
     box.classList.add('is-there');
+    box.classList.remove('is-kept');
     document.getElementById('cd-kicker').textContent='C’est parti';
     document.getElementById('cd-title').textContent='On y est 🇬🇷';
     document.getElementById('cd-grid').hidden=true;
     document.getElementById('cd-when').hidden=true;
-    document.getElementById('cd-hello').hidden=false;
+    const hello=document.getElementById('cd-hello');
+    hello.hidden=false;
+    hello.textContent='Le ciel grec vous attend. Belle semaine à Jessica, Yohai, Maor et Gabriela.';
     document.getElementById('cd-live').textContent='On y est. Belle semaine à Porto Sani.';
-    if(cdTimer){clearInterval(cdTimer);cdTimer=null}
     return;
   }
+  box.classList.remove('is-there','is-kept');
+  document.getElementById('cd-grid').hidden=false;
+  document.getElementById('cd-when').hidden=false;
+  document.getElementById('cd-hello').hidden=true;
+  document.getElementById('cd-kicker').textContent='Plus que';
+  document.getElementById('cd-title').textContent='On décolle dans…';
   const total=Math.floor(left/1000);
   const days=Math.floor(total/86400);
   const hours=Math.floor((total%86400)/3600);
@@ -1418,8 +1562,8 @@ let gearState=readJsonStore(GEAR_DAY_KEY);
 function writeSeen(){try{localStorage.setItem(SEEN_KEY,JSON.stringify(seenState))}catch(e){}}
 function writeGearDay(){try{localStorage.setItem(GEAR_DAY_KEY,JSON.stringify(gearState))}catch(e){}}
 function dayKey(opt,day){return opt+'-'+day}
-function isDaySeen(opt,day){return !!seenState[dayKey(opt,day)]}
-function markSeen(opt,day){seenState[dayKey(opt,day)]=1;writeSeen()}
+function isDaySeen(opt,day){return [1,2,3].some(n=>!!seenState[dayKey(n,day)])}
+function markSeen(opt,day){[1,2,3].forEach(n=>{seenState[dayKey(n,day)]=1});writeSeen()}
 function gearId(opt,day,id){return opt+'-'+day+'-'+id}
 function savedOpt(){try{const n=+localStorage.getItem('sitbon-option');if(n>=1&&n<=3) return n}catch(e){}return 1}
 function esc(s){return String(s).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
@@ -1450,7 +1594,7 @@ const DOW={
 };
 const DAY_ORDER=[12,13,14,15,16,17,18];
 const OPT_NAME={1:'Option 1 · Max fun',2:'Option 2 · Repos',3:'Option 3 · Nature'};
-const THEME_SOFT={arrive:'#d7eef8',bike:'#d5f6f2',jungle:'#e3f6d8',volvo:'#fde7c4',birds:'#e4f0ea',beach:'#dff5f8',bee:'#fff1c9',play:'#ffe0ea',depart:'#efe6f6'};
+const THEME_SOFT={arrive:'#d7eef8',bike:'#d5f6f2',jungle:'#e3f6d8',volvo:'#fde7c4',birds:'#e4f0ea',beach:'#dff5f8',swim:'#d4f1f8',bee:'#fff1c9',play:'#ffe0ea',depart:'#efe6f6'};
 const THEMES={
   arrive:{mood:'arrive',emoji:'🚲',title:'Arrivée & vélos',line:'Le bleu du premier jour. On pose les valises, Maor touche un vélo.',dio:'dio-arrive',accent:'#1a8fb5',art:[['8%','18px','1.8rem','✈️'],['30%','40px','2.1rem','🚲'],['54%','16px','2rem','🌊']]},
   bike:{mood:'bike',emoji:'🚴',title:'Vélos à la marina',line:'Turquoise, or du soleil, une boule de glace à l’ombre.',dio:'dio-bike',accent:'#0f8f86',art:[['10%','22px','2rem','🚴'],['36%','38px','1.8rem','🍦'],['60%','14px','2rem','⚓']]},
@@ -1458,282 +1602,116 @@ const THEMES={
   volvo:{mood:'volvo',emoji:'🚗',title:'La péninsule en Volvo',line:'Route ambrée, oliviers, la mer qui change de fenêtre.',dio:'dio-volvo',accent:'#c4842a',art:[['12%','28px','2.1rem','🚗'],['40%','16px','1.7rem','🫒'],['62%','34px','1.8rem','🗺️']]},
   birds:{mood:'birds',emoji:'🐦',title:'Les oiseaux du marais',line:'Brume sage, roseaux, on chuchote pour ne pas faire envoler le spectacle.',dio:'dio-birds',accent:'#3d6b5e',art:[['10%','14px','2rem','🐦'],['38%','32px','1.7rem','🪶'],['62%','18px','1.9rem','🌾']]},
   beach:{mood:'beach',emoji:'🏖️',title:'Plage & jeux',line:'Sable chaud, eau claire, un seau, et l’ombre pour Gabriela.',dio:'dio-beach',accent:'#128a96',art:[['8%','30px','2rem','🏖️'],['36%','14px','1.8rem','⛱️'],['60%','36px','1.9rem','🦀']]},
+  swim:{mood:'beach',emoji:'🏊',title:'L’eau avec vous',line:'Trente minutes, un parent dans l’eau, Maor seulement.',dio:'dio-swim',accent:'#0a6a8f',art:[['12%','30px','2rem','🏊'],['40%','14px','1.8rem','🌊'],['64%','32px','1.8rem','💛']]},
   bee:{mood:'bee',emoji:'🐝',title:'Les abeilles',line:'Miel, soleil, on regarde sans toucher.',dio:'dio-bee',accent:'#d89a14',art:[['12%','18px','2rem','🐝'],['40%','36px','1.9rem','🌻'],['64%','16px','1.8rem','🍯']]},
   play:{mood:'play',emoji:'🎈',title:'Ballons & sable',line:'Corail et soleil. Dix minutes de star, puis la plage.',dio:'dio-play',accent:'#e06a86',art:[['10%','16px','2rem','🎈'],['38%','34px','1.9rem','⚽'],['64%','18px','1.8rem','💛']]},
   depart:{mood:'depart',emoji:'🌅',title:'Départ tout doux',line:'Lumière de fin de journée. On dit au revoir sans courir.',dio:'dio-depart',accent:'#c48b9a',art:[['10%','20px','1.9rem','🌅'],['38%','34px','1.8rem','🧳'],['64%','14px','1.8rem','✈️']]}
 };
+const DINE_NOTE=" Arriver dans les 15 minutes. Tenue smart casual : un peu habillée, décontractée. Petit-déjeuner et déjeuner : pas de réservation.";
 const SEATS={
-  Artemis:"Demandez une table au bord, côté station enfants Donna Hay, pas dans le flux du buffet. Chaise haute de Maor en bout de table, poussette de Gabriela contre le mur. Vers 19h, avant que la salle se remplisse.",
-  Macaroni:"Terrasse si le vent est doux, table au bord : la poussette se pose à côté de vous, pas dans l’allée des serveurs. Chaise haute côté mur. Une pizza à partager va plus vite qu’un long menu.",
-  Vosporos:"Le coin le plus calme, loin du grill. Chaise haute dos au passage. Gabriela en écharpe ou en poussette, en bout de table. Grillades simples à partager, et on peut filer dès que les yeux se ferment.",
-  "Ergon Deli":"Petite table, facile à quitter. Les mezze au centre, du pain et une cuillère pour Maor. Pas le comptoir : la chaise haute n’y tient pas.",
-  Psaroyannos:"Table éloignée du passage, dans la partie la plus posée. Un gobelet renversé n’est pas un drame. Poisson simple pour vous ; pain ou pâtes si Maor n’en veut pas. Gabriela en écharpe si la poussette gêne."
+  Artemis:"Demandez une table au bord, côté station enfants Donna Hay, pas dans le flux du buffet. Chaise haute de Maor en bout de table, poussette de Gabriela contre le mur. Vers 19h, avant que la salle se remplisse."+DINE_NOTE,
+  Macaroni:"Terrasse si le vent est doux, table au bord : la poussette se pose à côté de vous, pas dans l’allée des serveurs. Chaise haute côté mur. Une pizza à partager va plus vite qu’un long menu."+DINE_NOTE,
+  Vosporos:"Le coin le plus calme, loin du grill. Chaise haute dos au passage. Gabriela en écharpe ou en poussette, en bout de table. Grillades simples à partager, et on peut filer dès que les yeux se ferment."+DINE_NOTE,
+  Ergon:"Petite table, facile à quitter. Les mezze au centre, du pain et une cuillère pour Maor. Pas le comptoir : la chaise haute n’y tient pas."+DINE_NOTE,
+  Psarogiannos:"Table éloignée du passage, dans la partie la plus posée. Un gobelet renversé n’est pas un drame. Poisson simple pour vous ; pain ou pâtes si Maor n’en veut pas. Gabriela en écharpe si la poussette gêne."+DINE_NOTE
 };
 const ROAD="Pas de restaurant de l’hôtel aujourd’hui. À l’aéroport, choisissez un coin calme plutôt que la zone la plus bruyante. Snacks que Maor connaît, Gabriela en écharpe, et les jeux de ce téléphone : aucun son n’est obligatoire.";
-function seatOf(name, extra){return {place:name, text:SEATS[name]+(extra?' '+extra:'')}}
+function seatOf(name, extra){
+  const alias={'Ergon Deli':'Ergon',Psaroyannos:'Psarogiannos'};
+  const key=alias[name]||name;
+  return {place:key, text:SEATS[key]+(extra?' '+extra:'')};
+}
 function slot(icon,time,when,title,text){return {icon,time,when,title,text}}
 function g(id,t,h){return [id,t,h]}
 
-const DAYS={
-1:{
-12:{theme:'arrive',pills:['Vol 8h00','Hôtel vers midi','Sieste 13h–15h'],
+const CONFIRMED_DAYS={
+12:{theme:'arrive',headline:'Arrivée, tout en douceur',line:'Salonique à 10h25, la suite vers midi, Artemis déjà réservé.',pills:['Vol 10h25','Sieste 13h–15h','Artemis 19h'],
 timeline:[
-slot('✈️','8h00–10h25','Matin','Le vol','Israir : Tel-Aviv 8h, Salonique 10h25. Maor près du hublot si le siège le permet, Gabriela contre Jessica ou Yohai. Doudou et snacks déjà dans le sac cabine, pas en soute.'),
-slot('🏨','vers 12h00','Après l’arrivée','La suite','Transfert jusqu’à Porto Sani, hôtel vers midi. On ne s’attarde pas à la réception : un regard vers la mer, les sacs dans la chambre, le grand balcon ouvert une minute. Les vélos attendent l’après-midi.'),
-slot('😴','13h00–15h00','Sieste','On éteint','Si le transfert glisse, la sieste commence dès que la chambre est calme, même à 13h20. Rideaux tirés, téléphones silencieux. Personne ne ressort.'),
-slot('🚲','15h30–17h30','Après-midi','Family bike','Bike Center, tour court près des suites. Maor dans le siège, vous deux aux commandes. Vingt à quarante minutes, puis on rentre avant que la joie devienne fatigue.'),
-slot('🍽️','19h00','Dîner','Artemis','Buffet près des suites, station enfants Donna Hay. Après le vol, on marche peu. Toute la famille, ensemble.')
+slot('✈️','8h00–10h25','Matin','Le vol','Israir : Tel-Aviv 8h, Salonique 10h25. Maor près du hublot si le siège le permet, Gabriela contre vous. Doudou et snacks en cabine, pas en soute.'),
+slot('🚐','10h25','À l’aéroport','Le transfert','Hall des arrivées B, côté droit, devant le Sani Resort Office. Transfert privé, deux sièges auto. On ne cherche pas un taxi.'),
+slot('🏨','vers 12h00','Midi','La suite','Le resort autour de midi. Un regard vers la mer, les sacs dans la chambre, le balcon ouvert une minute.'),
+slot('😴','13h00–15h00','Sieste','On éteint','Si le transfert glisse, la sieste commence dès que la chambre est calme. Rideaux tirés, téléphones silencieux. Personne ne ressort.'),
+slot('🚲','après 15h','Si l’envie','Vélos','Bike Center, pas réservé. Seulement s’ils en ont envie. Vingt à quarante minutes près des suites, puis on rentre. Sinon, le balcon suffit.'),
+slot('🍽️','19h00','Dîner','Artemis','Réservation 1404428, chaise haute pour Maor. Buffet près des suites, station enfants Donna Hay. On marche peu après le vol.')
 ],
-expect:'La suite sent le propre et la mer tient tout le balcon. Maor peut être surexcité, puis s’éteindre d’un coup : c’est le jour du voyage. Gabriela a besoin du noir plus tôt que le programme. Le sac de plage Sani est un repère, pas une obligation de plage aujourd’hui.',
-seat:seatOf('Artemis'),
-planb:'Pas de crèche aujourd’hui. Si Maor ne veut pas du vélo, playground des suites, dix minutes de ballon, puis le balcon. Le dîner ne bouge pas. Pas de baby-sitter : vous restez tous les quatre.',
-gear:[g('cap','Casquette de Maor','Et chapeau de Gabriela, dès la sortie'),g('water','Gourde','Remplie avant le vélo'),g('mount','Support téléphone','Pour filmer sans lâcher le guidon'),g('cream','Crème solaire','Visage et bras, même en octobre'),g('gaby','Change de Gabriela','Body et couche dans le sac à main'),g('lovey','Doudou de Maor','En cabine, pas en soute'),g('pass','Passeports à la main','Jessica, Yohai, Maor et Gabriela'),g('monitor','Note babyphone','À demander à l’hôtel : voir la chambre, jamais pour laisser les enfants seuls')]},
-13:{theme:'bike',pills:['Vélos','Sieste 13h–15h','Dîner 18h30'],
+expect:'La suite sent le propre et la mer tient le balcon. Maor peut être surexcité, puis s’éteindre d’un coup : c’est le jour du voyage. Gabriela a besoin du noir plus tôt que l’envie de vélo. Les vélos ne sont pas un rendez-vous.',
+seat:seatOf('Artemis','Chaise haute pour Maor, réservation 1404428.'),
+planb:'Pas de crèche. Si le vélo ne dit rien, playground dix minutes, puis le balcon. Le dîner ne bouge pas. Pas de baby-sitter : vous restez tous les quatre.',
+gear:[g('pass','Passeports à la main','Jessica, Yohai, Maor et Gabriela'),g('lovey','Doudou de Maor','En cabine, pas en soute'),g('gaby','Change de Gabriela','Body et couche dans le sac'),g('seat','Deux sièges auto','Ils sont avec le transfert, pas dans la valise'),g('cap','Casquette','Seulement si le vélo se fait'),g('cream','Crème solaire','Même pour un court tour'),g('water','Gourde','Si vous sortez après la sieste'),g('monitor','Note babyphone','À demander : pour voir la chambre, jamais pour s’absenter')]},
+13:{theme:'bike',headline:'Le matin est libre',line:'Vélos seulement si le cœur y est. Plage après la sieste. Macaroni à 18h30.',pills:['Vélos en option','Sieste 13h–15h','Macaroni 18h30'],
 timeline:[
-slot('☀️','8h30–10h00','Matin','Doucement','Petit-déjeuner à la suite ou chez Artemis, sans montre. Maor joue, Gabriela reste au calme. On ne « rattrape » pas la journée d’hier.'),
-slot('🚴','10h00–12h30','Milieu de matinée','Marina','Family bike jusqu’à la marina. À l’ombre : Maor choisit une boule, Gabriela au frais dans les bras. Dix minutes sucrées. Si l’énergie tombe avant, la glace part à emporter pour le balcon.'),
-slot('😴','13h00–15h00','Sieste','Chambre','Retour large avant 13h. La marina a déjà donné le pic de la journée.'),
-slot('🏖️','15h30–17h30','Après-midi','Pieds dans l’eau','Plage des suites ou jeux à l’ombre. On s’arrête au premier bâillement. Rien d’autre au programme.'),
-slot('🍽️','18h30','Dîner','Macaroni','Pizza et pâtes, joyeux, poussette bienvenue. On part dès que Maor décroche.')
+slot('☀️','8h30–9h30','Matin','Doucement','Petit-déjeuner sans réservation, à la suite ou chez Artemis. On ne rattrape pas la journée d’hier.'),
+slot('🚴','en matinée','Si l’envie','Bike Center','Pas réservé. Un tour seulement si Maor le réclame. Sinon on ne force rien, et la matinée reste au jardin.'),
+slot('😴','13h00–15h00','Sieste','Chambre','Retour large avant 13h. Le pic de la journée peut déjà être passé, et c’est très bien.'),
+slot('🏖️','15h30–17h30','Après la sieste','La plage','Ombre pour Gabriela, seau pour Maor, vous deux dans le cadre. On remonte au premier bâillement.'),
+slot('🍽️','18h30','Dîner','Macaroni','Réservation 1412299. Pizza et pâtes, poussette bienvenue. On part dès que Maor décroche.')
 ],
-expect:'La marina est plate, pratique pour la poussette, un peu animée. La glace est le souvenir du jour, pas un deuxième programme. Gabriela reste à l’ombre : le soleil de midi sur la marina tape encore.',
-seat:seatOf('Macaroni'),
-planb:'Pas de crèche. Si le vélo est refusé, on marche jusqu’à la marina ou on reste au playground. La glace peut se manger au balcon, tous ensemble.',
-gear:[g('cap','Casquette','Maor, et chapeau pour Gabriela'),g('water','Gourde','Avant de partir à vélo'),g('mount','Support téléphone','Sur le guidon, si vous filmez'),g('cream','Crème solaire','À remettre avant la marina'),g('wipe','Lingettes','Pour les mains après la glace'),g('layer','Petite laine','La marina fraîchit au retour'),g('gaby','Change de Gabriela','Au cas où, dans le sac')]},
-14:{theme:'jungle',pills:['Crèche animaux','Swim n°1','Sieste 13h–15h'],
+expect:'Rien n’est réservé avant le dîner, à part la sieste. La marina peut attendre un autre jour. Gabriela reste à l’ombre : le soleil de l’après-midi tape encore.',
+seat:seatOf('Macaroni','Réservation 1412299.'),
+planb:'Pas de crèche. Si le vélo est refusé, on reste au playground ou on avance la plage avant la sieste, courte. Le dîner, lui, tient.',
+gear:[g('cap','Casquette','Maor, et chapeau pour Gabriela'),g('water','Gourde','Avant un tour de vélo'),g('cream','Crème solaire','À remettre avant la plage'),g('swim','Maillot de Maor','Pour après la sieste'),g('shade','Ombre de Gabriela','Chapeau, et un coin déjà repéré'),g('bucket','Seau','Un seul suffit'),g('towel','Serviette','Et un change sec'),g('gaby','Change de Gabriela','Le sable voyage')]},
+14:{theme:'swim',headline:'L’eau, avec vous',line:'Baby Swim à 11h. La crèche n’est pas confirmée. Le soir, c’est Ergon, pas Vosporos.',pills:['Swim 11h','Sieste 13h–15h','Ergon 18h'],
 timeline:[
-slot('☀️','8h30–9h45','Matin','Les mots simples','Petit-déjeuner tranquille. On dit à Maor : « les animaux, maman et papa tout près ». Pas de long discours.'),
-slot('🦁','10h00–12h15','Milieu de matinée','Crèche et Swim n°1','Little Explorers, thème animaux, payante. Un parent reste dans le resort, joignable. Le Baby Swim dure environ 30 minutes, avec un parent dans l’eau : Maor n’y va pas seul. Gabriela est trop petite pour le cours, elle reste avec l’autre parent, à l’ombre, à quelques mètres. C’est le premier des deux Swim. Il n’y en aura pas un troisième.'),
+slot('☀️','8h30–10h30','Matin','Sans se presser','Petit-déjeuner sans réservation. Maillots dans le sac. On dit à Maor : l’eau, avec maman ou papa.'),
+slot('🏊','11h00','30 minutes','Baby Swim','Baby Swim & Sensory Play, piscine Sani Beach. Réservation 4966185. Un parent dans l’eau, Maor seulement. Gabriela avec l’autre parent, à l’ombre, hors du bassin. La crèche n’est pas confirmée : on ne compte pas dessus.'),
 slot('😴','13h00–15h00','Sieste','Après l’eau','On rentre avant 13h. Cette sieste compte double.'),
-slot('🌿','15h30–17h30','Après-midi','Balcon','Jouets, livres d’animaux, pas de nouvelle sortie longue. Le corps a déjà assez donné.'),
-slot('🍽️','19h00','Dîner','Vosporos','Grill grec à la marina. On choisit le coin calme et on ne traîne pas.')
+slot('🌿','15h30–17h15','Après-midi','Tout doux','Balcon, ou une plage très courte. Pas de nouveau rendez-vous. Pas de Vosporos ce soir.'),
+slot('🍽️','18h00','Dîner','Ergon','Réservation 1404431. 18h, pas 19h. Mezze à partager. Ce n’est pas Vosporos.')
 ],
-expect:'Maor peut adorer la crèche ou dire non au bout de dix minutes. Les deux font une bonne journée. Le Swim est un jeu dans l’eau, pas une évaluation. Prévoyez qu’il ait froid en sortant : le change sec est dans le sac, pas à la chambre.',
-seat:seatOf('Vosporos'),
-planb:'S’il refuse la crèche, on ne force pas. Playground, puis livres d’animaux sur le balcon. Le Swim reste possible seulement s’il réclame l’eau, toujours avec un parent. Sinon pataugeoire à la plage des suites, tous les quatre. Personne ne confie Maor. Pas de baby-sitter.',
-gear:[g('swim','Maillot de Maor','Pour le Swim n°1'),g('parent','Maillot du parent','Celui qui entre dans l’eau'),g('cream','Crème solaire','Avant la crèche et avant l’eau'),g('towel','Serviette','Et un change sec juste après'),g('gaby','Change de Gabriela','Elle attend à l’ombre, pas dans le bassin'),g('cash','Un peu d’espèces','Pour la crèche. Gabriela n’y entre pas'),g('lovey','Doudou','Pour la sieste, dès le retour')]},
-15:{theme:'volvo',pills:['Volvo offert','Sieste 13h–15h','Dîner 18h30'],
+expect:'Le Swim est un jeu dans l’eau, pas une évaluation. Maor peut adorer ou vouloir sortir : les deux font une bonne demi-heure. Le change sec est dans le sac, pas à la chambre. Gabriela, trois mois, n’entre pas dans le bassin.',
+seat:seatOf('Ergon','Réservation 1404431. 18h précises.'),
+planb:'Pas de crèche confirmée : si quelqu’un en reparle, on ne l’ajoute pas au détriment de la sieste. Si Maor refuse l’eau, pataugeoire ou plage des suites, tous les quatre. Pas de baby-sitter. Le dîner reste Ergon.',
+gear:[g('swim','Maillot de Maor','Pour 11h'),g('parent','Maillot du parent','Celui qui entre dans l’eau'),g('cream','Crème solaire','Avant de sortir'),g('towel','Serviette et change sec','Dès la sortie de l’eau'),g('gaby','Change de Gabriela','Elle attend à l’ombre, pas dans le bassin'),g('shade','Chapeau de Gabriela','Au bord de la piscine'),g('lovey','Doudou','Pour la sieste, dès le retour')]},
+15:{theme:'volvo',headline:'Kassandra, tous les quatre',line:'Le Volvo à 10h30. Le dîner est à Vosporos, pas à Ergon.',pills:['Volvo 10h30','Sieste 13h–15h','Vosporos 18h30'],
 timeline:[
-slot('☀️','8h30–9h45','Matin','Le sac voiture','Petit-déjeuner. Le pull léger entre dans le sac : la clim est fraîche, dehors l’air est doux.'),
-slot('🚗','10h00–12h30','Milieu de matinée','Tour de Kassandra','Voiture et chauffeur offerts avec la Suite Collection. Toute la famille à bord. Collines, mer, villages. On coupe dès que Maor ou Gabriela sature : le chauffeur sait faire demi-tour. Si Gabriela s’endort, on ne la réveille pas pour une photo.'),
+slot('☀️','8h30–10h00','Matin','Le sac voiture','Petit-déjeuner sans réservation. Le pull léger entre dans le sac : la clim est fraîche.'),
+slot('🚗','10h30','Milieu de matinée','Volvo Kassandra','Tous les quatre, avec le chauffeur. Péninsule de Kassandra. On coupe dès que Maor ou Gabriela sature : demi-tour n’est pas un échec. Si Gabriela s’endort, on ne la réveille pas pour une photo.'),
 slot('😴','13h00–15h00','Sieste','La chambre d’abord','Si vous rentrez à 13h15, la sieste commence à 13h15. On ne la remplace pas par la plage.'),
-slot('🏖️','15h30–17h30','Après-midi','Suite, puis peut-être la plage','D’abord le calme à la suite. Si l’énergie est là : plage douce, snacks du sac Sani, un petit château de sable. On s’arrête dès que Maor ralentit.'),
-slot('🍽️','18h30','Dîner','Ergon Deli','Mezze à partager, casual. On peut partir vite, et c’est très bien.')
+slot('🏖️','15h30–17h15','Si l’énergie est là','Pieds dans l’eau','Plage des suites, ou le balcon. Le Volvo a déjà été la sortie.'),
+slot('🍽️','18h30','Dîner','Vosporos','Réservation 1412300. Grill, coin calme. Ce n’est pas Ergon.')
 ],
-expect:'Ce n’est pas une excursion marathon. Le Volvo est un cadeau du resort, pas une liste de villages à cocher. Les fenêtres suffisent à Maor. Gabriela voyage mieux en écharpe ou dans son siège, contre vous.',
-seat:seatOf('Ergon Deli'),
-planb:'Pas de crèche aujourd’hui. Si la voiture ennuie au bout de vingt minutes, on écourte sans négocier. L’après-midi reste la suite ; la plage seulement si tout le monde est bien.',
-gear:[g('snack','Snacks','Biscuits, un fruit, avant de monter'),g('pull','Pull léger','Clim du Volvo et soirée vers 16 °C'),g('toy','Jouet calme','Un seul, pour la voiture'),g('wipe','Lingettes Gabriela','À portée de main, pas au fond du coffre'),g('cap','Casquette','Pour l’arrêt photo, s’il y en a un'),g('phone','Téléphone chargé','Et la batterie, le réseau passe mal par endroits'),g('gaby','Change de Gabriela','Les trajets et les changes n’attendent pas')]},
-16:{theme:'birds',pills:['Wetlands','Swim n°2 max','Sieste 13h–15h'],
+expect:'Ce n’est pas une liste de villages à cocher. Les fenêtres suffisent à Maor. Gabriela voyage mieux contre vous. Le confort et la sieste valent plus qu’un arrêt de plus.',
+seat:seatOf('Vosporos','Réservation 1412300.'),
+planb:'Pas de crèche. Si la voiture ennuie au bout de vingt minutes, on écourte sans négocier. L’après-midi peut rester la suite. Le dîner reste Vosporos.',
+gear:[g('snack','Snacks','Biscuits, un fruit, avant de monter'),g('pull','Pull léger','Clim du Volvo et soirée fraîche'),g('toy','Jouet calme','Un seul, pour la voiture'),g('wipe','Lingettes Gabriela','À portée de main'),g('cap','Casquette','Pour un arrêt court'),g('phone','Téléphone chargé','Le réseau passe mal par endroits'),g('gaby','Change de Gabriela','Les trajets n’attendent pas')]},
+16:{theme:'swim',headline:'Encore l’eau, pas le marais',line:'Même Baby Swim à 11h. Les wetlands sont secs : on n’y va pas.',pills:['Swim 11h','Sieste 13h–15h','Psarogiannos 18h30'],
 timeline:[
-slot('🐦','8h30–10h15','Matin','Wetlands','Petite balade oiseaux, gratuite, pendant que c’est calme. Voix basses, chaussures souples. On raccourcit au premier signe de fatigue. Poussette si le chemin le permet ; sinon Gabriela en écharpe et Maor à pied, un petit bout seulement.'),
-slot('🏊','10h30–12h15','Fin de matinée','Crèche ou Swim n°2','Un seul des deux si la forme est moyenne. Si les deux : crèche courte puis Swim, et retour pour 13h. C’est le deuxième Swim, le dernier de la semaine. Un parent dans l’eau, l’autre avec Gabriela juste à côté. On n’ajoutera pas de Swim samedi.'),
-slot('😴','13h00–15h00','Sieste','Profonde','Après les oiseaux et l’eau, on protège ce créneau. Rien ne le grignote.'),
-slot('🌿','15h30–17h30','Après-midi','Très doux','Balcon ou plage à l’ombre. Pas de troisième activité.'),
-slot('🍽️','19h00','Dîner','Psaroyannos','Taverne de poisson, plus calme. Le soir est doux, on en profite sans le rallonger.')
+slot('☀️','8h30–10h30','Matin','Doucement','Petit-déjeuner sans réservation. Maillots dans le sac. Rien d’autre n’est réservé ce matin.'),
+slot('🏊','11h00','30 minutes','Baby Swim','Même réservation 4966185. Piscine Sani Beach, un parent dans l’eau, Maor seulement. Gabriela à l’ombre, avec l’autre. Pas de wetlands : l’hôtel a dit qu’ils sont secs. La crèche n’est pas confirmée.'),
+slot('😴','13h00–15h00','Sieste','Profonde','Après l’eau, on protège ce créneau. Rien ne le grignote.'),
+slot('🌿','15h30–17h30','Après-midi','Très doux','Balcon ou plage à l’ombre. Pas de troisième activité, pas de marais « quand même ».'),
+slot('🍽️','18h30','Dîner','Psarogiannos','Réservation 1412301. Taverne de poisson, plus calme. On en profite sans rallonger.')
 ],
-expect:'Les Wetlands, c’est une boucle courte, pas une réserve à traverser. Des moustiques parfois : produit sur les vêtements, pas sur les mains de Maor. On ne cherche pas à « tout voir ». Deux ou trois oiseaux suffisent à une victoire.',
-seat:seatOf('Psaroyannos'),
-planb:'S’il refuse la crèche, les oiseaux du matin suffisent. Le Swim n°2 seulement s’il réclame l’eau. Sinon seau, plage, vous deux. On ne rattrape pas la crèche un autre jour, et on n’invente pas un troisième Swim.',
-gear:[g('zoom','Jumelles ou zoom du téléphone','Pour les oiseaux, sans s’approcher'),g('quiet','Chaussures souples','Celles qui ne claquent pas sur le chemin'),g('cap','Casquette','Le marais est à découvert'),g('bug','Anti-moustique','Sur les vêtements'),g('water','Gourde','La boucle donne soif'),g('swim','Maillot et crème','Seulement si le Swim n°2 se fait'),g('gaby','Change de Gabriela','Écharpe ou poussette, le change suit')]},
-17:{theme:'play',pills:['Ballons','Babe Watch','Dernier dîner'],
+expect:'C’est le deuxième et dernier Swim. Le marais ne se rattrape pas : il est sec. Deux ou trois rires dans l’eau suffisent à une victoire. Gabriela n’a pas à enchaîner les transats.',
+seat:seatOf('Psarogiannos','Réservation 1412301.'),
+planb:'Pas de crèche confirmée, pas de wetlands. Si Maor refuse l’eau, plage à l’ombre, ensemble. On n’invente pas un troisième Swim samedi. Pas de baby-sitter.',
+gear:[g('swim','Maillot de Maor','Deuxième Swim, le dernier'),g('parent','Maillot du parent','Dans le sac'),g('cream','Crème solaire',''),g('towel','Serviette et change sec','Dès la sortie'),g('shade','Ombre pour Gabriela','Au bord, comme mercredi'),g('gaby','Change de Gabriela',''),g('lovey','Doudou','Pour attaquer la sieste vite')]},
+17:{theme:'beach',headline:'Dernier soir à l’hôtel',line:'Matin souple, sieste, valises. Artemis à 19h, et c’est le dernier dîner sur place.',pills:['Matin doux','Sieste puis valises','Artemis 19h'],
 timeline:[
-slot('🎈','8h30–10h15','Matin','Dix minutes star','Vélos très courts ou ballons au playground. Mini séance photo : Maor en star, Gabriela dans les bras, Jessica et Yohai dans le cadre. Si le vent ou l’humeur dit non, les ballons restent dans le sac.'),
-slot('🏖️','10h30–12h15','Fin de matinée','Babe Watch','Environ 30 minutes offertes à la plage, avec un moniteur. Vous êtes juste à côté : ce n’est pas une garde. Gabriela reste avec vous. On ne s’éloigne pas « cinq minutes ».'),
-slot('😴','13h00–15h00','Sieste','Comme d’habitude','Même le dernier vrai jour de vacances a sa sieste.'),
-slot('🧳','15h30–17h30','Après-midi','Le sac de demain','Plage ou balcon. On prépare le départ de dimanche sans en faire une course devant les enfants.'),
-slot('🍽️','19h00','Dîner','Artemis','Dernier dîner à l’hôtel. Demain, on ne dîne pas sur place. On peut rester un peu.')
+slot('☀️','matin','Sans programme','Tout doux','Petit-déjeuner sans réservation. Pas de vélo à caser, pas de cours. Le sable seulement si Maor le demande.'),
+slot('🏖️','si vous y allez','Pas réservé','Babe Watch','Aucune réservation. Un parent reste tout le temps : Maor a 2 ans. Ce n’est pas une garde, et Gabriela reste avec vous. Si le cœur n’y est pas, on joue dans le sable ensemble, et la journée est complète.'),
+slot('😴','13h00–15h00','Sieste','Comme d’habitude','Même le dernier vrai jour a sa sieste.'),
+slot('🧳','après 15h','Après la sieste','Les valises','On prépare le départ de demain sans en faire une course devant les enfants. Passeports, doudou, changes cabine dans un seul sac.'),
+slot('🍽️','19h00','Dîner','Artemis','Réservation 1412302. Dernier dîner à l’hôtel. Demain, on ne dîne pas sur place. On peut rester un peu.')
 ],
-expect:'C’est le jour le plus léger avant le vol. Sable, ballons, vous quatre. Le Babe Watch est un plus de plage, pas une heure sans parents. Gabriela n’a pas besoin d’un programme : l’ombre et les bras suffisent.',
-seat:seatOf('Artemis','C’est le dernier dîner à l’hôtel : on peut rester un peu plus que lundi.'),
-planb:'Pas de crèche. Si Maor ne veut pas du moniteur, on joue dans le sable à deux mètres, ensemble. Les ballons ne sont pas obligatoires. Pas de baby-sitter.',
-gear:[g('ball','Ballon léger','Deux, si le vent est doux, pour la photo'),g('swim','Maillot','Plage et Babe Watch'),g('cream','Crème solaire','Même pour dix minutes de sable'),g('shade','Chapeau et ombre','Pour Gabriela, dès qu’on sort'),g('towel','Serviette','Dans le sac de plage'),g('outfit','Tenue du soir','Choisie avant 18h, pour ne pas chercher'),g('gaby','Change de Gabriela','Le sable et le lait n’attendent pas')]},
-18:{theme:'depart',pills:['Sieste 13h–15h','Départ 15h–15h30','Vol 19h25'],
+expect:'C’est le jour le plus léger avant le vol. Le Babe Watch n’est pas au programme tant que vous n’en avez pas envie, et jamais sans un parent. Gabriela n’a pas besoin d’un atelier : l’ombre et les bras suffisent.',
+seat:seatOf('Artemis','Dernier dîner à l’hôtel, réservation 1412302. On peut rester un peu plus que lundi.'),
+planb:'Pas de crèche, pas de Swim de rattrapage. Si le moniteur ne plaît pas, sable à deux mètres, ensemble. Pas de baby-sitter.',
+gear:[g('swim','Maillot','Seulement si vous descendez à la plage'),g('cream','Crème solaire','Même pour dix minutes de sable'),g('shade','Chapeau et ombre','Pour Gabriela, dès qu’on sort'),g('towel','Serviette','Dans le sac de plage'),g('outfit','Tenue du soir','Smart casual, choisie avant 18h'),g('pass','Passeports regroupés','Dans le sac de demain'),g('gaby','Change de Gabriela','Le sable et le lait n’attendent pas')]},
+18:{theme:'depart',headline:'On rentre doucement',line:'Matin souple, sieste, départ vers 15h. Pas de dîner à l’hôtel.',pills:['Sieste 13h–15h','Départ 15h–15h30','Vol 19h25'],
 timeline:[
-slot('☀️','8h30–10h15','Matin','Sans programme','Petit-déjeuner lent. Dernier regard au balcon. Les valises sont presque fermées depuis hier soir.'),
-slot('🏖️','10h30–12h30','Fin de matinée','Au revoir au sable','Plage courte, pieds dans l’eau. Pas de nouvelle activité, pas de vélo « une dernière fois » qui mange la sieste.'),
+slot('☀️','8h30–10h30','Matin','Sans programme','Petit-déjeuner lent. Dernier regard au balcon. Les valises sont presque fermées depuis hier soir.'),
+slot('🏖️','si le cœur y est','Fin de matinée','Un au revoir court','Plage très courte, ou pas du tout. Pas de vélo « une dernière fois » qui mange la sieste.'),
 slot('😴','13h00–15h00','Sieste','La dernière ici','On ne la saute pas. Le vol de 19h25 se passe mieux après.'),
 slot('🧳','15h00–15h30','Départ','On quitte l’hôtel','La fenêtre est celle-ci. Passeports, doudou, changes cabine, snacks. Si la sieste déborde, on réveille en douceur : mieux 15h40 sereins que 15h pile en pleurs.'),
-slot('✈️','19h25','Vol','Arkia','Salonique vers Tel-Aviv, arrivée 21h45. Pas de dîner à l’hôtel. On mange léger avant le vol ou dans l’avion. En attendant : mode avion des jeux, sans son.')
+slot('✈️','19h25','Vol','Arkia','Salonique vers Tel-Aviv, arrivée 21h45. Pas de dîner à l’hôtel. On mange léger avant le vol ou dans l’avion. En attendant : les jeux de ce téléphone, sans son.')
 ],
 expect:'Court sur place, long en transit. L’émotion de partir est normale, pour vous comme pour Maor. Gabriela en écharpe dans l’aéroport. Le téléphone avec cette page déjà ouverte sert de jeu, même si le réseau coupe.',
 road:ROAD,
-planb:'Pas de crèche. Si la plage du matin pèse, on reste au balcon. Le départ, lui, tient le vol : on vise 15h–15h30, avec un peu de mou si la sieste finit tard.',
+planb:'Pas de crèche, pas de dernière activité. Si la plage du matin pèse, on reste au balcon. Le départ tient le vol : on vise 15h–15h30, avec un peu de mou si la sieste finit tard.',
 gear:[g('pass','Passeports des quatre','À la main, pas dans la valise en soute'),g('cabin','Change cabine de Maor','Un ensemble complet'),g('diapers','Couches de Gabriela','En cabine, pas seulement en soute'),g('gaby','Change de Gabriela','Body de rechange dans le sac'),g('snacks','Snacks du vol','Connus, ouverts facilement'),g('lovey','Doudou','Dans les bras ou le sac, visible'),g('games','Jeux ouverts une fois','La page reste utilisable hors ligne')]}
-},
-2:{
-12:{theme:'arrive',line:'On arrive, on respire, le vélo n’a droit qu’à un court tour.',pills:['Vol 8h00','Hôtel vers midi','Sieste 13h–15h'],
-timeline:[
-slot('✈️','8h00–10h25','Matin','Le vol','Même vol Israir, 8h–10h25. On voyage léger dans les gestes : Gabriela contre vous, Maor avec son doudou, pas de projet compliqué dans l’avion.'),
-slot('🏨','vers 12h00','Après l’arrivée','S’installer','Hôtel vers midi. La suite et le balcon d’abord. L’émerveillement peut attendre que les sacs touchent le sol.'),
-slot('😴','13h00–15h00','Sieste','Priorité','Même rule que les autres jours, encore plus aujourd’hui. Si l’arrivée est à 12h40, la sieste commence à 12h40.'),
-slot('🚲','15h30–16h30','Après-midi','Vingt minutes','Family bike très court près des suites, ou playground si le vol a été long. Pas de marina. On rentre large.'),
-slot('🍽️','19h00','Dîner','Artemis','Près des suites. Après un vol, c’est le bon resto : peu de marche, station enfants.')
-],
-expect:'L’option repos commence dès la descente de l’avion. Le resort est beau demain aussi. Gabriela donne le tempo : si elle a besoin du noir, le vélo saute sans discussion.',
-seat:seatOf('Artemis'),
-planb:'Pas de crèche. Si Maor refuse le vélo, on ne le convainc pas. Balcon, ballon, dîner. Ensemble, sans baby-sitter.',
-gear:[g('cap','Casquette','Seulement si le tour de vélo se fait'),g('water','Gourde','Dans le sac, même pour vingt minutes'),g('cream','Crème solaire','Sortie courte comprise'),g('gaby','Change de Gabriela','Le vol et l’arrivée en demandent souvent un'),g('lovey','Doudou','Visible, pas au fond de la valise'),g('pass','Passeports','Restent dans le sac à main ce soir'),g('monitor','Note babyphone','À demander : pour voir la chambre, jamais pour s’absenter')]},
-13:{theme:'beach',line:'Sable, ombre, eau très douce. Le programme s’arrête là.',pills:['Plage soft','Sieste 13h–15h','Dîner 18h30'],
-timeline:[
-slot('☀️','8h30–10h00','Matin','Petit-déjeuner long','Suite ou Artemis. Personne ne met de chaussures de randonnée aujourd’hui.'),
-slot('🏖️','10h00–12h15','Milieu de matinée','Plage ou piscine soft','Seau pour Maor, ombre pour Gabriela, vous deux dans le cadre. Pas de cours. On rentre avant 13h, les cheveux encore salés c’est permis.'),
-slot('😴','13h00–15h00','Sieste','Au calme','Créneau protégé. La plage reprendra un autre jour s’il le faut.'),
-slot('🌿','15h30–17h30','Après-midi','Suite','Couleur, livres, balcon. Si l’énergie est vraiment là : petite boucle Wetlands, gratuite, et demi-tour au premier bâillement.'),
-slot('🍽️','18h30','Dîner','Macaroni','Pâtes et pizza. Court, joyeux, pas une soirée.')
-],
-expect:'Le jour est réussi si tout le monde a eu chaud aux pieds et froid nulle part. Gabriela ne bronze pas : chapeau, ombre, bras. Maor peut jouer vingt minutes et vouloir rentrer. C’est le bon rythme.',
-seat:seatOf('Macaroni'),
-planb:'Pas de crèche. Si la plage ennuie, on remonte. Les Wetlands ne sont qu’un bonus, jamais une dette. Ensemble.',
-gear:[g('swim','Maillot de Maor','Et le vôtre si vous entrez avec lui'),g('cream','Crème solaire','À remettre en milieu de matinée'),g('shade','Chapeau de Gabriela','Plus un coin d’ombre dès l’arrivée sur le sable'),g('bucket','Seau ou jouet de sable','Un seul suffit'),g('towel','Serviette','Et un change sec'),g('gaby','Change de Gabriela','Le sable voyage'),g('water','Gourde','À l’ombre, à portée de main')]},
-14:{theme:'jungle',line:'Un seul rendez-vous animaux, un seul Swim, puis on lâche.',pills:['Crèche','Swim n°1','Sieste 13h–15h'],
-timeline:[
-slot('☀️','8h30–9h45','Matin','Sans se presser','Petit-déjeuner. On nomme les animaux qu’il aime, c’est toute la préparation.'),
-slot('🦁','10h00–12h15','Milieu de matinée','Crèche puis Swim n°1','Une crèche animaux, pas deux dans la semaine pour cette option. Swim d’environ 30 minutes, parent dans l’eau. Gabriela avec l’autre parent, tout près, hors du bassin. Premier Swim sur deux au maximum. Retour avant 13h.'),
-slot('😴','13h00–15h00','Sieste','Non négociable','L’eau et les cris joyeux fatiguent plus qu’une balade.'),
-slot('🍦','15h30–17h00','Après-midi','Ou pas','Balcon d’abord. Si l’énergie est là après la sieste : une glace à la marina, courte, sucrée, tous les quatre. Sinon on ne sort pas.'),
-slot('🍽️','19h00','Dîner','Vosporos','Grill, coin calme. On a déjà assez marché.')
-],
-expect:'Une crèche qui dure dix minutes est une crèche réussie. Le Swim n’est pas un rattrapage si la crèche a été courte. Gabriela, trois mois, n’entre pas à la crèche.',
-seat:seatOf('Vosporos'),
-planb:'S’il refuse la crèche, on ferme la porte sans drame. Le Swim seulement s’il pointe l’eau. Sinon plage des suites, ensemble. Pas de baby-sitter, pas de « on réessaie demain à la place ». Le Swim n°2, s’il a lieu, reste vendredi.',
-gear:[g('swim','Maillot de Maor','Swim n°1'),g('parent','Maillot du parent','Dans le sac, pas oublié à la chambre'),g('cream','Crème solaire',''),g('towel','Serviette et change sec','Pour la sortie de l’eau'),g('cash','Un peu d’espèces','Crèche uniquement. Rien pour Gabriela là-bas : elle n’y va pas'),g('gaby','Change de Gabriela','Pendant que vous êtes au bord'),g('wipe','Lingettes','Si la glace de l’après-midi se fait')]},
-15:{theme:'volvo',line:'Un tour plus court que l’envie de tout voir.',pills:['Volvo','Sieste 13h–15h','Dîner 18h30'],
-timeline:[
-slot('☀️','8h30–9h45','Matin','On prévient le chauffeur','Petit-déjeuner, pull dans le sac. On dit au chauffeur que le tour peut être court. C’est prévu, pas un échec.'),
-slot('🚗','10h00–12h15','Milieu de matinée','Volvo','Toute la famille. Un ou deux arrêts, pas cinq. Gabriela s’endort souvent : on la laisse. Maor regarde par la fenêtre, un jouet dans la main.'),
-slot('😴','13h00–15h00','Sieste','Dès la chambre','Le retour ouvre la sieste, même si l’horloge dit 13h10.'),
-slot('🏖️','15h30–17h00','Après-midi','Pieds dans l’eau','Plage des suites et snacks du sac Sani. Le Volvo a assez duré. Ombre, seau, on remonte vite.'),
-slot('🍽️','18h30','Dîner','Ergon Deli','Mezze, rapide. Parfait après une journée assise.')
-],
-expect:'La péninsule est belle même vue de la vitre. Vous n’avez pas à descendre partout. Le confort de Gabriela et la sieste de Maor valent plus qu’un village de plus.',
-seat:seatOf('Ergon Deli'),
-planb:'Pas de crèche. Si Maor en a assez de la voiture, demi-tour. L’après-midi plage peut aussi devenir « balcon seulement ».',
-gear:[g('snack','Snacks','Avant de monter, pas à chercher à l’arrêt'),g('pull','Pull léger','Clim fraîche'),g('toy','Jouet calme','Un seul'),g('wipe','Lingettes Gabriela',''),g('cap','Casquette','Si on descend deux minutes'),g('gaby','Change de Gabriela','Dans le sac cabine de la voiture'),g('phone','Téléphone chargé','')]},
-16:{theme:'beach',line:'La plage par défaut. Les oiseaux seulement si Maor les réclame.',pills:['Plage','Swim n°2 si forme','Sieste 13h–15h'],
-timeline:[
-slot('🏖️','8h30–10h30','Matin','On choisit','Par défaut : plage à l’ombre. Si Maor est en forme et montre les oiseaux : Wetlands, boucle courte, voix basse, puis stop. Pas les deux en grand.'),
-slot('🏊','10h45–12h00','Fin de matinée','Swim n°2, ou rien','Seulement s’il réclame l’eau. Parent dans l’eau, Gabriela avec l’autre, à côté. C’est le dernier Swim possible. S’il ne se fait pas, on ne le reporte pas à samedi.'),
-slot('😴','13h00–15h00','Sieste','Pleine','On rentre pour de vrai, pas « encore cinq minutes ».'),
-slot('🚲','15h30–17h00','Après-midi','Ou la suite','Si l’énergie est là : boucle à vélo très douce près des suites, Maor au siège, Gabriela avec vous. Sinon chambre et balcon.'),
-slot('🍽️','19h00','Dîner','Psaroyannos','Poisson, calme. Une soirée qui ressemble à une respiration.')
-],
-expect:'Cette option gagne quand on sait dire non. Deux oui dans la même matinée (oiseaux et Swim) sont déjà beaucoup. Gabriela n’a pas à enchaîner les transats.',
-seat:seatOf('Psaroyannos'),
-planb:'Pas de crèche dans cette option aujourd’hui. Si tout est refusé, la plage à l’ombre avec vous est le jour entier, et c’est complet. Pas de baby-sitter.',
-gear:[g('swim','Maillot','Au cas où le Swim n°2 a lieu'),g('cream','Crème solaire',''),g('shade','Ombre pour Gabriela','Chapeau, et un coin déjà repéré'),g('quiet','Chaussures souples','Si vous partez aux Wetlands'),g('zoom','Zoom du téléphone','Les jumelles seulement si les oiseaux se font'),g('water','Gourde',''),g('gaby','Change de Gabriela','')]},
-17:{theme:'play',line:'Jeu libre. Le Babe Watch est le cœur, la photo est la cerise.',pills:['Jeu libre','Babe Watch','Dernier dîner'],
-timeline:[
-slot('🎈','8h30–10h15','Matin','Playground','Jeu libre, sans atelier. Si l’énergie est là : photo au ballon, dix minutes, Maor en star, Gabriela dans les bras. Sinon on joue, c’est tout.'),
-slot('🏖️','10h30–12h15','Fin de matinée','Babe Watch','Moniteur à la plage, vous à vue. Gabriela avec vous. Trente minutes, pas plus.'),
-slot('😴','13h00–15h00','Sieste','Oui','Le dernier samedi aussi.'),
-slot('🧳','15h30–17h30','Après-midi','Rien de neuf','Balcon. On glisse les passeports dans le sac de demain.'),
-slot('🍽️','19h00','Dîner','Artemis','Dernier dîner à l’hôtel. On savoure, on ne rallonge pas jusqu’à épuisement.')
-],
-expect:'Le playground suffit à remplir un matin de presque deux ans. La photo est un bonus, pas un contrat. Vous quatre dans le cadre, trois clichés, on range l’appareil.',
-seat:seatOf('Artemis','Dernier dîner sur place : bord de salle, et on peut s’attarder un peu.'),
-planb:'Pas de crèche. Si le moniteur ne plaît pas, sable à deux mètres, ensemble. Pas de baby-sitter.',
-gear:[g('ball','Ballon léger','Pour le playground et la photo'),g('swim','Maillot',''),g('cream','Crème solaire',''),g('shade','Chapeau Gabriela',''),g('towel','Serviette',''),g('pass','Passeports regroupés','Dans le sac de dimanche, ce soir'),g('gaby','Change de Gabriela','')]},
-18:{theme:'depart',line:'Le matin appartient au balcon. On ne remplit pas les dernières heures.',pills:['Sieste 13h–15h','Départ 15h–15h30','Vol 19h25'],
-timeline:[
-slot('☀️','8h30–10h30','Matin','Balcon','Petit-déjeuner sans horloge visible. Valises déjà bouclées. Maor joue avec ce qui traîne, Gabriela contre vous.'),
-slot('🏖️','10h30–12h15','Fin de matinée','Seulement s’il demande','Plage si Maor la réclame, très courte. Sinon on reste. Pas de vélo d’adieu.'),
-slot('😴','13h00–15h00','Sieste','Dernière','Elle protège le vol de 19h25.'),
-slot('🧳','15h00–15h30','Départ','Fenêtre de sortie','On quitte l’hôtel dans ce créneau. Un peu de mou si la sieste finit à 15h20. Passeports en main.'),
-slot('✈️','19h25','Vol','Arkia','Tel-Aviv 21h45. Pas de dîner à l’hôtel. Mode avion des jeux si l’attente est longue.')
-],
-expect:'Partir fatigués gâche le vol. Partir un peu en avance, avec une sieste dans le corps, le sauve. Gabriela en écharpe dès que vous quittez la chambre.',
-road:ROAD,
-planb:'Pas de crèche, pas de dernière activité à caser. Si le transfert est en retard, on attend au calme dans le hall, pas sur la plage.',
-gear:[g('pass','Passeports des quatre','À la main'),g('cabin','Change de Maor','En cabine'),g('diapers','Couches Gabriela','Cabine'),g('gaby','Change de Gabriela','Body de rechange'),g('snacks','Snacks connus',''),g('lovey','Doudou','Pas dans la soute'),g('games','Page des jeux ouverte','Avant de perdre le réseau')]}
-},
-3:{
-12:{theme:'arrive',line:'Premier regard : le jardin, les oiseaux, un tour de roue.',pills:['Vol 8h00','Hôtel vers midi','Sieste 13h–15h'],
-timeline:[
-slot('✈️','8h00–10h25','Matin','Le vol','Israir 8h–10h25. On garde les jumelles dans le sac : l’observation commence au resort, pas à l’aéroport.'),
-slot('🏨','vers 12h00','Après l’arrivée','Le balcon d’abord','Hôtel vers midi. Une minute de mer depuis le balcon, puis les sacs. Maor peut déjà montrer un oiseau du jardin. On ne le suit pas au-delà de la terrasse.'),
-slot('😴','13h00–15h00','Sieste','Même le jour d’arrivée','Créneau tenu, décalé seulement si le transfert l’exige.'),
-slot('🚲','15h30–17h15','Après-midi','Vélos du jardin','Tour court au Bike Center, près des suites. On nomme ce qu’on voit : oiseau, fleur, mer. Pas une expédition.'),
-slot('🍽️','19h00','Dîner','Artemis','Buffet des suites. Idéal après le vol.')
-],
-expect:'L’option nature ne commence pas par une performance. Le premier animal peut être celui du balcon. Gabriela découvre la lumière, c’est assez pour elle.',
-seat:seatOf('Artemis'),
-planb:'Pas de crèche. Si le vélo ne dit rien, on reste au jardin des suites. Ensemble, sans baby-sitter.',
-gear:[g('cap','Casquette',''),g('water','Gourde',''),g('mount','Support téléphone','Si vous filmez le premier tour'),g('cream','Crème solaire',''),g('zoom','Zoom du téléphone','Pour l’oiseau du jardin, sans courir après'),g('gaby','Change de Gabriela',''),g('lovey','Doudou',''),g('pass','Passeports à la main',''),g('monitor','Note babyphone','À demander, pour voir, pas pour s’absenter')]},
-13:{theme:'birds',line:'Les oiseaux le matin, pendant qu’il fait frais et calme.',pills:['Wetlands courts','Sieste 13h–15h','Dîner 18h30'],
-timeline:[
-slot('🐦','9h00–11h15','Matin','Wetlands','Boucle courte, gratuite. Chaussures souples, voix basses. Gabriela en écharpe si la poussette gêne. On s’arrête à deux ou trois oiseaux, pas à la fin du sentier.'),
-slot('🍦','11h20–12h15','Fin de matinée','Peut-être une glace','Si l’énergie est là : marina, cinq minutes, Gabriela contre vous. Sinon retour direct, on garde la forme pour 18h30.'),
-slot('😴','13h00–15h00','Sieste','Au retour','La matinée nature se paie ici. On ne la saute pas parce que « c’était tranquille ».'),
-slot('🌿','15h30–17h30','Après-midi','Ombre','Livres, balcon, rien qui ressemble à une deuxième sortie.'),
-slot('🍽️','18h30','Dîner','Macaroni','Pâtes après les oiseaux. Simple, et on rentre.')
-],
-expect:'Un wetland avec un tout-petit est une réussite dès le premier héron, ou même sans héron si Maor a écouté. Les moustiques se gèrent sur les vêtements. Gabriela n’a pas besoin de voir les oiseaux : elle a besoin de ne pas avoir trop chaud.',
-seat:seatOf('Macaroni'),
-planb:'Pas de crèche. Si la boucle est refusée au bout de cinq minutes, on fait demi-tour sans insister. La glace n’est pas un lot de consolation obligatoire.',
-gear:[g('zoom','Jumelles ou zoom','Le téléphone suffit'),g('quiet','Chaussures souples',''),g('cap','Casquette',''),g('bug','Anti-moustique','Vêtements, pas les mains'),g('water','Gourde',''),g('gaby','Change de Gabriela','L’écharpe chauffe'),g('wipe','Lingettes','Si la glace a lieu')]},
-14:{theme:'bee',line:'On regarde les abeilles. On ne les touche pas. Puis l’eau, une fois.',pills:['Bee Spot','Swim n°1','Sieste 13h–15h'],
-timeline:[
-slot('🐝','10h00–11h00','Matin','Bee Spot','Petit coup d’œil, sans contact. Maor regarde de loin, vous commentez avec trois mots. Gabriela reste couverte et éloignée des zones de vol. Dix à vingt minutes, c’est une visite entière.'),
-slot('🏊','11h15–12h15','Fin de matinée','Swim n°1','Environ 30 minutes, un parent dans l’eau. Gabriela avec l’autre, à l’ombre. Premier des deux Swim maximum. On rentre pour 13h.'),
-slot('😴','13h00–15h00','Sieste','Après l’eau','Créneau plein.'),
-slot('🎈','15h30–17h00','Après-midi','Si l’énergie est là','Ballons au playground des suites. Si l’eau appelle encore : petit jeu dans la piscine soft, tous les quatre. Ce n’est pas un cours, et ce n’est pas le Swim n°2 — celui-là, s’il a lieu, est vendredi.'),
-slot('🍽️','19h00','Dîner','Vosporos','Grill, coin calme, après une journée déjà bien remplie.')
-],
-expect:'Les abeilles restent une image, pas une expérience tactile. S’il y a du vent ou beaucoup d’insectes, on regarde de plus loin encore. Le Swim est le seul « cours » du jour.',
-seat:seatOf('Vosporos'),
-planb:'Pas de crèche aujourd’hui. Si Maor a peur des abeilles ou s’en désintéresse, on s’éloigne tout de suite, sans le raisonner. Le Swim reste possible s’il veut l’eau. Sinon playground. Ensemble, pas de baby-sitter.',
-gear:[g('cap','Casquette','Utile au rucher comme à la piscine'),g('cream','Crème solaire',''),g('swim','Maillot de Maor','Swim n°1'),g('parent','Maillot du parent',''),g('towel','Serviette et change sec',''),g('gaby','Change de Gabriela','Elle ne s’approche pas des abeilles'),g('ball','Ballon','Pour l’après-midi, si l’énergie est là')]},
-15:{theme:'volvo',line:'La péninsule par la vitre, puis le sable des suites.',pills:['Volvo','Sieste 13h–15h','Dîner 19h'],
-timeline:[
-slot('☀️','8h30–9h45','Matin','Départ souple','Petit-déjeuner, snacks et pull dans le sac. On vise un retour qui laisse la sieste intacte.'),
-slot('🚗','10h00–12h30','Milieu de matinée','Volvo péninsule','Chauffeur offert, toute la famille. Côtes, villages, arrêts courts. Fenêtre pour Maor, sommeil possible pour Gabriela. Demi-tour dès qu’un des deux sature.'),
-slot('😴','13h00–15h00','Sieste','Chambre','Avant toute idée de plage.'),
-slot('🏖️','15h30–17h30','Après-midi','Si l’énergie est là','Plage des suites : ombre pour Gabriela, seau pour Maor, snacks du sac Sani. Sinon le balcon suffit, le Volvo a déjà été la sortie.'),
-slot('🍽️','19h00','Dîner','Psaroyannos','Poisson, plus calme. Le bon soir pour une table posée.')
-],
-expect:'Vous n’êtes pas un groupe organisé. Le chauffeur s’adapte. Une photo de la côte depuis la voiture est un vrai souvenir. Gabriela n’a pas à être réveillée pour « en profiter ».',
-seat:seatOf('Psaroyannos'),
-planb:'Pas de crèche. Voiture trop longue : on rentre. Plage refusée : suite. Rien à rattraper demain matin, demain a déjà sa crèche et son Swim.',
-gear:[g('snack','Snacks','Dans le sac avant le hall'),g('pull','Pull léger','Pour la clim'),g('toy','Jouet calme',''),g('wipe','Lingettes Gabriela',''),g('cap','Casquette',''),g('bucket','Seau de plage','Pour l’après-midi, s’il a lieu'),g('gaby','Change de Gabriela',''),g('phone','Téléphone chargé','')]},
-16:{theme:'jungle',line:'Le jour crèche de cette option, et le dernier Swim.',pills:['Crèche','Swim n°2','Sieste 13h–15h'],
-timeline:[
-slot('☀️','8h30–9h15','Matin','Petit-déjeuner','À la suite, sans se presser. Trois mots pour Maor : les animaux, puis l’eau, avec vous.'),
-slot('🦁','9h30–12h15','Milieu de matinée','Crèche et Swim n°2','Little Explorers, animaux. Un parent joignable dans le resort. Puis le Swim n°2, environ 30 minutes, l’autre parent — ou le même — dans l’eau. Gabriela juste à côté, pas dans le cours. C’est le dernier Swim. On est rentrés pour 13h. Si la forme est moyenne, on ne fait que l’un des deux.'),
-slot('😴','13h00–15h00','Sieste','Protégée','Après les animaux et l’eau, c’est le cœur du jour.'),
-slot('⚓','15h30–17h15','Après-midi','Seulement si c’est léger','Suite d’abord. Si l’après-midi est vraiment légère : marina, une glace, une photo, et retour large avant le dîner. Sinon on ne sort pas.'),
-slot('🍽️','18h30','Dîner','Ergon Deli','Mezze, rapide. 18h30, pas 20h.')
-],
-expect:'C’est le jour le plus « programme » de l’option nature. Il tient parce que le matin est net et l’après-midi est optionnel. Maor n’a pas à être sociable pour que la journée compte. Gabriela reste dans vos bras pendant le Swim.',
-seat:seatOf('Ergon Deli'),
-planb:'S’il refuse la crèche, on ne force pas et on ne la recase pas dimanche. Le Swim n°2 seulement s’il veut l’eau. Sinon plage ou suite, ensemble. Pas de baby-sitter. Pas de troisième Swim.',
-gear:[g('swim','Maillot de Maor','Swim n°2, le dernier'),g('parent','Maillot du parent',''),g('cream','Crème solaire',''),g('towel','Serviette et change sec',''),g('cash','Un peu d’espèces','Pour la crèche. Gabriela n’y va pas'),g('gaby','Change de Gabriela',''),g('wipe','Lingettes','Si la glace de la marina se fait'),g('lovey','Doudou','Pour attaquer la sieste vite')]},
-17:{theme:'beach',line:'Vélos ou plage, moniteur à vue, dernier dîner.',pills:['Plage','Babe Watch','Dernier dîner'],
-timeline:[
-slot('🚲','8h30–10h15','Matin','Vélos ou sable','L’un ou l’autre, pas les deux en long. Si l’énergie est là juste avant le dîner, non : la photo ballons, s’il y en a une, dure dix minutes dans le matin. Maor en star, Gabriela dans les bras.'),
-slot('🏖️','10h30–12h15','Fin de matinée','Babe Watch','Moniteur, vous à côté, Gabriela avec vous. Ce n’est pas une garde.'),
-slot('😴','13h00–15h00','Sieste','Oui','Dernier samedi compris.'),
-slot('🧳','15h30–17h30','Après-midi','Ranger sans bruit','Balcon. Passeports, doudou, changes cabine dans un seul sac.'),
-slot('🍽️','19h00','Dîner','Artemis','Dernier dîner à l’hôtel. Station Donna Hay, on en profite.')
-],
-expect:'Le samedi nature est un samedi de plage. Les oiseaux ont déjà eu leur matin. Gabriela a eu une semaine de bras : on continue. Trois clichés ballons, puis on range.',
-seat:seatOf('Artemis','Dernier soir à table ici.'),
-planb:'Pas de crèche. Moniteur refusé : on joue dans le sable, ensemble. Pas de baby-sitter, pas de Swim supplémentaire.',
-gear:[g('swim','Maillot',''),g('cream','Crème solaire',''),g('shade','Ombre et chapeau','Gabriela'),g('ball','Ballons','Pour la photo courte, si le vent est doux'),g('towel','Serviette',''),g('pass','Passeports regroupés','Pour demain 15h'),g('gaby','Change de Gabriela','')]},
-18:{theme:'depart',line:'Les jumelles restent dans le sac. On dit au revoir à la mer.',pills:['Sieste 13h–15h','Départ 15h–15h30','Vol 19h25'],
-timeline:[
-slot('☀️','8h30–10h15','Matin','Au revoir au balcon','Petit-déjeuner. Dernière lumière sur la mer. Pas de Wetlands d’adieu.'),
-slot('🏖️','10h30–12h15','Fin de matinée','Pieds dans l’eau','Court, ou pas du tout. Maor touche le sable une dernière fois s’il veut. Gabriela à l’ombre.'),
-slot('😴','13h00–15h00','Sieste','Pour le vol','19h25 se prépare ici, pas dans le hall.'),
-slot('🧳','15h00–15h30','Départ','On quitte l’hôtel','Fenêtre tenue, avec un peu de mou si la sieste déborde. Passeports en main.'),
-slot('✈️','19h25','Vol','Arkia','Tel-Aviv 21h45. Pas de dîner à l’hôtel. Jeux sans son pendant l’attente.')
-],
-expect:'La nature de ce dernier matin, c’est la vue du balcon. Tout le reste a déjà eu sa place dans la semaine. On part avec le doudou visible et Gabriela contre vous.',
-road:ROAD,
-planb:'Pas de crèche, pas de dernière boucle oiseaux. Si le transfert tarde, hall calme, jeux du téléphone, pas une sortie de plus.',
-gear:[g('pass','Passeports des quatre','À la main'),g('cabin','Change cabine Maor',''),g('diapers','Couches Gabriela','Cabine'),g('gaby','Change de Gabriela',''),g('snacks','Snacks du vol',''),g('lovey','Doudou',''),g('games','Jeux déjà ouverts','La page tient hors ligne')]}
-}
 };
+const DAYS={1:CONFIRMED_DAYS,2:CONFIRMED_DAYS,3:CONFIRMED_DAYS};
 
 let dayBack='choose';
 let jeuxBack='intro';
@@ -1742,7 +1720,7 @@ let joursOpt=1;
 const FLIGHT_STEPS=['find','catch','guess','memory'];
 
 function safeDest(id, fallback){
-  if(id==='intro'||id==='choose'||id==='legend'||id==='vote'||id==='equip'||id==='pack'||id==='jours'||id==='jour'||id==='jeux') return id;
+  if(id==='intro'||id==='choose'||id==='legend'||id==='vote'||id==='equip'||id==='pack'||id==='jours'||id==='jour'||id==='jeux'||id==='souvenir') return id;
   if(/^opt[123]$/.test(id||'')) return id;
   return fallback;
 }
@@ -1762,12 +1740,7 @@ function renderJours(){
   const el=document.getElementById('jours');
   const seenN=DAY_ORDER.filter(d=>isDaySeen(joursOpt,d)).length;
   el.innerHTML=`<div class="topbar"><button type="button" onclick="go('${joursBack}')" aria-label="Retour">←</button><div class="t">Mon jour</div><button type="button" onclick="openJeux('jours')" aria-label="Occuper Maor">🦁</button></div>
-<p class="play-help">Chaque jour s’ouvre à part : l’ambiance, les heures, et quoi glisser dans le sac ce matin-là.</p>
-<div class="oswitch" role="tablist">
-<button type="button" class="${joursOpt===1?'on':''}" onclick="setJoursOpt(1)">1 · Fun</button>
-<button type="button" class="${joursOpt===2?'on':''}" onclick="setJoursOpt(2)">2 · Doux</button>
-<button type="button" class="${joursOpt===3?'on':''}" onclick="setJoursOpt(3)">3 · Nature</button>
-</div>
+<p class="play-help">Horaires confirmés par l’hôtel, à l’heure de Porto Sani. Chaque jour : le fil, et quoi glisser dans le sac.</p>
 ${seenN?`<p class="play-help">${seenN}/7 jours déjà ouverts.</p>`:''}
 ${DAY_ORDER.map(d=>{
   const data=DAYS[joursOpt][d];
@@ -1775,6 +1748,7 @@ ${DAY_ORDER.map(d=>{
   const seen=isDaySeen(joursOpt,d);
   return `<button type="button" class="card jcard" onclick="openDay(${joursOpt},${d},'jours')"><span class="jem" style="background:${THEME_SOFT[data.theme]}">${th.emoji}</span><span><h2>${esc(DOW[d][1])} ${d}${seen?' <span class="seen-pip" aria-hidden="true"></span>':''}</h2><p class="muted">${esc(data.line||th.line)}</p></span></button>`;
 }).join('')}
+<button class="btn ghost" type="button" onclick="openSouvenir('jours')">📷 L’album</button>
 <button class="btn ghost" type="button" onclick="openJeux('jours')">🦁 Occuper Maor</button>`;
 }
 function dioramaHtml(theme){
@@ -1795,13 +1769,13 @@ function openDay(opt, day, back){
   const gear=data.gear;
   const onCount=gear.filter(it=>gearState[gearId(opt,day,it[0])]).length;
   const pct=gear.length?Math.round(100*onCount/gear.length):0;
-  const tipKey={Artemis:'artemis',Macaroni:'macaroni',Vosporos:'vosporos','Ergon Deli':'ergon',Psaroyannos:'psaro'};
+  const tipKey={Artemis:'artemis',Macaroni:'macaroni',Vosporos:'vosporos',Ergon:'ergon','Ergon Deli':'ergon',Psarogiannos:'psaro',Psaroyannos:'psaro'};
   const seatHtml=data.seat?`<div class="callout seat"><b>Où s’asseoir · ${tipKey[data.seat.place]?`<button type="button" class="tip" data-t="${tipKey[data.seat.place]}">${esc(data.seat.place)}</button>`:esc(data.seat.place)}</b>${esc(data.seat.text)}</div>`:'';
   const roadHtml=data.road?`<div class="callout seat"><b>En chemin</b>${esc(data.road)}</div>`:'';
   document.getElementById('jour').innerHTML=`<div class="topbar"><button type="button" onclick="backDay()" aria-label="Retour">←</button><div class="t">${esc(DOW[day][1])} ${day}</div><button type="button" onclick="openJeux('jour')" aria-label="Occuper Maor">🦁</button></div>
 <div class="dayhero">
-  <div class="day-kicker">${esc(OPT_NAME[opt])} · jour ${idx+1}/7</div>
-  <h2>${theme.emoji} ${esc(theme.title)}</h2>
+  <div class="day-kicker">Semaine confirmée · jour ${idx+1}/7</div>
+  <h2>${theme.emoji} ${esc(data.headline||theme.title)}</h2>
   <p class="day-mood">${esc(data.line||theme.line)}</p>
   <div class="day-pills">${data.pills.map(p=>`<span>${esc(p)}</span>`).join('')}<span>Ensemble</span></div>
   ${dioramaHtml(theme)}
@@ -1821,6 +1795,7 @@ ${gear.map(it=>{const id=gearId(opt,day,it[0]);return `<label class="pack-item">
 <button type="button" class="navbtn" ${prev?`onclick="openDay(${opt},${prev},'${dayBack}')"`:'disabled'} aria-label="${prev?'Jour précédent, '+DOW[prev][1]+' '+prev:'Pas de jour précédent'}">${prev?'← '+prev:'Début'}</button>
 <button type="button" class="navbtn" ${next?`onclick="openDay(${opt},${next},'${dayBack}')"`:'disabled'} aria-label="${next?'Jour suivant, '+DOW[next][1]+' '+next:'Pas de jour suivant'}">${next?next+' →':'Fin'}</button>
 </div>
+<button class="btn ghost" type="button" onclick="openSouvenir('jour')">📷 Garder une photo</button>
 <button class="btn mint" type="button" onclick="openJeux('jour')">🦁 Occuper Maor</button>`;
   document.querySelectorAll('#jour .tip').forEach(bindTip);
   go('jour');
@@ -2318,6 +2293,460 @@ function startMemory(opts){
       }
     });
   });
+}
+
+
+const NEXT_MS=6000;
+const NEXT_WINDOW=5;
+const AGENDA=[
+  {day:12,start:'10:25',end:'12:00',time:'10h25',title:'Arrivée à Salonique',line:'Hall B, à droite, devant le Sani Resort Office. Deux sièges auto.'},
+  {day:12,start:'12:00',end:'13:00',time:'vers 12h',title:'Le resort',line:'Transfert privé jusqu’à la suite. On pose les sacs, on ouvre le balcon.'},
+  {day:12,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Chambre calme, rideaux tirés. Dès que c’est possible.'},
+  {day:12,start:'15:30',end:'17:30',time:'après 15h',title:'Vélos, si l’envie',line:'Bike Center, pas réservé. Seulement s’ils en ont envie.'},
+  {day:12,start:'19:00',end:'20:30',time:'19h00',title:'Dîner Artemis',line:'Réservation 1404428 · chaise haute. Dans les 15 min, smart casual.'},
+  {day:13,start:'09:30',end:'12:15',time:'matin',title:'Vélos du matin',line:'Bike Center, en option. Si le cœur n’y est pas, on ne force pas.'},
+  {day:13,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Retour large. La chambre avant toute autre idée.'},
+  {day:13,start:'15:30',end:'17:30',time:'15h30',title:'La plage',line:'Après la sieste. Ombre pour Gabriela, seau pour Maor.'},
+  {day:13,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Macaroni',line:'Réservation 1412299. Dans les 15 min, smart casual.'},
+  {day:14,start:'11:00',end:'11:40',time:'11h00',title:'Baby Swim',line:'Piscine Sani Beach · 30 min · un parent dans l’eau. Maillot. Maor seulement.'},
+  {day:14,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Après l’eau. On rentre avant 13h.'},
+  {day:14,start:'18:00',end:'19:30',time:'18h00',title:'Dîner Ergon',line:'Réservation 1404431. Pas Vosporos. Dans les 15 min, smart casual.'},
+  {day:15,start:'10:30',end:'12:45',time:'10h30',title:'Volvo Kassandra',line:'Tous les quatre. Pull léger, un jouet calme, des snacks.'},
+  {day:15,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Dès la chambre, même si l’horloge dit 13h10.'},
+  {day:15,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Vosporos',line:'Réservation 1412300. Pas Ergon. Dans les 15 min, smart casual.'},
+  {day:16,start:'11:00',end:'11:40',time:'11h00',title:'Baby Swim',line:'Même réservation. Piscine Sani Beach. Pas de wetlands, ils sont secs.'},
+  {day:16,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Après l’eau. Rien ne grignote ce créneau.'},
+  {day:16,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Psarogiannos',line:'Réservation 1412301. Dans les 15 min, smart casual.'},
+  {day:17,start:'09:00',end:'12:30',time:'matin',title:'Matin doux',line:'Rien de réservé. Babe Watch non plus : si vous y allez, un parent reste, Maor a 2 ans.'},
+  {day:17,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Même le dernier samedi. Ensuite, les valises.'},
+  {day:17,start:'15:15',end:'18:30',time:'après 15h',title:'On prépare les valises',line:'Passeports, doudou, changes cabine. Sans en faire une course.'},
+  {day:17,start:'19:00',end:'20:30',time:'19h00',title:'Dîner Artemis',line:'Réservation 1412302. Dernier dîner à l’hôtel. Dans les 15 min, smart casual.'},
+  {day:18,start:'09:00',end:'12:30',time:'matin',title:'Matin doux',line:'Valises presque fermées. Pas de dernière activité.'},
+  {day:18,start:'13:00',end:'15:00',time:'13h–15h',title:'Dernière sieste',line:'Elle protège le vol de 19h25.'},
+  {day:18,start:'15:00',end:'16:00',time:'15h–15h30',title:'On quitte l’hôtel',line:'Passeports, doudou, changes cabine, snacks. Un peu de mou si la sieste déborde.'},
+  {day:18,start:'19:25',end:'21:45',time:'19h25',title:'Arkia',line:'Salonique. Pas de dîner à l’hôtel. Snacks dans le sac.'}
+];
+function itemStamp(day,hm){return zonedToUtc('2026-10-'+pad2(day)+'T'+hm+':00',ATHENS)}
+function itemStart(it){return itemStamp(it.day,it.start)}
+function itemEnd(it){return itemStamp(it.day,it.end)}
+function visibleAgenda(now){
+  const t=now.getTime();
+  return AGENDA.filter(it=>itemEnd(it).getTime()>t);
+}
+let nextPos=0, nextSig='', nextTimer=0, nextSwipe=false, nextCount=0;
+function nextMotionOk(){
+  return !window.matchMedia('(prefers-reduced-motion: reduce)').matches && !document.hidden;
+}
+function restartNextLoop(){
+  clearTimeout(nextTimer);
+  if(!nextMotionOk()||nextCount<2) return;
+  nextTimer=setTimeout(()=>{stepNext(1)},NEXT_MS);
+}
+function stepNext(dir){
+  if(nextCount<2) return;
+  nextPos+=dir;
+  paintNext(true);
+}
+function showNext(i){nextPos=i;paintNext(true)}
+function openNextDay(day){
+  if(nextSwipe){nextSwipe=false;return}
+  openDay(1,day,'intro');
+}
+function kickerFor(it,now,phase){
+  const t=now.getTime();
+  let label;
+  if(t>=itemStart(it).getTime()) label='En ce moment';
+  else if(phase==='before') label='Bientôt';
+  else label='Tout à l’heure';
+  if(clockOverride()) label+=' · heure figée';
+  return label;
+}
+function paintNext(force){
+  const root=document.getElementById('next-strip');
+  if(!root) return;
+  const now=agendaNow();
+  const phase=tripPhase(now);
+  const items=phase==='after'?[]:visibleAgenda(now).slice(0,NEXT_WINDOW);
+  nextCount=items.length;
+  if(!items.length){
+    const sig='kept-'+phase;
+    if(!force&&sig===nextSig) return;
+    nextSig=sig;
+    nextPos=0;
+    root.innerHTML='<p class="next-kicker"><span class="next-live" aria-hidden="true"></span>Pour s’en souvenir</p>'
+      +'<div class="next-card is-kept"><button type="button" class="next-hit" onclick="openSouvenir(\'intro\')">'
+      +'<span class="next-time">L’album</span>'
+      +'<span class="next-title">Ce qu’on a gardé</span>'
+      +'<span class="next-line">Les photos du séjour, dans l’ordre des jours. Elles vivent sur ce téléphone.</span>'
+      +'</button></div>';
+    restartNextLoop();
+    return;
+  }
+  nextPos=((nextPos%items.length)+items.length)%items.length;
+  const it=items[nextPos];
+  const sig=phase+'|'+items.map(x=>x.day+x.start).join(',')+'|'+nextPos+'|'+(clockOverride()?'1':'0');
+  if(!force&&sig===nextSig) return;
+  nextSig=sig;
+  const dayLabel=DOW[it.day][1]+' '+it.day+' octobre';
+  const dots=items.map((x,i)=>'<button type="button" class="'+(i===nextPos?'on':'')+'" onclick="showNext('+i+')" aria-label="Étape '+(i+1)+' sur '+items.length+', '+esc(x.title)+'"'+(i===nextPos?' aria-current="true"':'')+'></button>').join('');
+  const note=phase==='before'?'<p class="next-note">Aperçu du séjour, pas encore le jour J. L’horloge est celle de Porto Sani.</p>':'';
+  const bar=items.length>1?'<div class="next-bar" aria-hidden="true"><i class="'+(nextMotionOk()?'run':'')+'"></i></div>':'';
+  const nav=items.length>1?'<div class="next-nav"><button type="button" class="next-arrow" onclick="stepNext(-1)" aria-label="Précédent">‹</button><div class="next-dots">'+dots+'</div><button type="button" class="next-arrow" onclick="stepNext(1)" aria-label="Suivant">›</button></div>':'';
+  root.innerHTML=note
+    +'<p class="next-kicker"><span class="next-live" aria-hidden="true"></span>'+esc(kickerFor(it,now,phase))+'</p>'
+    +'<div class="next-card"><button type="button" class="next-hit" onclick="openNextDay('+it.day+')">'
+    +'<span class="next-time">'+esc(it.time)+'</span>'
+    +'<span class="next-title">'+esc(it.title)+'</span>'
+    +'<span class="next-line">'+esc(it.line)+'</span>'
+    +'<span class="next-day">'+esc(dayLabel)+' · voir le jour</span>'
+    +'</button>'+bar+'</div>'
+    +nav
+    +'<button type="button" class="next-album" onclick="openSouvenir(\'intro\')">L’album du séjour</button>';
+  restartNextLoop();
+}
+function bindStripSwipe(){
+  const el=document.getElementById('next-strip');
+  if(!el||el.dataset.bound) return;
+  el.dataset.bound='1';
+  let x=0,y=0;
+  el.addEventListener('touchstart',e=>{
+    x=e.changedTouches[0].clientX; y=e.changedTouches[0].clientY;
+  },{passive:true});
+  el.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-x;
+    const dy=e.changedTouches[0].clientY-y;
+    if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.2){
+      nextSwipe=true;
+      stepNext(dx<0?1:-1);
+      setTimeout(()=>{nextSwipe=false},400);
+    }
+  },{passive:true});
+}
+bindStripSwipe();
+paintNext(true);
+setInterval(()=>{paintNext(false)},15000);
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden) clearTimeout(nextTimer);
+  else paintNext(true);
+});
+
+const FAMILY_GATE='sani-sitbon';
+const GATE_STORE='sitbon-album-word';
+let souvenirBack='intro';
+let pendingPhoto=null;
+let albumMsg='';
+let armDelete='';
+let editId='';
+let shownUrls=[];
+function familyWord(){
+  try{const w=localStorage.getItem(GATE_STORE); if(w) return w}catch(e){}
+  return FAMILY_GATE;
+}
+function sameWord(a,b){return String(a||'').trim().toLowerCase()===String(b||'').trim().toLowerCase()}
+function albumUnlocked(){try{return sessionStorage.getItem('sitbon-album-ok')==='1'}catch(e){return false}}
+function unlockAlbum(){try{sessionStorage.setItem('sitbon-album-ok','1')}catch(e){}}
+function openSouvenir(from){
+  souvenirBack=safeDest(from,'intro');
+  albumMsg='';
+  renderSouvenir();
+  go('souvenir');
+}
+function backSouvenir(){
+  if(souvenirBack==='jour'){go('jour');return}
+  if(souvenirBack==='jours'){renderJours();go('jours');return}
+  go(souvenirBack||'intro');
+}
+function albumDB(){
+  return new Promise((resolve,reject)=>{
+    if(!window.indexedDB){reject(new Error('nodb'));return}
+    const req=indexedDB.open('sitbon-souvenir-2026',1);
+    req.onupgradeneeded=()=>{
+      const db=req.result;
+      if(!db.objectStoreNames.contains('photos')) db.createObjectStore('photos',{keyPath:'id'});
+    };
+    req.onsuccess=()=>resolve(req.result);
+    req.onerror=()=>reject(req.error||new Error('nodb'));
+  });
+}
+function loadPhotos(){
+  return albumDB().then(db=>new Promise((resolve,reject)=>{
+    const req=db.transaction('photos','readonly').objectStore('photos').getAll();
+    req.onsuccess=()=>{
+      const list=(req.result||[]).slice().sort((a,b)=>a.added-b.added);
+      resolve(list);
+    };
+    req.onerror=()=>reject(req.error);
+  }));
+}
+function putPhoto(rec){
+  return albumDB().then(db=>new Promise((resolve,reject)=>{
+    const tx=db.transaction('photos','readwrite');
+    tx.objectStore('photos').put(rec);
+    tx.oncomplete=()=>resolve();
+    tx.onerror=()=>reject(tx.error);
+    tx.onabort=()=>reject(tx.error||new Error('quota'));
+  }));
+}
+function removePhoto(id){
+  return albumDB().then(db=>new Promise((resolve,reject)=>{
+    const tx=db.transaction('photos','readwrite');
+    tx.objectStore('photos').delete(id);
+    tx.oncomplete=()=>resolve();
+    tx.onerror=()=>reject(tx.error);
+  }));
+}
+function revokeShown(){shownUrls.forEach(u=>URL.revokeObjectURL(u));shownUrls=[]}
+function frMoment(ms){
+  return new Intl.DateTimeFormat('fr-FR',{timeZone:ATHENS,weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'}).format(new Date(ms));
+}
+function shrinkPhoto(file){
+  const draw=bmp=>{
+    const max=1400;
+    const scale=Math.min(1,max/Math.max(bmp.width,bmp.height));
+    const w=Math.max(1,Math.round(bmp.width*scale));
+    const h=Math.max(1,Math.round(bmp.height*scale));
+    const canvas=document.createElement('canvas');
+    canvas.width=w; canvas.height=h;
+    canvas.getContext('2d').drawImage(bmp,0,0,w,h);
+    if(bmp.close) bmp.close();
+    return new Promise((resolve,reject)=>{
+      canvas.toBlob(blob=>{
+        if(!blob) reject(new Error('blob'));
+        else resolve({blob:blob,w:w,h:h});
+      },'image/jpeg',0.82);
+    });
+  };
+  return createImageBitmap(file,{imageOrientation:'from-image'}).catch(()=>createImageBitmap(file)).then(draw).catch(()=>{throw new Error('decode')});
+}
+function renderSouvenir(){
+  const el=document.getElementById('souvenir');
+  if(!el) return;
+  if(!albumUnlocked()){
+    el.innerHTML='<div class="topbar"><button type="button" onclick="backSouvenir()" aria-label="Retour">←</button><div class="t">L’album</div><div style="width:42px"></div></div>'
+      +'<div class="card album-gate"><p class="album-kicker">Juste pour nous</p><h2>Le mot de la famille</h2>'
+      +'<p class="muted">Un mot, et les photos s’ouvrent. Cette page n’est pas pour les passants.</p>'
+      +'<form id="gate-form"><label for="gate-word" class="sr">Le mot</label>'
+      +'<input id="gate-word" type="password" autocomplete="current-password" enterkeyhint="go" placeholder="Le mot">'
+      +(albumMsg?'<p class="album-err">'+esc(albumMsg)+'</p>':'')
+      +'<button class="btn" type="submit">Entrer</button></form></div>';
+    document.getElementById('gate-form').addEventListener('submit',e=>{
+      e.preventDefault();
+      const val=document.getElementById('gate-word').value;
+      if(sameWord(val,familyWord())){unlockAlbum();albumMsg='';renderSouvenir()}
+      else{albumMsg='Ce n’est pas celui-là. On réessaie doucement.';renderSouvenir()}
+    });
+    const input=document.getElementById('gate-word');
+    if(input) input.focus();
+    return;
+  }
+  revokeShown();
+  loadPhotos().then(list=>paintAlbum(list)).catch(()=>{
+    el.innerHTML=topAlbum()+'<div class="card"><h2>L’album ne s’ouvre pas</h2><p class="muted">Ce navigateur ne garde pas les photos ici. Essayez Safari ou Chrome, hors navigation privée.</p></div>';
+  });
+}
+function topAlbum(){
+  return '<div class="topbar"><button type="button" onclick="backSouvenir()" aria-label="Retour">←</button><div class="t">L’album</div><div style="width:42px"></div></div>';
+}
+function paintAlbum(list){
+  const el=document.getElementById('souvenir');
+  const n=list.length;
+  const count=n===0?'Aucune photo encore.':(n===1?'Une photo gardée.':n+' photos gardées.');
+  let preview='';
+  if(pendingPhoto){
+    preview='<img class="album-preview" alt="Aperçu de la photo choisie" src="'+pendingPhoto.url+'">';
+  }
+  const memories=list.map(p=>{
+    const url=URL.createObjectURL(p.blob);
+    shownUrls.push(url);
+    const cap=p.caption?('<p class="mem-cap">'+esc(p.caption)+'</p>'):'<p class="mem-quiet">Sans légende. L’image suffit.</p>';
+    const editing=editId===p.id;
+    const editor=editing?'<textarea id="edit-cap" maxlength="180">'+esc(p.caption||'')+'</textarea><button type="button" class="album-pick" onclick="saveCaption(\''+p.id+'\')">Garder la ligne</button>':'';
+    const armed=armDelete===p.id;
+    return '<figure class="memory"><img src="'+url+'" alt="'+(p.caption?esc(p.caption):'Photo du séjour')+'" width="'+p.w+'" height="'+p.h+'">'
+      +'<figcaption>'+cap+'<p class="mem-when">'+esc(frMoment(p.added))+'</p>'
+      +editor
+      +'<div class="mem-tools"><button type="button" onclick="beginEdit(\''+p.id+'\')">Retoucher la ligne</button>'
+      +'<button type="button" class="danger" onclick="askRemove(\''+p.id+'\')">'+(armed?'Oui, retirer':'Retirer')+'</button></div></figcaption></figure>';
+  }).join('');
+  const empty=n?'':'<div class="card"><h2>La première est libre</h2><p class="muted">Elle peut être toute petite : le balcon, une main, la lumière du matin.</p></div>';
+  el.innerHTML=topAlbum()
+    +'<p class="album-count">Pour Jessica, Yohai, Maor et Gabriela. '+esc(count)+'</p>'
+    +'<div class="card album-add"><p class="album-kicker">Pendant le séjour</p><h2>Une image de plus</h2>'
+    +'<p class="muted">Depuis ce téléphone, tout de suite.</p>'
+    +'<div class="album-row">'
+    +'<label class="album-pick">Prendre une photo<input type="file" accept="image/*" capture="environment" id="pick-cam"></label>'
+    +'<label class="album-pick">Choisir dans la pellicule<input type="file" accept="image/*" id="pick-lib"></label>'
+    +'</div>'+preview
+    +'<label for="album-caption" class="sr">Légende</label>'
+    +'<textarea id="album-caption" maxlength="180" placeholder="Une ligne, si elle vient. Sinon, rien."></textarea>'
+    +(albumMsg?'<p class="album-status">'+esc(albumMsg)+'</p>':'')
+    +'<button class="btn" type="button" id="keep-photo"'+(pendingPhoto?'':' disabled')+'>La garder</button>'
+    +'<div class="album-tools"><button class="btn ghost" type="button" id="take-album" style="color:#042f45;border-color:#9bb8c6">Emporter ou envoyer</button>'
+    +'<label class="album-pick">Recevoir l’album de l’autre téléphone<input type="file" accept=".html,text/html" id="import-album"></label></div>'
+    +'<p class="muted album-limit">Ces photos restent dans ce téléphone. Elles ne sont pas publiées sur le site. Pour les retrouver plus tard, emportez la page. Pour les voir aussi sur l’autre téléphone, envoyez ce fichier, puis importez-le là-bas.</p>'
+    +'<details class="album-word"><summary>Changer le mot</summary>'
+    +'<p class="muted">Le nouveau mot ne vaut que sur ce téléphone. L’autre garde l’ancien jusqu’à ce qu’on le change aussi.</p>'
+    +'<input id="new-word" type="password" autocomplete="new-password" placeholder="Le nouveau mot">'
+    +'<button class="btn mint" type="button" id="save-word">Le retenir</button></details></div>'
+    +empty+memories;
+  const cap=document.getElementById('album-caption');
+  if(cap&&pendingPhoto&&pendingPhoto.caption) cap.value=pendingPhoto.caption;
+  document.getElementById('pick-cam').addEventListener('change',e=>stagePhoto(e.target.files[0]));
+  document.getElementById('pick-lib').addEventListener('change',e=>stagePhoto(e.target.files[0]));
+  document.getElementById('keep-photo').addEventListener('click',keepPhoto);
+  document.getElementById('take-album').addEventListener('click',takeAlbum);
+  document.getElementById('import-album').addEventListener('change',e=>importAlbum(e.target.files[0]));
+  document.getElementById('save-word').addEventListener('click',saveWord);
+  if(albumMsg==='Elle est dans l’album.'||albumMsg.indexOf('arrivée')>=0){
+    const mems=el.querySelectorAll('.memory');
+    if(mems.length) mems[mems.length-1].scrollIntoView({block:'start'});
+  }
+}
+function stagePhoto(file){
+  if(!file) return;
+  const draft=document.getElementById('album-caption');
+  const caption=draft?draft.value:'';
+  if(pendingPhoto&&pendingPhoto.url) URL.revokeObjectURL(pendingPhoto.url);
+  pendingPhoto={file:file,url:URL.createObjectURL(file),caption:caption};
+  albumMsg='';
+  renderSouvenir();
+}
+function keepPhoto(){
+  if(!pendingPhoto) return;
+  const btn=document.getElementById('keep-photo');
+  if(btn) btn.disabled=true;
+  const caption=(document.getElementById('album-caption').value||'').trim().slice(0,180);
+  shrinkPhoto(pendingPhoto.file).then(shrunk=>{
+    const rec={id:(crypto.randomUUID?crypto.randomUUID():String(Date.now())),caption:caption,added:Date.now(),w:shrunk.w,h:shrunk.h,blob:shrunk.blob};
+    return putPhoto(rec);
+  }).then(()=>{
+    URL.revokeObjectURL(pendingPhoto.url);
+    pendingPhoto=null;
+    albumMsg='Elle est dans l’album.';
+    renderSouvenir();
+  }).catch(err=>{
+    const decode=err&&err.message==='decode';
+    albumMsg=decode?'Cette photo ne s’ouvre pas ici. Essayez-en une autre.':'Ce téléphone n’a pas pu la garder. Emportez l’album s’il est plein, puis réessayez.';
+    renderSouvenir();
+  });
+}
+function beginEdit(id){editId=id;armDelete='';renderSouvenir()}
+function saveCaption(id){
+  const input=document.getElementById('edit-cap');
+  const caption=input?(input.value||'').trim().slice(0,180):'';
+  loadPhotos().then(list=>{
+    const rec=list.find(p=>p.id===id);
+    if(!rec) return;
+    rec.caption=caption;
+    return putPhoto(rec);
+  }).then(()=>{editId='';albumMsg='La ligne est gardée.';renderSouvenir()});
+}
+function askRemove(id){
+  if(armDelete!==id){armDelete=id;renderSouvenir();return}
+  removePhoto(id).then(()=>{armDelete='';albumMsg='Elle a quitté ce téléphone.';renderSouvenir()});
+}
+function blobToDataUrl(blob){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>resolve(r.result);
+    r.onerror=()=>reject(r.error);
+    r.readAsDataURL(blob);
+  });
+}
+function dataUrlToBlob(dataUrl){
+  const parts=String(dataUrl).split(',');
+  const head=parts[0]||'';
+  const body=parts[1]||'';
+  const mime=(head.match(/data:(.*?);/)||[])[1]||'image/jpeg';
+  const bin=atob(body);
+  const arr=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) arr[i]=bin.charCodeAt(i);
+  return new Blob([arr],{type:mime});
+}
+function buildExport(list){
+  const jobs=list.map(p=>blobToDataUrl(p.blob).then(url=>({p:p,url:url})));
+  return Promise.all(jobs).then(rows=>{
+    const articles=rows.map(({p,url})=>{
+      return '<article class="souvenir" data-id="'+esc(p.id)+'" data-added="'+p.added+'">'
+        +'<img alt="'+(p.caption?esc(p.caption):'Photo du séjour')+'" src="'+url+'">'
+        +'<p class="cap">'+(p.caption?esc(p.caption):'')+'</p>'
+        +'<p class="when">'+esc(frMoment(p.added))+'</p></article>';
+    }).join('');
+    return '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+      +'<title>Souvenir Sitbon</title>'
+      +'<style>body{margin:0;background:#fff8ef;color:#12232c;font-family:Georgia,serif}main{max-width:640px;margin:0 auto;padding:28px 16px 64px}'
+      +'h1{font-weight:500;font-size:2.2rem;color:#042f45;margin:0 0 8px} .lead{color:#5a6f7a;line-height:1.45}'
+      +'article{margin:28px 0} img{width:100%;border-radius:18px;display:block} .cap{font-size:1.35rem;line-height:1.35;margin:12px 4px 0;color:#042f45}'
+      +'.when{margin:6px 4px 0;font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#8a5a00}'
+      +'</style></head><body><main><p class="when">Porto Sani · octobre 2026</p><h1>Ce qu’on a gardé</h1>'
+      +'<p class="lead">Jessica, Yohai, Maor et Gabriela.</p>'
+      +'<!-- souvenir-sitbon -->'+articles
+      +'<p class="lead">La semaine est passée. Ceci reste.</p></main></body></html>';
+  });
+}
+function takeAlbum(){
+  loadPhotos().then(list=>{
+    if(!list.length){albumMsg='L’album est encore vide. Une photo d’abord.';renderSouvenir();return}
+    return buildExport(list).then(html=>{
+      const file=new File([html],'souvenir-sitbon.html',{type:'text/html'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){
+        return navigator.share({files:[file],title:'Souvenir Sitbon'}).catch(err=>{
+          if(err&&err.name==='AbortError') return;
+          downloadHtml(html);
+        });
+      }
+      downloadHtml(html);
+    });
+  }).catch(()=>{albumMsg='L’envoi n’a pas marché. Réessayez dans un instant.';renderSouvenir()});
+}
+function downloadHtml(html){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([html],{type:'text/html'}));
+  a.download='souvenir-sitbon.html';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  albumMsg='La page souvenir est prête. Gardez-la, ou envoyez-la à l’autre téléphone.';
+  renderSouvenir();
+}
+function importAlbum(file){
+  if(!file) return;
+  file.text().then(text=>{
+    if(text.indexOf('souvenir-sitbon')<0){albumMsg='Ce fichier n’est pas un album Sitbon.';renderSouvenir();return}
+    const doc=new DOMParser().parseFromString(text,'text/html');
+    const nodes=[...doc.querySelectorAll('article.souvenir')];
+    return loadPhotos().then(existing=>{
+      const have={};
+      existing.forEach(p=>{have[p.id]=1});
+      let added=0, skipped=0;
+      const jobs=[];
+      nodes.forEach(node=>{
+        const id=node.getAttribute('data-id')||'';
+        const src=(node.querySelector('img')||{}).getAttribute&&node.querySelector('img').getAttribute('src');
+        if(!id||!src||src.indexOf('data:')!==0) return;
+        if(have[id]){skipped++;return}
+        const capNode=node.querySelector('.cap');
+        const caption=capNode?capNode.textContent.trim().slice(0,180):'';
+        const addedAt=+(node.getAttribute('data-added')||Date.now());
+        const blob=dataUrlToBlob(src);
+        jobs.push(putPhoto({id:id,caption:caption,added:addedAt,w:0,h:0,blob:blob}).then(()=>{added++}));
+      });
+      return Promise.all(jobs).then(()=>{
+        albumMsg=added
+          ?(added+' '+(added>1?'photos sont arrivées':'photo est arrivée')+(skipped?' · '+skipped+' déjà là':'')+'.')
+          :(skipped?'Elles étaient déjà là.':'Rien de nouveau dans ce fichier.');
+        renderSouvenir();
+      });
+    });
+  }).catch(()=>{albumMsg='Ce fichier ne s’ouvre pas.';renderSouvenir()});
+}
+function saveWord(){
+  const input=document.getElementById('new-word');
+  const word=(input&&input.value||'').trim();
+  if(word.length<4){albumMsg='Un mot un peu plus long, pour que ce soit vraiment le vôtre.';renderSouvenir();return}
+  try{localStorage.setItem(GATE_STORE,word)}catch(e){}
+  albumMsg='C’est le nouveau mot, sur ce téléphone.';
+  renderSouvenir();
 }
 
 </script>
