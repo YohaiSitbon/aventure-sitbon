@@ -594,6 +594,9 @@ body[data-mood] .sky .orb{opacity:.22}
 .callout.seat b{color:var(--sea2)}
 .callout.planb{background:#fff6e4;color:#5c4a28}
 .callout.planb b{color:#8a5a00}
+.callout.wx{background:#eef4ff;color:#243e52;margin:0 0 12px}
+.callout.wx b{color:#1a5f8a}
+.callout.wx a,#meteo a{font-weight:800;color:#0a6a8f}
 .callout.bonus{background:#fff9ef;border:1px dashed #e2c27a;color:#5c4a28}
 .callout.bonus b{color:#a87412}
 .day-nav{display:flex;gap:8px;margin:4px 0 10px}
@@ -927,7 +930,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
       <p class="sr" id="cd-live" aria-live="polite"></p>
     </div>
     <section class="next-strip" id="next-strip" aria-label="La suite du séjour"></section>
-    <p class="lead">Jessica, Yohai, Maor & Gabriela — la semaine est confirmée, le rythme reste le vôtre.</p>
+    <p class="lead">Jessica, Yohai, Maor & Gabriela — le rythme reste le vôtre. Mardi, la crèche est demandée, encore en attente.</p>
     <div class="fam">
       <div class="chip">Jessica<small>maman</small></div>
       <div class="chip">Yohai<small>papa</small></div>
@@ -949,7 +952,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
     </div>
     <button class="climate-peek" type="button" onclick="go('legend','meteo')">
       <span aria-hidden="true">🌤️</span>
-      <span><strong>Climat mi-octobre</strong><small>16–22 °C · mer ~21 °C · pluie possible</small></span>
+      <span><strong>Prévision du 9 oct.</strong><small>13–23 °C · mardi sous la pluie</small></span>
       <span class="arr" aria-hidden="true">→</span>
     </button>
   </div>
@@ -986,9 +989,22 @@ button.gcard,button.jcard{appearance:none;width:100%}
     </div>
   </div>
   <div class="card" id="meteo">
-    <h2>Climat typique mi-octobre à Porto Sani</h2>
+    <h2>Le temps de cette semaine</h2>
+    <p class="wx-flag">Prévision du 9 octobre</p>
+    <p class="muted">Notée le 9 octobre, pour Porto Sani. Ça peut encore bouger. <a href="https://yohaisitbon.github.io/sani-meteo/">La prévision en direct</a>.</p>
+    <div class="wx-row" aria-label="Prévision du 9 octobre">
+      <div class="wx-chip live"><div class="wx-d">Lun<small>12</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>23°</b><span>18°</span></div><div class="wx-p">sec</div></div>
+      <div class="wx-chip wet"><div class="wx-d">Mar<small>13</small></div><div class="wx-ico">🌧️</div><div class="wx-t"><b>19°</b><span>14°</span></div><div class="wx-p">pluie presque toute la journée</div><div class="wx-tag">dedans</div></div>
+      <div class="wx-chip"><div class="wx-d">Mer<small>14</small></div><div class="wx-ico">💨</div><div class="wx-t"><b>18°</b><span>13°</span></div><div class="wx-p">vent · matin ressenti 10–12°</div></div>
+      <div class="wx-chip"><div class="wx-d">Jeu<small>15</small></div><div class="wx-ico">💨</div><div class="wx-t"><b>20°</b><span>15°</span></div><div class="wx-p">vent</div></div>
+      <div class="wx-chip live"><div class="wx-d">Ven<small>16</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>21°</b><span>16°</span></div><div class="wx-p">sec</div><div class="wx-tag">le plus beau</div></div>
+      <div class="wx-chip live"><div class="wx-d">Sam<small>17</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>21°</b><span>16°</span></div><div class="wx-p">sec</div></div>
+      <div class="wx-chip"><div class="wx-d">Dim<small>18</small></div><div class="wx-ico">🌦️</div><div class="wx-t"><b>20°</b><span>15°</span></div><div class="wx-p">petite bruine possible</div></div>
+    </div>
+    <p class="wx-legend">Chiffre foncé = max · clair = min · prévision du 9 octobre</p>
+    <h3 class="wx-sub">Climat habituel, pour comparer</h3>
     <p class="wx-flag">Normales historiques · 2020–2024</p>
-    <p class="muted">Moyennes Open-Meteo pour Porto Sani / Kassandra (~40,08° N, 23,32° E). Ce n’est pas la météo réelle d’octobre 2026 : seulement le climat habituel de ces dates. La prévision s’ajoute en dessous dès qu’elle est publiée.</p>
+    <p class="muted">Moyennes Open-Meteo pour Porto Sani / Kassandra (~40,08° N, 23,32° E). Ce n’est pas le temps de cette semaine : seulement ce qui se passe d’habitude à ces dates.</p>
     <div class="wx-row" aria-label="Normales jour par jour">
       <div class="wx-chip"><div class="wx-d">Lun<small>12</small></div><div class="wx-ico">☀️</div><div class="wx-t"><b>21,9°</b><span>18,1°</span></div><div class="wx-p">0,8 mm</div></div>
       <div class="wx-chip"><div class="wx-d">Mar<small>13</small></div><div class="wx-ico">🌤️</div><div class="wx-t"><b>21,3°</b><span>16,9°</span></div><div class="wx-p">3,4 mm</div></div>
@@ -1000,7 +1016,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
     </div>
     <p class="wx-legend">Chiffre foncé = max typique · clair = min · pluie = moyenne en mm</p>
     <div id="wx-live" hidden></div>
-    <p class="muted wx-note">Mer souvent ~20–22 °C. Les soirées descendent vers 15–18 °C : un pull léger suffit. Prévoyez une couche pluie compacte, surtout autour du 15 octobre, historiquement plus arrosé.</p>
+    <p class="muted wx-note">Le climat habituel met souvent la pluie autour du 15. Cette année, la note du 9 octobre la met plutôt mardi 13. Mer souvent ~20–22 °C. Un pull léger, et un parapluie pour mardi.</p>
     <button type="button" class="wx-btn" id="wx-refresh">Voir si la prévision 2026 est disponible</button>
     <p class="wx-status" id="wx-status"></p>
   </div>
@@ -1017,7 +1033,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 <section id="choose" class="screen">
   <div class="topbar"><button onclick="go('legend')">←</button><div class="t">Votre aventure</div><div style="width:42px"></div></div>
   <div class="progress"><span class="on"></span><span class="on"></span><span></span><span></span></div>
-  <p class="reco-why"><strong>La semaine est confirmée par l’hôtel.</strong> Sieste de 13h à 15h, deux Baby Swim, le Volvo jeudi, les dîners déjà réservés. Les trois cartes gardent une couleur ; les horaires, eux, sont les mêmes. Gabriela reste dans vos bras : toute la famille, ensemble.</p>
+  <p class="reco-why"><strong>Les dîners, les deux Baby Swim et le Volvo sont à l’hôtel.</strong> Sieste de 13h à 15h. Mardi, la crèche de Maor est demandée, en attente de confirmation. Les trois cartes gardent une couleur ; les horaires, eux, sont les mêmes. Gabriela reste dans vos bras : toute la famille, ensemble.</p>
   <button class="card opt a reco" onclick="openOpt(1)">
     <span class="ribbon">La plus joueuse 💛</span>
     <span class="tag">Fun</span>
@@ -1081,7 +1097,7 @@ button.gcard,button.jcard{appearance:none;width:100%}
 
 <section id="pack" class="screen">
   <div class="topbar"><button type="button" onclick="backPack()">←</button><div class="t">À emballer</div><div style="width:42px"></div></div>
-  <p class="pack-intro">Mi-octobre en Chalcidique : journées ~19–22 °C, soirées 15–18 °C, mer ~20–22 °C, averses possibles. Pension complète à l’hôtel. Les coches restent sur ce téléphone.</p>
+  <p class="pack-intro">Prévision du 9 octobre : 13 à 23 °C, mardi sous la pluie. Un parapluie dans le sac. Pension complète à l’hôtel. Les coches restent sur ce téléphone.</p>
   <div class="pack-tabs" id="pack-tabs" role="tablist"></div>
   <p class="pack-overall" id="pack-overall"></p>
   <div id="pack-panels"></div>
@@ -1110,27 +1126,27 @@ button.gcard,button.jcard{appearance:none;width:100%}
 
 <script>
 const tips={
-bike:["Family bike","Bike Center, pas réservé. Seulement s’ils en ont envie : lundi après la sieste, ou mardi matin."],
-creche:["Crèche","Pas confirmée. On ne compte pas dessus. Si un créneau s’ouvre, un parent reste joignable. Sinon, plan B ensemble."],
+bike:["Family bike","Bike Center, pas réservé. Seulement s’ils en ont envie : lundi 12 après la sieste, ou vendredi 16 et samedi 17. Pas mardi : il pleut."],
+creche:["Crèche","Pour Maor, 2 ans, mardi 13. Adaptation 9h40–10h00, vous restez dedans avec lui. À 10h00 vous partez. Séance 10h00–13h00 : 42 €, goûter pomme et banane, bacs sensoriels, bricolage, jeu libre dedans et dehors. On peut le récupérer à tout moment. Annulation gratuite : concierge, Kids Club, ou l’appli. Statut : demandé, en attente de confirmation."],
 swim:["Baby Swim","Baby Swim & Sensory Play, 30 min, piscine Sani Beach. Réservation 4966185. Mercredi 14 et vendredi 16 à 11h. Un parent dans l’eau. Maor seulement. Gabriela trop petite."],
-babe:["Babe Watch","Pas de réservation. Si vous y allez, un parent reste tout le temps : Maor a 2 ans. Ce n’est pas une garde."],
+babe:["Babe Watch","Tous les jours, 13h15–14h45. Pas de réservation, et un parent reste : Maor a 2 ans. Ce n’est pas une garde. Ça tombe sur sa sieste (13h–15h) : on choisit l’un ou l’autre. S’il pleut, c’est annulé ; au hall, maquillage et coloriages. Les meilleurs jours : vendredi 16 ou samedi 17."],
 wet:["Wetlands","Pas au programme. L’hôtel a dit que les wetlands sont secs."],
 bee:["Bee Spot","Pas au programme de cette semaine. Si vous en croisez, on regarde sans toucher."],
 volvo:["Volvo","Jeudi 15 octobre, 10h30, tour de Kassandra. Tous les quatre, avec le chauffeur du resort."],
 dine:["Dine Around","Les dîners sont réservés. Arriver dans les 15 minutes, tenue smart casual. Petit-déjeuner et déjeuner : pas de réservation."],
 artemis:["Artemis","Buffet près des suites, station enfants Donna Hay. Lundi 19h, réservation 1404428, chaise haute. Samedi 19h, réservation 1412302, dernier dîner à l’hôtel."],
-macaroni:["Macaroni","Italien, marina : pizza et pâtes. Mardi 18h30, réservation 1412299."],
+macaroni:["Macaroni","Italien, marina : pizza et pâtes. Mardi 18h30, réservation 1412299. Il pleut : parapluie, ou on demande une voiture."],
 vosporos:["Vosporos","Grill grec, marina. Jeudi 18h30, réservation 1412300. Pas le mercredi : mercredi, c’est Ergon."],
 ergon:["Ergon","Mezze à partager. Mercredi 18h, réservation 1404431. Pas Vosporos ce soir-là."],
 psaro:["Psarogiannos","Taverne de poisson, plus calme. Vendredi 18h30, réservation 1412301. Sur d’anciens papiers, le nom s’écrivait Psaroyannos."]
 };
 const WEEK=[
-["12","lun","Arrivée 10h25 · hall B · sieste · <strong>Artemis 19h</strong>"],
-["13","mar","Vélos le matin, si envie · plage · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
+["12","lun","Arrivée 10h25 · hall B · vélos après la sieste, si envie · <strong>Artemis 19h</strong>"],
+["13","mar","<button class='tip' data-t='creche'>Crèche demandée 9h40</button> · pluie, on reste dedans · <button class='tip' data-t='macaroni'>Macaroni 18h30</button>"],
 ["14","mer","<button class='tip' data-t='swim'>Baby Swim 11h</button> · sieste · <button class='tip' data-t='ergon'>Ergon 18h</button>"],
 ["15","jeu","<button class='tip' data-t='volvo'>Volvo 10h30</button> · sieste · <button class='tip' data-t='vosporos'>Vosporos 18h30</button>"],
-["16","ven","<button class='tip' data-t='swim'>Baby Swim 11h</button> · pas de wetlands · <button class='tip' data-t='psaro'>Psarogiannos 18h30</button>"],
-["17","sam","Matin doux · sieste · valises · <button class='tip' data-t='artemis'>Artemis 19h</button>"],
+["16","ven","<button class='tip' data-t='swim'>Baby Swim 11h</button> · vélos si envie · <button class='tip' data-t='psaro'>Psarogiannos 18h30</button>"],
+["17","sam","Vélos ou <button class='tip' data-t='babe'>Babe Watch</button> · sieste · valises · <button class='tip' data-t='artemis'>Artemis 19h</button>"],
 ["18","dim","Matin doux · sieste · départ 15h–15h30 · vol 19h25"]
 ];
 const opts={
@@ -1626,43 +1642,48 @@ function g(id,t,h){return [id,t,h]}
 
 const CONFIRMED_DAYS={
 12:{theme:'arrive',headline:'Arrivée, tout en douceur',line:'Salonique à 10h25, la suite vers midi, Artemis déjà réservé.',pills:['Vol 10h25','Sieste 13h–15h','Artemis 19h'],
+weather:'18–23°. Belle journée pour arriver. Les vélos, seulement après la sieste, s’ils en ont envie.',
 timeline:[
 slot('✈️','8h00–10h25','Matin','Le vol','Israir : Tel-Aviv 8h, Salonique 10h25. Maor près du hublot si le siège le permet, Gabriela contre vous. Doudou et snacks en cabine, pas en soute.'),
 slot('🚐','10h25','À l’aéroport','Le transfert','Hall des arrivées B, côté droit, devant le Sani Resort Office. Transfert privé, deux sièges auto. On ne cherche pas un taxi.'),
 slot('🏨','vers 12h00','Midi','La suite','Le resort autour de midi. Un regard vers la mer, les sacs dans la chambre, le balcon ouvert une minute.'),
 slot('😴','13h00–15h00','Sieste','On éteint','Si le transfert glisse, la sieste commence dès que la chambre est calme. Rideaux tirés, téléphones silencieux. Personne ne ressort.'),
-slot('🚲','après 15h','Si l’envie','Vélos','Bike Center, pas réservé. Seulement s’ils en ont envie. Vingt à quarante minutes près des suites, puis on rentre. Sinon, le balcon suffit.'),
+slot('🚲','après 15h','Si l’envie','Vélos','Bike Center, pas réservé. Seulement s’ils en ont envie, après la sieste. Vingt à quarante minutes près des suites, puis on rentre. L’autre fenêtre, c’est vendredi 16 ou samedi 17. Sinon, le balcon suffit.'),
 slot('🍽️','19h00','Dîner','Artemis','Réservation 1404428, chaise haute pour Maor. Buffet près des suites, station enfants Donna Hay. On marche peu après le vol.')
 ],
 expect:'La suite sent le propre et la mer tient le balcon. Maor peut être surexcité, puis s’éteindre d’un coup : c’est le jour du voyage. Gabriela a besoin du noir plus tôt que l’envie de vélo. Les vélos ne sont pas un rendez-vous.',
 seat:seatOf('Artemis','Chaise haute pour Maor, réservation 1404428.'),
-planb:'Pas de crèche. Si le vélo ne dit rien, playground dix minutes, puis le balcon. Le dîner ne bouge pas. Pas de baby-sitter : vous restez tous les quatre.',
+planb:'Pas de crèche aujourd’hui : c’est le jour du voyage. Si le vélo ne dit rien, playground dix minutes, puis le balcon. Le dîner ne bouge pas. Pas de baby-sitter : vous restez tous les quatre.',
 gear:[g('pass','Passeports à la main','Jessica, Yohai, Maor et Gabriela'),g('lovey','Doudou de Maor','En cabine, pas en soute'),g('gaby','Change de Gabriela','Body et couche dans le sac'),g('seat','Deux sièges auto','Ils sont avec le transfert, pas dans la valise'),g('cap','Casquette','Seulement si le vélo se fait'),g('cream','Crème solaire','Même pour un court tour'),g('water','Gourde','Si vous sortez après la sieste'),g('monitor','Note babyphone','À demander : pour voir la chambre, jamais pour s’absenter')]},
-13:{theme:'bike',headline:'Le matin est libre',line:'Vélos seulement si le cœur y est. Plage après la sieste. Macaroni à 18h30.',pills:['Vélos en option','Sieste 13h–15h','Macaroni 18h30'],
+13:{theme:'jungle',headline:'La crèche, si la place vient',kicker:'Crèche en attente',line:'Demandé pour Maor, en attente de confirmation. Journée pluvieuse : on reste dedans. Macaroni à 18h30.',pills:['Crèche demandée','Sieste 13h–15h','Macaroni 18h30'],
+weather:'14–19°, pluie une bonne partie de la journée. On reste dedans. Parapluie pour Macaroni, ou on demande une voiture.',
 timeline:[
-slot('☀️','8h30–9h30','Matin','Doucement','Petit-déjeuner sans réservation, à la suite ou chez Artemis. On ne rattrape pas la journée d’hier.'),
-slot('🚴','en matinée','Si l’envie','Bike Center','Pas réservé. Un tour seulement si Maor le réclame. Sinon on ne force rien, et la matinée reste au jardin.'),
-slot('😴','13h00–15h00','Sieste','Chambre','Retour large avant 13h. Le pic de la journée peut déjà être passé, et c’est très bien.'),
-slot('🏖️','15h30–17h30','Après la sieste','La plage','Ombre pour Gabriela, seau pour Maor, vous deux dans le cadre. On remonte au premier bâillement.'),
-slot('🍽️','18h30','Dîner','Macaroni','Réservation 1412299. Pizza et pâtes, poussette bienvenue. On part dès que Maor décroche.')
+slot('☀️','8h30–9h20','Matin','Doucement','Petit-déjeuner sans réservation, à la suite. Dehors, il pleut : on ne prévoit pas de vélos ni de plage.'),
+slot('🧸','9h40–10h00','Adaptation','Vous restez avec lui','Crèche pour Maor, 2 ans. De 9h40 à 10h00, vous êtes à l’intérieur avec lui. À 10h00, vous partez. Statut : demandé, en attente de confirmation. 42 € seulement si la place vient. Annulation gratuite : concierge, Kids Club, ou l’appli.'),
+slot('🦁','10h00–13h00','Si la place vient','La séance','Goûter : pomme et banane. Bacs sensoriels, bricolage, jeu libre dedans et dehors. On peut le récupérer à tout moment. Vous restez joignables. Toujours demandé, en attente de confirmation.'),
+slot('😴','13h00–15h00','Sieste','Chambre','On le récupère à 13h00, puis la chambre. Le Babe Watch (13h15–14h45) tombe sur cette sieste, et la pluie l’annule de toute façon.'),
+slot('🖍️','15h30–17h30','Après la sieste','Dedans','Hall : maquillage et coloriages. Pas de plage, pas de vélos. C’est le repli du Babe Watch quand il pleut.'),
+slot('🍽️','18h30','Dîner','Macaroni','Réservation 1412299. Parapluie, ou on demande une voiture. Pizza et pâtes. On part dès que Maor décroche.')
 ],
-expect:'Rien n’est réservé avant le dîner, à part la sieste. La marina peut attendre un autre jour. Gabriela reste à l’ombre : le soleil de l’après-midi tape encore.',
-seat:seatOf('Macaroni','Réservation 1412299.'),
-planb:'Pas de crèche. Si le vélo est refusé, on reste au playground ou on avance la plage avant la sieste, courte. Le dîner, lui, tient.',
-gear:[g('cap','Casquette','Maor, et chapeau pour Gabriela'),g('water','Gourde','Avant un tour de vélo'),g('cream','Crème solaire','À remettre avant la plage'),g('swim','Maillot de Maor','Pour après la sieste'),g('shade','Ombre de Gabriela','Chapeau, et un coin déjà repéré'),g('bucket','Seau','Un seul suffit'),g('towel','Serviette','Et un change sec'),g('gaby','Change de Gabriela','Le sable voyage')]},
-14:{theme:'swim',headline:'L’eau, avec vous',line:'Baby Swim à 11h. La crèche n’est pas confirmée. Le soir, c’est Ergon, pas Vosporos.',pills:['Swim 11h','Sieste 13h–15h','Ergon 18h'],
+expect:'La place n’est pas encore là : on dit demandé, en attente de confirmation, et on ne construit pas la matinée dessus. S’il y va, Gabriela reste avec vous. À 13h on le récupère pour la sieste. L’après-midi reste au chaud.',
+seat:seatOf('Macaroni','Réservation 1412299. Il pleut : parapluie, ou on demande une voiture. La terrasse peut attendre.'),
+planb:'Si la place ne vient pas, la matinée reste à la suite ou au hall : coloriages, jeux. La pluie annule le Babe Watch. On ne sort pas à la plage. Le dîner Macaroni tient.',
+gear:[g('umbre','Parapluie','Pour Macaroni, ou on demande une voiture'),g('rain','Veste de pluie','Maor, et vous'),g('lovey','Doudou de Maor','Pour la sieste, dès 13h'),g('change','Change sec','Si le dehors mouille quand même'),g('phone','Téléphone','Concierge, Kids Club ou l’appli, si on annule'),g('gaby','Change de Gabriela','Elle reste avec vous pendant la crèche')]},
+14:{theme:'swim',headline:'L’eau, avec vous',line:'Baby Swim à 11h. Le soir, c’est Ergon, pas Vosporos.',pills:['Swim 11h','Sieste 13h–15h','Ergon 18h'],
+weather:'13–18°. Le matin, on a l’impression de 10–12°, et il y a du vent. Un pull avant le Swim.',
 timeline:[
-slot('☀️','8h30–10h30','Matin','Sans se presser','Petit-déjeuner sans réservation. Maillots dans le sac. On dit à Maor : l’eau, avec maman ou papa.'),
-slot('🏊','11h00','30 minutes','Baby Swim','Baby Swim & Sensory Play, piscine Sani Beach. Réservation 4966185. Un parent dans l’eau, Maor seulement. Gabriela avec l’autre parent, à l’ombre, hors du bassin. La crèche n’est pas confirmée : on ne compte pas dessus.'),
+slot('☀️','8h30–10h30','Matin','Sans se presser','Petit-déjeuner sans réservation. Il fait frais et il y a du vent : un pull avant de sortir. Maillots dans le sac. On dit à Maor : l’eau, avec maman ou papa.'),
+slot('🏊','11h00','30 minutes','Baby Swim','Baby Swim & Sensory Play, piscine Sani Beach. Réservation 4966185. Un parent dans l’eau, Maor seulement. Gabriela avec l’autre parent, à l’ombre, hors du bassin.'),
 slot('😴','13h00–15h00','Sieste','Après l’eau','On rentre avant 13h. Cette sieste compte double.'),
 slot('🌿','15h30–17h15','Après-midi','Tout doux','Balcon, ou une plage très courte. Pas de nouveau rendez-vous. Pas de Vosporos ce soir.'),
 slot('🍽️','18h00','Dîner','Ergon','Réservation 1404431. 18h, pas 19h. Mezze à partager. Ce n’est pas Vosporos.')
 ],
 expect:'Le Swim est un jeu dans l’eau, pas une évaluation. Maor peut adorer ou vouloir sortir : les deux font une bonne demi-heure. Le change sec est dans le sac, pas à la chambre. Gabriela, trois mois, n’entre pas dans le bassin.',
 seat:seatOf('Ergon','Réservation 1404431. 18h précises.'),
-planb:'Pas de crèche confirmée : si quelqu’un en reparle, on ne l’ajoute pas au détriment de la sieste. Si Maor refuse l’eau, pataugeoire ou plage des suites, tous les quatre. Pas de baby-sitter. Le dîner reste Ergon.',
-gear:[g('swim','Maillot de Maor','Pour 11h'),g('parent','Maillot du parent','Celui qui entre dans l’eau'),g('cream','Crème solaire','Avant de sortir'),g('towel','Serviette et change sec','Dès la sortie de l’eau'),g('gaby','Change de Gabriela','Elle attend à l’ombre, pas dans le bassin'),g('shade','Chapeau de Gabriela','Au bord de la piscine'),g('lovey','Doudou','Pour la sieste, dès le retour')]},
+planb:'Si Maor refuse l’eau, pataugeoire ou plage des suites, tous les quatre. Pas de baby-sitter. Le dîner reste Ergon.',
+gear:[g('swim','Maillot de Maor','Pour 11h'),g('parent','Maillot du parent','Celui qui entre dans l’eau'),g('pull','Pull léger','Le matin se sent à 10–12°, avec du vent'),g('cream','Crème solaire','Avant de sortir'),g('towel','Serviette et change sec','Dès la sortie de l’eau'),g('gaby','Change de Gabriela','Elle attend à l’ombre, pas dans le bassin'),g('shade','Chapeau de Gabriela','Au bord de la piscine'),g('lovey','Doudou','Pour la sieste, dès le retour')]},
 15:{theme:'volvo',headline:'Kassandra, tous les quatre',line:'Le Volvo à 10h30. Le dîner est à Vosporos, pas à Ergon.',pills:['Volvo 10h30','Sieste 13h–15h','Vosporos 18h30'],
+weather:'15–20°, du vent. Le pull reste dans le sac du Volvo.',
 timeline:[
 slot('☀️','8h30–10h00','Matin','Le sac voiture','Petit-déjeuner sans réservation. Le pull léger entre dans le sac : la clim est fraîche.'),
 slot('🚗','10h30','Milieu de matinée','Volvo Kassandra','Tous les quatre, avec le chauffeur. Péninsule de Kassandra. On coupe dès que Maor ou Gabriela sature : demi-tour n’est pas un échec. Si Gabriela s’endort, on ne la réveille pas pour une photo.'),
@@ -1672,33 +1693,36 @@ slot('🍽️','18h30','Dîner','Vosporos','Réservation 1412300. Grill, coin ca
 ],
 expect:'Ce n’est pas une liste de villages à cocher. Les fenêtres suffisent à Maor. Gabriela voyage mieux contre vous. Le confort et la sieste valent plus qu’un arrêt de plus.',
 seat:seatOf('Vosporos','Réservation 1412300.'),
-planb:'Pas de crèche. Si la voiture ennuie au bout de vingt minutes, on écourte sans négocier. L’après-midi peut rester la suite. Le dîner reste Vosporos.',
+planb:'Si la voiture ennuie au bout de vingt minutes, on écourte sans négocier. L’après-midi peut rester la suite. Le dîner reste Vosporos.',
 gear:[g('snack','Snacks','Biscuits, un fruit, avant de monter'),g('pull','Pull léger','Clim du Volvo et soirée fraîche'),g('toy','Jouet calme','Un seul, pour la voiture'),g('wipe','Lingettes Gabriela','À portée de main'),g('cap','Casquette','Pour un arrêt court'),g('phone','Téléphone chargé','Le réseau passe mal par endroits'),g('gaby','Change de Gabriela','Les trajets n’attendent pas')]},
-16:{theme:'swim',headline:'Encore l’eau, pas le marais',line:'Même Baby Swim à 11h. Les wetlands sont secs : on n’y va pas.',pills:['Swim 11h','Sieste 13h–15h','Psarogiannos 18h30'],
+16:{theme:'swim',headline:'Encore l’eau, pas le marais',line:'Même Baby Swim à 11h. Après la sieste, vélos si l’envie est là. Les wetlands sont secs.',pills:['Swim 11h','Sieste 13h–15h','Psarogiannos 18h30'],
+weather:'16–21°, sec. Le plus beau jour : vélos après la sieste, ou Babe Watch si vous sautez un bout de sieste.',
 timeline:[
 slot('☀️','8h30–10h30','Matin','Doucement','Petit-déjeuner sans réservation. Maillots dans le sac. Rien d’autre n’est réservé ce matin.'),
-slot('🏊','11h00','30 minutes','Baby Swim','Même réservation 4966185. Piscine Sani Beach, un parent dans l’eau, Maor seulement. Gabriela à l’ombre, avec l’autre. Pas de wetlands : l’hôtel a dit qu’ils sont secs. La crèche n’est pas confirmée.'),
-slot('😴','13h00–15h00','Sieste','Profonde','Après l’eau, on protège ce créneau. Rien ne le grignote.'),
-slot('🌿','15h30–17h30','Après-midi','Très doux','Balcon ou plage à l’ombre. Pas de troisième activité, pas de marais « quand même ».'),
+slot('🏊','11h00','30 minutes','Baby Swim','Même réservation 4966185. Piscine Sani Beach, un parent dans l’eau, Maor seulement. Gabriela à l’ombre, avec l’autre. Pas de wetlands : l’hôtel a dit qu’ils sont secs.'),
+slot('😴','13h00–15h00','Sieste','Ou le Babe Watch','Le Babe Watch, tous les jours 13h15–14h45, sans réservation : un parent reste, Maor a 2 ans. Ça tombe sur la sieste. On choisit l’un ou l’autre. S’il pleut, le Babe Watch est annulé : hall, maquillage et coloriages. Vendredi est un bon jour s’il reste sec.'),
+slot('🚲','15h30–17h15','Si l’envie','Vélos','Bike Center, pas réservé. Vendredi est l’autre belle fenêtre, avec lundi après la sieste et samedi. Sinon balcon ou plage à l’ombre. Pas de marais « quand même ».'),
 slot('🍽️','18h30','Dîner','Psarogiannos','Réservation 1412301. Taverne de poisson, plus calme. On en profite sans rallonger.')
 ],
 expect:'C’est le deuxième et dernier Swim. Le marais ne se rattrape pas : il est sec. Deux ou trois rires dans l’eau suffisent à une victoire. Gabriela n’a pas à enchaîner les transats.',
 seat:seatOf('Psarogiannos','Réservation 1412301.'),
-planb:'Pas de crèche confirmée, pas de wetlands. Si Maor refuse l’eau, plage à l’ombre, ensemble. On n’invente pas un troisième Swim samedi. Pas de baby-sitter.',
+planb:'Pas de wetlands. Si Maor refuse l’eau, plage à l’ombre, ensemble. On n’invente pas un troisième Swim samedi. Pas de baby-sitter. Le Babe Watch ne remplace la sieste que si vous le décidez.',
 gear:[g('swim','Maillot de Maor','Deuxième Swim, le dernier'),g('parent','Maillot du parent','Dans le sac'),g('cream','Crème solaire',''),g('towel','Serviette et change sec','Dès la sortie'),g('shade','Ombre pour Gabriela','Au bord, comme mercredi'),g('gaby','Change de Gabriela',''),g('lovey','Doudou','Pour attaquer la sieste vite')]},
-17:{theme:'beach',headline:'Dernier soir à l’hôtel',line:'Matin souple, sieste, valises. Artemis à 19h, et c’est le dernier dîner sur place.',pills:['Matin doux','Sieste puis valises','Artemis 19h'],
+17:{theme:'beach',headline:'Dernier soir à l’hôtel',line:'Matin souple, vélos si l’envie est là, sieste, valises. Artemis à 19h, dernier dîner sur place.',pills:['Matin doux','Sieste puis valises','Artemis 19h'],
+weather:'16–21°, sec. Encore un bon jour pour les vélos, le matin, avant la sieste.',
 timeline:[
-slot('☀️','matin','Sans programme','Tout doux','Petit-déjeuner sans réservation. Pas de vélo à caser, pas de cours. Le sable seulement si Maor le demande.'),
-slot('🏖️','si vous y allez','Pas réservé','Babe Watch','Aucune réservation. Un parent reste tout le temps : Maor a 2 ans. Ce n’est pas une garde, et Gabriela reste avec vous. Si le cœur n’y est pas, on joue dans le sable ensemble, et la journée est complète.'),
-slot('😴','13h00–15h00','Sieste','Comme d’habitude','Même le dernier vrai jour a sa sieste.'),
+slot('🚲','matin','Si l’envie','Vélos, ou pas','Bike Center, pas réservé. Samedi est sec, comme vendredi. Sinon petit-déjeuner sans programme, et le sable seulement si Maor le demande.'),
+slot('🏖️','13h15–14h45','Pas réservé','Babe Watch, ou la sieste','Tous les jours, 13h15–14h45. Aucune réservation. Un parent reste tout le temps : Maor a 2 ans. Ce n’est pas une garde, et Gabriela reste avec vous. Ça empiète sur la sieste de 13h à 15h : on ne fait pas les deux. S’il pleut, c’est annulé ; au hall, maquillage et coloriages. Samedi est un des deux jours qu’on viserait, avec vendredi.'),
+slot('😴','13h00–15h00','Sieste','Comme d’habitude','Même le dernier vrai jour a sa sieste, sauf si vous avez choisi le Babe Watch à la place.'),
 slot('🧳','après 15h','Après la sieste','Les valises','On prépare le départ de demain sans en faire une course devant les enfants. Passeports, doudou, changes cabine dans un seul sac.'),
 slot('🍽️','19h00','Dîner','Artemis','Réservation 1412302. Dernier dîner à l’hôtel. Demain, on ne dîne pas sur place. On peut rester un peu.')
 ],
-expect:'C’est le jour le plus léger avant le vol. Le Babe Watch n’est pas au programme tant que vous n’en avez pas envie, et jamais sans un parent. Gabriela n’a pas besoin d’un atelier : l’ombre et les bras suffisent.',
+expect:'C’est le jour le plus léger avant le vol. Le Babe Watch reste un choix, jamais une garde, et il mange un bout de sieste. Gabriela n’a pas besoin d’un atelier : l’ombre et les bras suffisent.',
 seat:seatOf('Artemis','Dernier dîner à l’hôtel, réservation 1412302. On peut rester un peu plus que lundi.'),
-planb:'Pas de crèche, pas de Swim de rattrapage. Si le moniteur ne plaît pas, sable à deux mètres, ensemble. Pas de baby-sitter.',
+planb:'Pas de Swim de rattrapage. Si le moniteur ne plaît pas, ou s’il pleut, sable à l’abri ou coloriages au hall, ensemble. Pas de baby-sitter.',
 gear:[g('swim','Maillot','Seulement si vous descendez à la plage'),g('cream','Crème solaire','Même pour dix minutes de sable'),g('shade','Chapeau et ombre','Pour Gabriela, dès qu’on sort'),g('towel','Serviette','Dans le sac de plage'),g('outfit','Tenue du soir','Smart casual, choisie avant 18h'),g('pass','Passeports regroupés','Dans le sac de demain'),g('gaby','Change de Gabriela','Le sable et le lait n’attendent pas')]},
 18:{theme:'depart',headline:'On rentre doucement',line:'Matin souple, sieste, départ vers 15h. Pas de dîner à l’hôtel.',pills:['Sieste 13h–15h','Départ 15h–15h30','Vol 19h25'],
+weather:'15–20°, peut-être une petite bruine. Le parapluie reste dans le sac du départ.',
 timeline:[
 slot('☀️','8h30–10h30','Matin','Sans programme','Petit-déjeuner lent. Dernier regard au balcon. Les valises sont presque fermées depuis hier soir.'),
 slot('🏖️','si le cœur y est','Fin de matinée','Un au revoir court','Plage très courte, ou pas du tout. Pas de vélo « une dernière fois » qui mange la sieste.'),
@@ -1708,7 +1732,7 @@ slot('✈️','19h25','Vol','Arkia','Salonique vers Tel-Aviv, arrivée 21h45. Pa
 ],
 expect:'Court sur place, long en transit. L’émotion de partir est normale, pour vous comme pour Maor. Gabriela en écharpe dans l’aéroport. Le téléphone avec cette page déjà ouverte sert de jeu, même si le réseau coupe.',
 road:ROAD,
-planb:'Pas de crèche, pas de dernière activité. Si la plage du matin pèse, on reste au balcon. Le départ tient le vol : on vise 15h–15h30, avec un peu de mou si la sieste finit tard.',
+planb:'Pas de dernière activité. Si la plage du matin pèse, ou s’il bruine, on reste au balcon. Le départ tient le vol : on vise 15h–15h30, avec un peu de mou si la sieste finit tard.',
 gear:[g('pass','Passeports des quatre','À la main, pas dans la valise en soute'),g('cabin','Change cabine de Maor','Un ensemble complet'),g('diapers','Couches de Gabriela','En cabine, pas seulement en soute'),g('gaby','Change de Gabriela','Body de rechange dans le sac'),g('snacks','Snacks du vol','Connus, ouverts facilement'),g('lovey','Doudou','Dans les bras ou le sac, visible'),g('games','Jeux ouverts une fois','La page reste utilisable hors ligne')]}
 };
 const DAYS={1:CONFIRMED_DAYS,2:CONFIRMED_DAYS,3:CONFIRMED_DAYS};
@@ -1740,7 +1764,7 @@ function renderJours(){
   const el=document.getElementById('jours');
   const seenN=DAY_ORDER.filter(d=>isDaySeen(joursOpt,d)).length;
   el.innerHTML=`<div class="topbar"><button type="button" onclick="go('${joursBack}')" aria-label="Retour">←</button><div class="t">Mon jour</div><button type="button" onclick="openJeux('jours')" aria-label="Occuper Maor">🦁</button></div>
-<p class="play-help">Horaires confirmés par l’hôtel, à l’heure de Porto Sani. Chaque jour : le fil, et quoi glisser dans le sac.</p>
+<p class="play-help">Les horaires de l’hôtel, à l’heure de Porto Sani. Mardi, la crèche est demandée, en attente. Chaque jour : le fil, et quoi glisser dans le sac.</p>
 ${seenN?`<p class="play-help">${seenN}/7 jours déjà ouverts.</p>`:''}
 ${DAY_ORDER.map(d=>{
   const data=DAYS[joursOpt][d];
@@ -1772,15 +1796,17 @@ function openDay(opt, day, back){
   const tipKey={Artemis:'artemis',Macaroni:'macaroni',Vosporos:'vosporos',Ergon:'ergon','Ergon Deli':'ergon',Psarogiannos:'psaro',Psaroyannos:'psaro'};
   const seatHtml=data.seat?`<div class="callout seat"><b>Où s’asseoir · ${tipKey[data.seat.place]?`<button type="button" class="tip" data-t="${tipKey[data.seat.place]}">${esc(data.seat.place)}</button>`:esc(data.seat.place)}</b>${esc(data.seat.text)}</div>`:'';
   const roadHtml=data.road?`<div class="callout seat"><b>En chemin</b>${esc(data.road)}</div>`:'';
+  const weatherHtml=data.weather?`<div class="callout wx"><b>Météo · notée le 9 octobre</b>${esc(data.weather)} <a href="https://yohaisitbon.github.io/sani-meteo/">Prévision en direct</a>.</div>`:'';
   document.getElementById('jour').innerHTML=`<div class="topbar"><button type="button" onclick="backDay()" aria-label="Retour">←</button><div class="t">${esc(DOW[day][1])} ${day}</div><button type="button" onclick="openJeux('jour')" aria-label="Occuper Maor">🦁</button></div>
 <div class="dayhero">
-  <div class="day-kicker">Semaine confirmée · jour ${idx+1}/7</div>
+  <div class="day-kicker">${esc(data.kicker||'Semaine à l’hôtel')} · jour ${idx+1}/7</div>
   <h2>${theme.emoji} ${esc(data.headline||theme.title)}</h2>
   <p class="day-mood">${esc(data.line||theme.line)}</p>
   <div class="day-pills">${data.pills.map(p=>`<span>${esc(p)}</span>`).join('')}<span>Ensemble</span></div>
   ${dioramaHtml(theme)}
 </div>
 <div class="wdots" role="tablist" aria-label="Jours de la semaine">${DAY_ORDER.map(d=>`<button type="button" class="${d===day?'on':''}${isDaySeen(opt,d)?' seen':''}" onclick="openDay(${opt},${d},'${dayBack}')" aria-label="${esc(DOW[d][1])} ${d} octobre"${d===day?' aria-current="true"':''}>${d}</button>`).join('')}</div>
+${weatherHtml}
 <div class="card" style="--accent:${theme.accent}"><h2>Le fil de la journée</h2>
 <ol class="tl">${data.timeline.map((it,i,arr)=>`<li><div class="tl-rail"><div class="tl-dot"></div>${i<arr.length-1?'<div class="tl-line"></div>':''}</div><div class="tl-body"><div class="tl-time">${esc(it.time)} · ${esc(it.when)}</div><h3>${it.icon} ${esc(it.title)}</h3><p>${esc(it.text)}</p></div></li>`).join('')}</ol>
 </div>
@@ -2298,16 +2324,18 @@ function startMemory(opts){
 
 const NEXT_MS=6000;
 const NEXT_WINDOW=5;
+const NEXT_PREVIEW=10;
 const AGENDA=[
   {day:12,start:'10:25',end:'12:00',time:'10h25',title:'Arrivée à Salonique',line:'Hall B, à droite, devant le Sani Resort Office. Deux sièges auto.'},
   {day:12,start:'12:00',end:'13:00',time:'vers 12h',title:'Le resort',line:'Transfert privé jusqu’à la suite. On pose les sacs, on ouvre le balcon.'},
   {day:12,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Chambre calme, rideaux tirés. Dès que c’est possible.'},
   {day:12,start:'15:30',end:'17:30',time:'après 15h',title:'Vélos, si l’envie',line:'Bike Center, pas réservé. Seulement s’ils en ont envie.'},
   {day:12,start:'19:00',end:'20:30',time:'19h00',title:'Dîner Artemis',line:'Réservation 1404428 · chaise haute. Dans les 15 min, smart casual.'},
-  {day:13,start:'09:30',end:'12:15',time:'matin',title:'Vélos du matin',line:'Bike Center, en option. Si le cœur n’y est pas, on ne force pas.'},
-  {day:13,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Retour large. La chambre avant toute autre idée.'},
-  {day:13,start:'15:30',end:'17:30',time:'15h30',title:'La plage',line:'Après la sieste. Ombre pour Gabriela, seau pour Maor.'},
-  {day:13,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Macaroni',line:'Réservation 1412299. Dans les 15 min, smart casual.'},
+  {day:13,start:'09:40',end:'10:00',time:'9h40–10h00',title:'Adaptation à la crèche',line:'Maor, 2 ans. Vous restez dedans avec lui. Demandé, en attente de confirmation.'},
+  {day:13,start:'10:00',end:'13:00',time:'10h00–13h00',title:'Crèche, le matin',line:'À 10h00 vous partez. Goûter pomme et banane. On peut le récupérer à tout moment. En attente de confirmation.'},
+  {day:13,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'On le récupère à 13h. La pluie annule le Babe Watch, qui tombait sur la sieste.'},
+  {day:13,start:'15:30',end:'17:45',time:'après 15h',title:'On reste dedans',line:'Journée pluvieuse. Hall : maquillage et coloriages. Pas la plage.'},
+  {day:13,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Macaroni',line:'Réservation 1412299. Parapluie, ou on demande une voiture.'},
   {day:14,start:'11:00',end:'11:40',time:'11h00',title:'Baby Swim',line:'Piscine Sani Beach · 30 min · un parent dans l’eau. Maillot. Maor seulement.'},
   {day:14,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Après l’eau. On rentre avant 13h.'},
   {day:14,start:'18:00',end:'19:30',time:'18h00',title:'Dîner Ergon',line:'Réservation 1404431. Pas Vosporos. Dans les 15 min, smart casual.'},
@@ -2315,10 +2343,11 @@ const AGENDA=[
   {day:15,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Dès la chambre, même si l’horloge dit 13h10.'},
   {day:15,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Vosporos',line:'Réservation 1412300. Pas Ergon. Dans les 15 min, smart casual.'},
   {day:16,start:'11:00',end:'11:40',time:'11h00',title:'Baby Swim',line:'Même réservation. Piscine Sani Beach. Pas de wetlands, ils sont secs.'},
-  {day:16,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Après l’eau. Rien ne grignote ce créneau.'},
+  {day:16,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Après l’eau. Le Babe Watch (13h15–14h45) tombe dessus : on choisit, un parent reste.'},
+  {day:16,start:'15:30',end:'17:15',time:'après 15h',title:'Vélos, si l’envie',line:'Bike Center, pas réservé. Vendredi est sec. Sinon, le balcon.'},
   {day:16,start:'18:30',end:'20:00',time:'18h30',title:'Dîner Psarogiannos',line:'Réservation 1412301. Dans les 15 min, smart casual.'},
-  {day:17,start:'09:00',end:'12:30',time:'matin',title:'Matin doux',line:'Rien de réservé. Babe Watch non plus : si vous y allez, un parent reste, Maor a 2 ans.'},
-  {day:17,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Même le dernier samedi. Ensuite, les valises.'},
+  {day:17,start:'09:30',end:'12:15',time:'matin',title:'Vélos, si l’envie',line:'Bike Center, pas réservé. Samedi est sec. Sinon, matin doux, rien à caser.'},
+  {day:17,start:'13:00',end:'15:00',time:'13h–15h',title:'Sieste',line:'Le Babe Watch (13h15–14h45) empiète dessus : on choisit, un parent reste. Ensuite, les valises.'},
   {day:17,start:'15:15',end:'18:30',time:'après 15h',title:'On prépare les valises',line:'Passeports, doudou, changes cabine. Sans en faire une course.'},
   {day:17,start:'19:00',end:'20:30',time:'19h00',title:'Dîner Artemis',line:'Réservation 1412302. Dernier dîner à l’hôtel. Dans les 15 min, smart casual.'},
   {day:18,start:'09:00',end:'12:30',time:'matin',title:'Matin doux',line:'Valises presque fermées. Pas de dernière activité.'},
@@ -2366,7 +2395,8 @@ function paintNext(force){
   if(!root) return;
   const now=agendaNow();
   const phase=tripPhase(now);
-  const items=phase==='after'?[]:visibleAgenda(now).slice(0,NEXT_WINDOW);
+  const limit=phase==='before'?NEXT_PREVIEW:NEXT_WINDOW;
+  const items=phase==='after'?[]:visibleAgenda(now).slice(0,limit);
   nextCount=items.length;
   if(!items.length){
     const sig='kept-'+phase;
